@@ -6,11 +6,11 @@ namespace StoreUI
     public class AddCustomerMenu : IMenu
     {
         //static non-access modifier is needed to keep this variable consistent to all objects we create out of our AddPokeMenu
-        private static Pokemon _newPoke = new Pokemon();
-        private IPokemonBL _pokeBL;
-        public AddPokeMenu(IPokemonBL p_pokeBL)
+        private static Customer _newCustomer = new Customer();
+        private IStoreBL _customerBL;
+        public AddPokeMenu(IStoreBL p_customerBL)
         {
-            _pokeBL = p_pokeBL;
+            _customerBL = p_customerBL;
         }
         public void Display()
         {

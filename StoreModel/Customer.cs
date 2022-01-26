@@ -1,10 +1,11 @@
-﻿namespace StoreModel
+﻿//Updating this file to push to git
+namespace StoreModel
 {
 public class Customer
 {
     public string Name{ get; set;}
     public string Address {get; set;}
-       private List<Order> _orders;
+    private List<Order> _orders;
     public List<Ability> Abilities
     {
         get {return _abilities;}
