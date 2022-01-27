@@ -6,19 +6,19 @@ public class Customer
     public string Name{ get; set;}
     public string Address {get; set;}
     private List<Order> _orders;
-    public List<Ability> Abilities
+    public List<Order> Orders
     {
-        get {return _abilities;}
+        get {return _orders;}
         set 
         {
-            if(value.Count < 4)
+            if(value.Count < 0)
             {  
-                _abilities = value;
+                _orders = value;
 
             }
             else
             {
-                throw new Exception ("Pokemon cannot hold more than 4 abilities!");
+                throw new Exception ("Orders is empty");
             }
         }
     }
