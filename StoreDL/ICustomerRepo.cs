@@ -1,7 +1,7 @@
-﻿using StoreModel;
+using StoreModel;
 
 namespace StoreDL;
-public interface IRepository
+public interface ICustomerRepo
 {
     Customer AddCustomer(Customer p_customer);
 

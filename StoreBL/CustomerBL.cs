@@ -4,8 +4,8 @@ namespace StoreBL
 {
     public class CustomerBL : ICustomerBL
     {
-        private IRepository _repo;
-        public CustomerBL(IRepository p_repo)
+        private ICustomerRepo _repo;
+        public CustomerBL(ICustomerRepo p_repo)
         {
             _repo = p_repo;
         }

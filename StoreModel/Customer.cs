@@ -7,6 +7,8 @@ public class Customer
     public string Name{ get; set;}
     public string Address {get; set;}
     public string Email {get; set;}
+    public string PhoneNumber{get; set;}
+
     private List<Order> _orders;
     public List<Order> Orders
     {
@@ -23,6 +25,14 @@ public class Customer
                 throw new Exception ("Order is empty");
             }
         }
+    }
+    public Customer()
+    {
+        Name = "";
+        Address = "";
+        Email = "";
+        PhoneNumber = "";
+
     }
 }
 }

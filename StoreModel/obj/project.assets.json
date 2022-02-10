@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\StoreModel.csproj",
+      "projectUniqueName": "C:\\Users\\veron\\Documents\\P0\\StoreModel\\StoreModel.csproj",
       "projectName": "StoreModel",
-      "projectPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\StoreModel.csproj",
+      "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreModel\\StoreModel.csproj",
       "packagesPath": "C:\\Users\\veron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\obj\\",
+      "outputPath": "C:\\Users\\veron\\Documents\\P0\\StoreModel\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\veron\\AppData\\Roaming\\NuGet\\NuGet.Config",

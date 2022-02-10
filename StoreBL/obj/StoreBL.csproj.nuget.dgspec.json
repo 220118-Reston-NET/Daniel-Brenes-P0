@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreBL\\StoreBL.csproj": {}
+    "C:\\Users\\veron\\Documents\\P0\\StoreBL\\StoreBL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreBL\\StoreBL.csproj": {
+    "C:\\Users\\veron\\Documents\\P0\\StoreBL\\StoreBL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreBL\\StoreBL.csproj",
+        "projectUniqueName": "C:\\Users\\veron\\Documents\\P0\\StoreBL\\StoreBL.csproj",
         "projectName": "StoreBL",
-        "projectPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreBL\\StoreBL.csproj",
+        "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreBL\\StoreBL.csproj",
         "packagesPath": "C:\\Users\\veron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreBL\\obj\\",
+        "outputPath": "C:\\Users\\veron\\Documents\\P0\\StoreBL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\veron\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreDL\\StoreDL.csproj": {
-                "projectPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreDL\\StoreDL.csproj"
+              "C:\\Users\\veron\\Documents\\P0\\StoreDL\\StoreDL.csproj": {
+                "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreDL\\StoreDL.csproj"
               },
-              "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\StoreModel.csproj": {
-                "projectPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\StoreModel.csproj"
+              "C:\\Users\\veron\\Documents\\P0\\StoreModel\\StoreModel.csproj": {
+                "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreModel\\StoreModel.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreDL\\StoreDL.csproj": {
+    "C:\\Users\\veron\\Documents\\P0\\StoreDL\\StoreDL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreDL\\StoreDL.csproj",
+        "projectUniqueName": "C:\\Users\\veron\\Documents\\P0\\StoreDL\\StoreDL.csproj",
         "projectName": "StoreDL",
-        "projectPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreDL\\StoreDL.csproj",
+        "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreDL\\StoreDL.csproj",
         "packagesPath": "C:\\Users\\veron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreDL\\obj\\",
+        "outputPath": "C:\\Users\\veron\\Documents\\P0\\StoreDL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\veron\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\StoreModel.csproj": {
-                "projectPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\StoreModel.csproj"
+              "C:\\Users\\veron\\Documents\\P0\\StoreModel\\StoreModel.csproj": {
+                "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreModel\\StoreModel.csproj"
               }
             }
           }
@@ -123,14 +123,14 @@
         }
       }
     },
-    "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\StoreModel.csproj": {
+    "C:\\Users\\veron\\Documents\\P0\\StoreModel\\StoreModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\StoreModel.csproj",
+        "projectUniqueName": "C:\\Users\\veron\\Documents\\P0\\StoreModel\\StoreModel.csproj",
         "projectName": "StoreModel",
-        "projectPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\StoreModel.csproj",
+        "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreModel\\StoreModel.csproj",
         "packagesPath": "C:\\Users\\veron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\obj\\",
+        "outputPath": "C:\\Users\\veron\\Documents\\P0\\StoreModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\veron\\AppData\\Roaming\\NuGet\\NuGet.Config",

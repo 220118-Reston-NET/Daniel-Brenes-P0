@@ -5,7 +5,7 @@ namespace StoreDL
 {
 
 
-    public class Repository : IRepository
+    public class CustomerRepo : ICustomerRepo
     {
         private string _filepath = "../StoreDL/Database/";
         private string _jsonString;
