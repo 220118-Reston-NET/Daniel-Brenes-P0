@@ -5,6 +5,7 @@ public class Customer
 {
     public string Name{ get; set;}
     public string Address {get; set;}
+    public string Email {get; set;}
     private List<Order> _orders;
     public List<Order> Orders
     {
@@ -18,7 +19,7 @@ public class Customer
             }
             else
             {
-                throw new Exception ("Orders is empty");
+                throw new Exception ("Order is empty");
             }
         }
     }

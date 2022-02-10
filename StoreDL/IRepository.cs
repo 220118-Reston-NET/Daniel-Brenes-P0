@@ -1,4 +1,6 @@
-﻿namespace StoreDL;
+﻿using StoreModel;
+
+namespace StoreDL;
 public interface IRepository
 {
     Customer AddCustomer(Customer p_customer);

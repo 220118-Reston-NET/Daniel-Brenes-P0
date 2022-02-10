@@ -1,4 +1,4 @@
-namespace PokeUI
+namespace StoreUI
 {
     /*
         Interface are one of the best way to implement abstraction

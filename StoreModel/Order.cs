@@ -6,10 +6,10 @@ namespace StoreModel
         private string _orderList;
         public string OrderList 
         {
-            get {return _orderlist;}
+            get {return _orderList;}
             set
             {
-                if (!_orderList.IsNullOrEmpty())
+                if (_orderList.Length > 0)
                 {
                     _orderList = value;
                 }

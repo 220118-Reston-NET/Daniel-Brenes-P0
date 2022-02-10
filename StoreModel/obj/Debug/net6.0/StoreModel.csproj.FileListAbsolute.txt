@@ -1,0 +1,12 @@
+C:\Users\veron\Documents\Revature\P0\StoreModel\obj\Debug\net6.0\StoreModel.csproj.AssemblyReference.cache
+C:\Users\veron\Documents\Revature\P0\StoreModel\obj\Debug\net6.0\StoreModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\veron\Documents\Revature\P0\StoreModel\obj\Debug\net6.0\StoreModel.AssemblyInfoInputs.cache
+C:\Users\veron\Documents\Revature\P0\StoreModel\obj\Debug\net6.0\StoreModel.AssemblyInfo.cs
+C:\Users\veron\Documents\Revature\P0\StoreModel\obj\Debug\net6.0\StoreModel.csproj.CoreCompileInputs.cache
+C:\Users\veron\Documents\Revature\P0\StoreModel\bin\Debug\net6.0\StoreModel.deps.json
+C:\Users\veron\Documents\Revature\P0\StoreModel\bin\Debug\net6.0\StoreModel.dll
+C:\Users\veron\Documents\Revature\P0\StoreModel\bin\Debug\net6.0\ref\StoreModel.dll
+C:\Users\veron\Documents\Revature\P0\StoreModel\bin\Debug\net6.0\StoreModel.pdb
+C:\Users\veron\Documents\Revature\P0\StoreModel\obj\Debug\net6.0\StoreModel.dll
+C:\Users\veron\Documents\Revature\P0\StoreModel\obj\Debug\net6.0\ref\StoreModel.dll
+C:\Users\veron\Documents\Revature\P0\StoreModel\obj\Debug\net6.0\StoreModel.pdb

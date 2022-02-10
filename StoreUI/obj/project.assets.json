@@ -1,15 +1,72 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "StoreBL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "StoreDL": "1.0.0",
+          "StoreModel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StoreBL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreBL.dll": {}
+        }
+      },
+      "StoreDL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "StoreModel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StoreDL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreDL.dll": {}
+        }
+      },
+      "StoreModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/StoreModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreModel.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "StoreBL/1.0.0": {
+      "type": "project",
+      "path": "../StoreBL/StoreBL.csproj",
+      "msbuildProject": "../StoreBL/StoreBL.csproj"
+    },
+    "StoreDL/1.0.0": {
+      "type": "project",
+      "path": "../StoreDL/StoreDL.csproj",
+      "msbuildProject": "../StoreDL/StoreDL.csproj"
+    },
+    "StoreModel/1.0.0": {
+      "type": "project",
+      "path": "../StoreModel/StoreModel.csproj",
+      "msbuildProject": "../StoreModel/StoreModel.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "StoreBL >= 1.0.0",
+      "StoreDL >= 1.0.0",
+      "StoreModel >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\veron\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\veron\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -20,13 +77,9 @@
       "packagesPath": "C:\\Users\\veron\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreUI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
         "C:\\Users\\veron\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -38,7 +91,17 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreBL\\StoreBL.csproj": {
+              "projectPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreBL\\StoreBL.csproj"
+            },
+            "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreDL\\StoreDL.csproj": {
+              "projectPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreDL\\StoreDL.csproj"
+            },
+            "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\StoreModel.csproj": {
+              "projectPath": "C:\\Users\\veron\\Documents\\Revature\\P0\\StoreModel\\StoreModel.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

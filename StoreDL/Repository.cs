@@ -1,6 +1,7 @@
 using System.Text.Json;
+using StoreModel;
 
-namespace PokeDL
+namespace StoreDL
 {
 
 

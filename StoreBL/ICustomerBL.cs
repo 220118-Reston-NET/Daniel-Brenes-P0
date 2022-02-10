@@ -4,6 +4,6 @@ namespace StoreBL
 {
     public interface ICustomerBL
     {
-        CustomerBL AddCustomer(CustomerBL p_customer);
+        Customer AddCustomer(Customer p_customer);
     }
 }

@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "StoreBL/1.0.0": {
+        "dependencies": {
+          "StoreDL": "1.0.0",
+          "StoreModel": "1.0.0"
+        },
+        "runtime": {
+          "StoreBL.dll": {}
+        }
+      },
+      "StoreDL/1.0.0": {
+        "dependencies": {
+          "StoreModel": "1.0.0"
+        },
+        "runtime": {
+          "StoreDL.dll": {}
+        }
+      },
+      "StoreModel/1.0.0": {
+        "runtime": {
+          "StoreModel.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "StoreBL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StoreDL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StoreModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

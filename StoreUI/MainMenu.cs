@@ -1,4 +1,4 @@
-namespace PokeUI
+namespace StoreUI
 {
     /*
         MainMenu inherits IMenu interface but since it is a class it needs to give actual implementation details to the methods
@@ -13,7 +13,7 @@ namespace PokeUI
             Console.WriteLine("[1] Add Customer to your team");
             Console.WriteLine("[0] Exit");
         }
-
+        
         public string UserChoice()
         {
             string userInput = Console.ReadLine();

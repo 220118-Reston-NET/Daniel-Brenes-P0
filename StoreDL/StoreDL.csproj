@@ -1,5 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\StoreModel\StoreModel.csproj" />
+  </ItemGroup>
+
+
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
