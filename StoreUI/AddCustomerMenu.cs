@@ -15,8 +15,9 @@ namespace StoreUI
         public void Display()
         {
             Console.WriteLine("Enter Customer information");
-            Console.WriteLine("[3] Name - " );
-            Console.WriteLine("[2] Level - " );
+            Console.WriteLine("[4] Name - "  + _newCustomer.Name);
+            Console.WriteLine("[3] Address - " + _newCustomer.Address);
+            Console.WriteLine("[2] Email" + _newCustomer.Email);
             Console.WriteLine("[1] Save");
             Console.WriteLine("[0] Go Back");
         }
@@ -36,8 +37,12 @@ namespace StoreUI
                     _newCustomer.Email = Console.ReadLine();
                     return "AddCustomer";
                 case "3": 
-                    Console.WriteLine("Please enter a name!");
+                    Console.WriteLine("Please enter an address!");
                     _newCustomer.Address = Console.ReadLine();
+                    return "AddCustomer";
+                case "4":
+                    Console.WriteLine("Please enter a name!");
+                    _newCustomer.Name = Console.ReadLine();
                     return "AddCustomer";
                 default:
                     Console.WriteLine("Please input a valid response");
