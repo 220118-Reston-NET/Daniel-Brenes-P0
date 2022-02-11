@@ -15,9 +15,10 @@ namespace StoreUI
         public void Display()
         {
             Console.WriteLine("Enter Customer information");
+            Console.WriteLine("[5] Initial Wallet : $" + _newCustomer.Wallet);
             Console.WriteLine("[4] Name - "  + _newCustomer.Name);
             Console.WriteLine("[3] Address - " + _newCustomer.Address);
-            Console.WriteLine("[2] Email" + _newCustomer.Email);
+            Console.WriteLine("[2] Email - " + _newCustomer.Email);
             Console.WriteLine("[1] Save");
             Console.WriteLine("[0] Go Back");
         }
@@ -43,6 +44,10 @@ namespace StoreUI
                 case "4":
                     Console.WriteLine("Please enter a name!");
                     _newCustomer.Name = Console.ReadLine();
+                    return "AddCustomer";
+                case "5":
+                    Console.WriteLine("Please enter the starting wallet");
+                    _newCustomer.Wallet = Convert.ToDouble(Console.ReadLine());
                     return "AddCustomer";
                 default:
                     Console.WriteLine("Please input a valid response");

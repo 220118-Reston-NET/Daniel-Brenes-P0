@@ -10,8 +10,8 @@ namespace StoreUI
         {
             Console.WriteLine("Welcome to the Outdoor Shopping Mall");
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("[4] View Stores and/or Products");
-            Console.WriteLine("[3] View Orders");
+            Console.WriteLine("[4] View Products by Store");
+            Console.WriteLine("[3] View Customers by Order");
             Console.WriteLine("[2] Add A Store to the Mall");
             Console.WriteLine("[1] Add A Customer to the Mall");
             Console.WriteLine("[0] Exit");

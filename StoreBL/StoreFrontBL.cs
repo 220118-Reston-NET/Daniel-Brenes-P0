@@ -5,7 +5,7 @@ namespace StoreBL
     public class StoreFrontBL : IStoreFrontBL
     {
         private IStoreFrontRepo _repo;
-        public StoreFrontBL(ICustomerRepo p_repo)
+        public StoreFrontBL(IStoreFrontRepo p_repo)
         {
             _repo = p_repo;
         }

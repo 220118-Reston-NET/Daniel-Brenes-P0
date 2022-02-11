@@ -8,6 +8,7 @@ public class Customer
     public string Address {get; set;}
     public string Email {get; set;}
     public string PhoneNumber{get; set;}
+    public double Wallet{ get; set;}
 
     private List<Order> _orders;
     public List<Order> Orders
@@ -32,6 +33,7 @@ public class Customer
         Address = "";
         Email = "";
         PhoneNumber = "";
+        Wallet = 0.0;
 
     }
 }
