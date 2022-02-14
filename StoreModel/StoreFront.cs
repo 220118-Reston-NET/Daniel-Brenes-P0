@@ -21,7 +21,12 @@ public class StoreFront
     {
         Name = "";
         Address = "";
+        TypeOfStore = "";
 
+    }
+    public override string ToString()
+    {
+            return $"Name: {Name}\nAddress: {Address}\nType Of Store: {TypeOfStore}\n";
     }
 }
 }

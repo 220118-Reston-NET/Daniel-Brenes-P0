@@ -25,11 +25,17 @@ while (repeat)
     
     switch (ans)
     {
+        case "ViewCustomer":
+            menu = new ViewCustomer(new CustomerBL (new SQLRepo(_connectionString)));
+            break;
+        case "SearchCustomer":
+            menu = new SearchCustomer(new CustomerBL (new SQLRepo(_connectionString)));
+            break;
         case "AddStoreFront":
-            menu = new AddStoreFrontMenu(new StoreFrontBL (new StoreFrontRepo()));
+            menu = new AddStoreFrontMenu(new StoreFrontBL (new SQLRepo(_connectionString)));
             break;
         case "AddCustomer":
-            menu = new AddCustomerMenu(new CustomerBL(new SQLCustomer(_connectionString)));
+            menu = new AddCustomerMenu(new CustomerBL(new SQLRepo(_connectionString)));
             break;
         case "MainMenu":
             menu = new MainMenu();

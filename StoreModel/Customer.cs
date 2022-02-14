@@ -36,6 +36,10 @@ public class Customer
         Wallet = 0.0;
 
     }
+    public override string ToString()
+    {
+            return $"Id: {CustomerID}\nName: {Name}\nAddress: {Address}\nEmail: {Email}\nPhoneNumber: {PhoneNumber}\n";
+    }
 }
 }
 
