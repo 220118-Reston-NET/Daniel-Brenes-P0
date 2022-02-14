@@ -29,5 +29,10 @@ namespace StoreDL
 
             return JsonSerializer.Deserialize<List<Customer>>(_jsonString);
         }
+
+        // public Customer SearchCustomer(Customer p_customer)
+        // {
+        //     throw new NotImplementedException();
+        // }
     }
 }

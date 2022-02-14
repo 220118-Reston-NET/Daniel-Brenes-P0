@@ -5,7 +5,9 @@
   <ItemGroup>
     <ProjectReference Include="..\StoreModel\StoreModel.csproj" />
   </ItemGroup>
-
+ <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
 
 
   <PropertyGroup>
