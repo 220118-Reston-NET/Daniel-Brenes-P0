@@ -8,7 +8,12 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.File("./logs/user.txt") //We configure our logger to save in this file
     .CreateLogger();
 
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json")
+    .Build();
 
+string _connectionString = configuration.GetConnectionString("Reference2DB");
 bool repeat = true;
 IMenu menu = new MainMenu();
 
@@ -24,7 +29,7 @@ while (repeat)
             menu = new AddStoreFrontMenu(new StoreFrontBL (new StoreFrontRepo()));
             break;
         case "AddCustomer":
-            menu = new AddCustomerMenu(new CustomerBL(new CustomerRepo()));
+            menu = new AddCustomerMenu(new CustomerBL(new SQLCustomer(_connectionString)));
             break;
         case "MainMenu":
             menu = new MainMenu();

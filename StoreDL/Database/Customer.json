@@ -1,0 +1,9 @@
+{
+  "CustomerID": 0,
+  "Name": "Daniel",
+  "Address": "1234 main st",
+  "Email": "brenes.daniel@yahoo.com",
+  "PhoneNumber": "12345654567",
+  "Wallet": 0,
+  "Orders": null
+}

@@ -23,7 +23,7 @@ namespace StoreDL
             //This is where you specify the sql statement required to do whatever operation you need based on the method
             //
             string sqlQuery = @"insert into Customer 
-                            values(@CustomerID, @CustomerName, @customerEmail, @customerAddress,@customerPhoneNumber, @customerWallet)";
+                            values(@customerName,  @customerAddress, @customerEmail,@customerPhoneNumber, @customerWallet)";
 
             //using block is different from our normal using statement
             //It is used to automatically close any resource you stated inside of the parenthesis
@@ -36,14 +36,16 @@ namespace StoreDL
                 //SqlCommand class is a class specialized in executing SQL statements
                 //Command will how the sqlQuery that will execute on the currently connection we have in the con object
                 SqlCommand command = new SqlCommand(sqlQuery, con);
-                command.Parameters.AddWithValue("@pokeName", p_customer.Name);
-                command.Parameters.AddWithValue("@pokeLevel", p_customer.Address);
-                command.Parameters.AddWithValue("@pokeAttack", p_customer.Email);
-                command.Parameters.AddWithValue("@pokeDefense", p_customer.PhoneNumber);
-                command.Parameters.AddWithValue("@pokeHealth", p_customer.Wallet);
+                // command.Parameters.AddWithValue("@customerID", p_customer.CustomerID);
+                command.Parameters.AddWithValue("@customerName", p_customer.Name);
+                command.Parameters.AddWithValue("@customerAddress", p_customer.Address);
+                command.Parameters.AddWithValue("@customerEmail", p_customer.Email);
+                command.Parameters.AddWithValue("@customerPhoneNumber", p_customer.PhoneNumber);
+                command.Parameters.AddWithValue("@customerWallet", p_customer.Wallet);
 
                 //Executes the SQL statement
                 command.ExecuteNonQuery();
+                
             }
 
             return p_customer;
@@ -83,7 +85,7 @@ namespace StoreDL
         // }
 
         public List<Customer> GetAllCustomer()
-        {
+        { 
             List<Customer> listOfCustomer = new List<Customer>();
 
             string sqlQuery = @"select * from Customer";
@@ -108,9 +110,9 @@ namespace StoreDL
                         //Zero-based column index
                         CustomerID = reader.GetInt32(0), //It will get column PokeId since that is the very first column of our select statement
                         Name = reader.GetString(1), //it will get the pokeName column since it is the second column of our select statement
-                        Address = reader.GetInt32(2),
-                        Email = reader.GetInt32(3),
-                        PhoneNumber = reader.GetInt32(4),
+                        Address = reader.GetString(2),
+                        Email = reader.GetString(3),
+                        PhoneNumber = reader.GetString(4),
                         Wallet = reader.GetInt32(5)
                     });
                 }

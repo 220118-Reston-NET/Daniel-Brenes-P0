@@ -15,10 +15,11 @@ namespace StoreUI
         public void Display()
         {
             Console.WriteLine("Enter Customer information");
-            Console.WriteLine("[5] Initial Wallet : $" + _newCustomer.Wallet);
-            Console.WriteLine("[4] Name - "  + _newCustomer.Name);
-            Console.WriteLine("[3] Address - " + _newCustomer.Address);
-            Console.WriteLine("[2] Email - " + _newCustomer.Email);
+            Console.WriteLine("[6] Initial Wallet : $" + _newCustomer.Wallet);
+            Console.WriteLine("[5] Name - "  + _newCustomer.Name);
+            Console.WriteLine("[4] Address - " + _newCustomer.Address);
+            Console.WriteLine("[3] Email - " + _newCustomer.Email);
+            Console.WriteLine("[2] Phone Number - " + _newCustomer.PhoneNumber);
             Console.WriteLine("[1] Save");
             Console.WriteLine("[0] Go Back");
         }
@@ -34,18 +35,22 @@ namespace StoreUI
                     _customerBL.AddCustomer(_newCustomer);
                     return "MainMenu";
                 case "2":
+                    Console.WriteLine("Please enter an Phone Number");
+                    _newCustomer.PhoneNumber = Console.ReadLine();
+                    return "AddCustomer";
+                case "3":
                     Console.WriteLine("Please enter an email");
                     _newCustomer.Email = Console.ReadLine();
                     return "AddCustomer";
-                case "3": 
+                case "4": 
                     Console.WriteLine("Please enter an address!");
                     _newCustomer.Address = Console.ReadLine();
                     return "AddCustomer";
-                case "4":
+                case "5":
                     Console.WriteLine("Please enter a name!");
                     _newCustomer.Name = Console.ReadLine();
                     return "AddCustomer";
-                case "5":
+                case "6":
                     Console.WriteLine("Please enter the starting wallet");
                     _newCustomer.Wallet = Convert.ToDouble(Console.ReadLine());
                     return "AddCustomer";

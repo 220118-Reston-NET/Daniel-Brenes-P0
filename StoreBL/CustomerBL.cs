@@ -11,7 +11,7 @@ namespace StoreBL
         }
         public Customer AddCustomer(Customer c_customer)
         {
-            return c_customer;
+            return _repo.AddCustomer(c_customer);
 
         }
     }
