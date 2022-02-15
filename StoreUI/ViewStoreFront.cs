@@ -21,8 +21,9 @@ namespace StoreUI
                         Console.WriteLine(item);
                     }
                 
-                Console.WriteLine("Press Enter to continue");
-                Console.ReadLine();
+                // Console.WriteLine("Press Enter to continue");
+                // Console.ReadLine();
+                Console.WriteLine("------------------------");
                 Console.WriteLine("Enter StoreID to see Products");
                 Console.WriteLine("[2] View by StoreID");
                 Console.WriteLine("[1] View All Products");

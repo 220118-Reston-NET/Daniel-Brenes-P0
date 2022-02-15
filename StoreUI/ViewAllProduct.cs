@@ -19,21 +19,24 @@ namespace StoreUI
                         Console.WriteLine("================");
                         Console.WriteLine(item);
                     }
-                    Console.WriteLine("Please press Enter to continue");
+                    Console.WriteLine("Press 1 To Replenish Inventory");
+                    Console.WriteLine("Press 0 To Go Back");
                     Console.ReadLine();
                    
         }
         public string UserChoice()
         {
-            Console.WriteLine("Please press Enter to continue");
+            
             string userInput = Console.ReadLine();
 
-           // switch (userInput)
+            switch (userInput)
             {
+                case "0":
+                    return "MainMenu";
                
-             //   default:
-                //    Console.WriteLine("Please press Enter to continue");
-               //     Console.ReadLine();
+                default:
+                   Console.WriteLine("Please press Enter to continue");
+                   Console.ReadLine();
                     return "MainMenu";
 
             }

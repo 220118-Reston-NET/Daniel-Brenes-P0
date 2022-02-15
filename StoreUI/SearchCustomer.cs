@@ -48,6 +48,8 @@ namespace StoreUI
                         Console.WriteLine("-------------");
                         Console.WriteLine(item);
                     }
+                    Console.WriteLine("Please press Enter to continue");
+                    Console.ReadLine();
                     return "MainMenu";
                     }
                     catch(Exception exc)
@@ -70,7 +72,7 @@ namespace StoreUI
                     }
                     Console.WriteLine("Please press Enter to continue");
                     Console.ReadLine();
-                    return "SearchCustomer";
+                    return "MainMenu";
                     }
                     catch(Exception exc)
                     {
@@ -92,7 +94,7 @@ namespace StoreUI
                     }
                     Console.WriteLine("Please press Enter to continue");
                     Console.ReadLine();
-                    return "SearchCustomer";
+                    return "MainMenu";
                     }
                     catch (Exception exc)
                     {
@@ -114,7 +116,7 @@ namespace StoreUI
                     }
                     Console.WriteLine("Please press Enter to continue");
                     Console.ReadLine();
-                    return "SearchCustomer";
+                    return "MainMenu";
                     }
                     catch (Exception exc)
                     {
@@ -136,7 +138,7 @@ namespace StoreUI
                     }
                     Console.WriteLine("Please press Enter to continue");
                     Console.ReadLine();
-                    return "SearchCustomer";
+                    return "MainMenu";
                     }
                     catch (Exception exc)
                     {

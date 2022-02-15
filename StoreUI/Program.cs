@@ -25,6 +25,9 @@ while (repeat)
     
     switch (ans)
     {
+        case "ReplenishInventory":
+            menu = new ReplenishInventory(new LineItemBL ( new SQLRepo(_connectionString)));
+            break;
         case "ViewAllProducts":
             menu = new ViewAllProduct(new ProductBL (new SQLRepo(_connectionString)));
             break;

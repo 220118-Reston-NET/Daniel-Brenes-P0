@@ -1,5 +1,4 @@
-﻿//Updating this file to push to git
-namespace StoreModel
+﻿namespace StoreModel
 {
 public class Customer
 {

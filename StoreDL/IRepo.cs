@@ -12,5 +12,7 @@ namespace StoreDL
         List<Customer> SearchCustomerById(int p_id);
         List<Product> GetAllProducts();
         List<Product> GetProductById(int p_id);
+        List<LineItem> GetLineItemByStoreId(int p_id);
+        LineItem ReplenishQuantity(int p_id, int p_quantity);
     }
 }

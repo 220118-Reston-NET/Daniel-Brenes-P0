@@ -13,5 +13,9 @@ namespace StoreModel
             ProductName = "";
             Quantity = 0;
         }
+        public override string ToString()
+        {
+            return $"Id: {ProductId} \t\tName: {ProductName} \t\tQuantity: {Quantity}";
+        }
     }
 }

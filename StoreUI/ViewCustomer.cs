@@ -14,8 +14,8 @@ namespace StoreUI
         }
         public void Display()
         {
-                  List<Customer> listOfCustomer = _customerBL.GetAllCustomer();
-                    foreach (var item in listOfCustomer)
+                List<Customer> listOfCustomer = _customerBL.GetAllCustomer();
+                foreach (var item in listOfCustomer)
                     {
                         Console.WriteLine("================");
                         Console.WriteLine(item);
