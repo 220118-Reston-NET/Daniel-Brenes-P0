@@ -1,5 +1,5 @@
 using StoreModel;
-using StoreBL;
+using BL;
 
 namespace StoreUI
 {
@@ -7,8 +7,8 @@ namespace StoreUI
     public class ViewStoreFront : IMenu
     {
         private static StoreFront _newStoreFront = new StoreFront();
-        private IStoreFrontBL _storefrontBL;
-        public ViewStoreFront(IStoreFrontBL p_storefrontBL)
+        private IStoreBL _storefrontBL;
+        public ViewStoreFront(IStoreBL p_storefrontBL)
         {
             _storefrontBL = p_storefrontBL;
         }

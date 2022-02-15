@@ -1,7 +1,7 @@
 ﻿global using Serilog;
 using Microsoft.Extensions.Configuration;
 using StoreUI;
-using StoreBL;
+using BL;
 using StoreDL;
 
 Log.Logger = new LoggerConfiguration()
@@ -26,31 +26,31 @@ while (repeat)
     switch (ans)
     {
         case "ReplenishInventory":
-            menu = new ReplenishInventory(new LineItemBL ( new SQLRepo(_connectionString)));
+            menu = new ReplenishInventory(new StoreBL ( new SQLRepo(_connectionString)));
             break;
         case "ViewAllProducts":
-            menu = new ViewAllProduct(new ProductBL (new SQLRepo(_connectionString)));
+            menu = new ViewAllProduct(new StoreBL (new SQLRepo(_connectionString)));
             break;
         case "ViewCustomer":
-            menu = new ViewCustomer(new CustomerBL (new SQLRepo(_connectionString)));
+            menu = new ViewCustomer(new StoreBL (new SQLRepo(_connectionString)));
             break;
         case "ViewStoreFrontInventory":
-            menu = new ViewStoreFrontInventory(new LineItemBL (new SQLRepo(_connectionString)));
+            menu = new ViewStoreFrontInventory(new StoreBL (new SQLRepo(_connectionString)));
             break;
         case "SearchCustomer":
-            menu = new SearchCustomer(new CustomerBL (new SQLRepo(_connectionString)));
+            menu = new SearchCustomer(new StoreBL (new SQLRepo(_connectionString)));
             break;
         case "ViewStoreFront":
-            menu = new ViewStoreFront(new StoreFrontBL(new SQLRepo(_connectionString)));
+            menu = new ViewStoreFront(new StoreBL(new SQLRepo(_connectionString)));
             break;
         case "AddStoreFront":
-            menu = new AddStoreFrontMenu(new StoreFrontBL (new SQLRepo(_connectionString)));
+            menu = new AddStoreFrontMenu(new StoreBL (new SQLRepo(_connectionString)));
             break;
         case "PlaceOrder":
-            menu = new PlaceOrder( new CustomerBL( new SQLRepo(_connectionString)));
+            menu = new PlaceOrder( new StoreBL( new SQLRepo(_connectionString)));
             break;
         case "AddCustomer":
-            menu = new AddCustomerMenu(new CustomerBL(new SQLRepo(_connectionString)));
+            menu = new AddCustomerMenu(new StoreBL(new SQLRepo(_connectionString)));
             break;
         case "MainMenu":
             menu = new MainMenu();

@@ -1685,7 +1685,7 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
-      "StoreBL/1.0.0": {
+      "BL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -1693,10 +1693,10 @@
           "StoreModel": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/StoreBL.dll": {}
+          "bin/placeholder/BL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/StoreBL.dll": {}
+          "bin/placeholder/BL.dll": {}
         }
       },
       "StoreDL/1.0.0": {
@@ -6065,10 +6065,10 @@
         "system.xml.xmldocument.nuspec"
       ]
     },
-    "StoreBL/1.0.0": {
+    "BL/1.0.0": {
       "type": "project",
-      "path": "../StoreBL/StoreBL.csproj",
-      "msbuildProject": "../StoreBL/StoreBL.csproj"
+      "path": "../BL/BL.csproj",
+      "msbuildProject": "../BL/BL.csproj"
     },
     "StoreDL/1.0.0": {
       "type": "project",
@@ -6083,13 +6083,13 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BL >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 6.0.0",
       "Microsoft.Extensions.Configuration.FileExtensions >= 6.0.0",
       "Microsoft.Extensions.Configuration.Json >= 6.0.0",
       "Moq >= 4.16.1",
       "Serilog >= 2.10.0",
       "Serilog.Sinks.File >= 5.0.0",
-      "StoreBL >= 1.0.0",
       "StoreDL >= 1.0.0",
       "StoreModel >= 1.0.0"
     ]
@@ -6121,8 +6121,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\veron\\Documents\\P0\\StoreBL\\StoreBL.csproj": {
-              "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreBL\\StoreBL.csproj"
+            "C:\\Users\\veron\\Documents\\P0\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\veron\\Documents\\P0\\BL\\BL.csproj"
             },
             "C:\\Users\\veron\\Documents\\P0\\StoreDL\\StoreDL.csproj": {
               "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreDL\\StoreDL.csproj"

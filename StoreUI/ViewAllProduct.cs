@@ -1,13 +1,13 @@
 using StoreModel;
-using StoreBL;
+using BL;
 
 namespace StoreUI
 {
     public class ViewAllProduct : IMenu
     {
         private static Product _newProduct = new Product();
-        private IProductBL _productBL;
-        public ViewAllProduct(IProductBL p_productBL)
+        private IStoreBL _productBL;
+        public ViewAllProduct(IStoreBL p_productBL)
         {
             _productBL = p_productBL;
         }

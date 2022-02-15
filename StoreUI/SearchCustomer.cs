@@ -1,4 +1,4 @@
-using StoreBL;
+using BL;
 using StoreModel;
 
 namespace StoreUI
@@ -6,9 +6,9 @@ namespace StoreUI
     public class SearchCustomer : IMenu
     {
         private static Customer _newCustomer = new Customer();
-        private ICustomerBL _customerBL;
+        private IStoreBL _customerBL;
         private List<Customer> _listOfCustomer;
-        public SearchCustomer(ICustomerBL p_customerBL)
+        public SearchCustomer(IStoreBL p_customerBL)
         {
             _customerBL = p_customerBL;
         }

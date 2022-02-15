@@ -1,4 +1,4 @@
-using StoreBL;
+using BL;
 using StoreModel;
 
 namespace StoreUI
@@ -6,9 +6,9 @@ namespace StoreUI
     public class ReplenishInventory : IMenu
     {
         private static LineItem _newLineItem = new LineItem();
-        private ILineItemBL _lineItemBL;
+        private IStoreBL _lineItemBL;
         private List<LineItem> _listOfLineItem;
-        public ReplenishInventory(ILineItemBL p_lineItemBL)
+        public ReplenishInventory(IStoreBL p_lineItemBL)
         {
             _lineItemBL = p_lineItemBL;
         }

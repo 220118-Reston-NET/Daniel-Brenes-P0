@@ -2,8 +2,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StoreModel\StoreModel.csproj" />
-    <ProjectReference Include="..\StoreBL\StoreBL.csproj" />
     <ProjectReference Include="..\StoreDL\StoreDL.csproj" />
+    <ProjectReference Include="..\BL\BL.csproj" />
+
+
   </ItemGroup>
 
   <ItemGroup>

@@ -1,5 +1,5 @@
 using StoreModel;
-using StoreBL;
+using BL;
 
 namespace StoreUI
 {
@@ -7,8 +7,8 @@ namespace StoreUI
     public class ViewCustomer : IMenu
     {
         private static Customer _newCustomer = new Customer();
-        private ICustomerBL _customerBL;
-        public ViewCustomer(ICustomerBL p_customerBL)
+        private IStoreBL _customerBL;
+        public ViewCustomer(IStoreBL p_customerBL)
         {
             _customerBL = p_customerBL;
         }

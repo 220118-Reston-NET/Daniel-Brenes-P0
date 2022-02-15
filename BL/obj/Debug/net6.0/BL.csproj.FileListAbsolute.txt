@@ -1,0 +1,17 @@
+C:\Users\veron\Documents\P0\BL\bin\Debug\net6.0\BL.deps.json
+C:\Users\veron\Documents\P0\BL\bin\Debug\net6.0\BL.dll
+C:\Users\veron\Documents\P0\BL\bin\Debug\net6.0\ref\BL.dll
+C:\Users\veron\Documents\P0\BL\bin\Debug\net6.0\BL.pdb
+C:\Users\veron\Documents\P0\BL\bin\Debug\net6.0\StoreDL.dll
+C:\Users\veron\Documents\P0\BL\bin\Debug\net6.0\StoreModel.dll
+C:\Users\veron\Documents\P0\BL\bin\Debug\net6.0\StoreDL.pdb
+C:\Users\veron\Documents\P0\BL\bin\Debug\net6.0\StoreModel.pdb
+C:\Users\veron\Documents\P0\BL\obj\Debug\net6.0\BL.csproj.AssemblyReference.cache
+C:\Users\veron\Documents\P0\BL\obj\Debug\net6.0\BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\veron\Documents\P0\BL\obj\Debug\net6.0\BL.AssemblyInfoInputs.cache
+C:\Users\veron\Documents\P0\BL\obj\Debug\net6.0\BL.AssemblyInfo.cs
+C:\Users\veron\Documents\P0\BL\obj\Debug\net6.0\BL.csproj.CoreCompileInputs.cache
+C:\Users\veron\Documents\P0\BL\obj\Debug\net6.0\BL.csproj.CopyComplete
+C:\Users\veron\Documents\P0\BL\obj\Debug\net6.0\BL.dll
+C:\Users\veron\Documents\P0\BL\obj\Debug\net6.0\ref\BL.dll
+C:\Users\veron\Documents\P0\BL\obj\Debug\net6.0\BL.pdb

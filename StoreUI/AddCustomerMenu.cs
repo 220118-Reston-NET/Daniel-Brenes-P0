@@ -1,5 +1,5 @@
 using StoreModel;
-using StoreBL;
+using BL;
 
 namespace StoreUI
 {
@@ -7,8 +7,8 @@ namespace StoreUI
     {
         //static non-access modifier is needed to keep this variable consistent to all objects we create out of our AddPokeMenu
         private static Customer _newCustomer = new Customer();
-        private ICustomerBL _customerBL;
-        public AddCustomerMenu(ICustomerBL p_customerBL)
+        private IStoreBL _customerBL;
+        public AddCustomerMenu(IStoreBL p_customerBL)
         {
             _customerBL = p_customerBL;
         }

@@ -1,24 +1,24 @@
 using StoreModel;
-using StoreBL;
+using BL;
 
 namespace StoreUI
 {
 
     public class ViewStoreFrontInventory : IMenu
     {
-        private IStoreFrontBL _storefrontBL;
-        private ILineItemBL _lineItemBL;
-        public ViewStoreFrontInventory(ILineItemBL p_lineitemBL)
+        private IStoreBL _storefrontBL;
+        private IStoreBL _lineItemBL;
+        public ViewStoreFrontInventory(IStoreBL p_lineitemBL)
         {
             _lineItemBL = p_lineitemBL;
         }
         public void Display()
         {
-            Console.Write("Enter the store id :");
+            Console.Write("Enter the StoreId :");
             int id = Convert.ToInt32(Console.ReadLine());
 
             List<LineItem> listOfLineItem = _lineItemBL.GetLineItemByStoreId(id);
-            Console.WriteLine("=== LineItems ====");
+            Console.WriteLine("========== LineItems ==========");
                 foreach (var item in listOfLineItem)
                 {
                     Console.WriteLine(item);

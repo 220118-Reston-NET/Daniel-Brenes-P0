@@ -1,13 +1,13 @@
 using StoreModel;
-using StoreBL;
+using BL;
 
 namespace StoreUI
 {
     public class PlaceOrder : IMenu
     {
         private static Customer _newCustomer = new Customer();
-        private ICustomerBL _customerBL;
-        public PlaceOrder(ICustomerBL p_customerBL)
+        private IStoreBL _customerBL;
+        public PlaceOrder(IStoreBL p_customerBL)
         {
             _customerBL = p_customerBL;
         }

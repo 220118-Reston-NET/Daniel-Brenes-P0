@@ -4,14 +4,14 @@
     "C:\\Users\\veron\\Documents\\P0\\StoreUI\\StoreUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\veron\\Documents\\P0\\StoreBL\\StoreBL.csproj": {
+    "C:\\Users\\veron\\Documents\\P0\\BL\\BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\veron\\Documents\\P0\\StoreBL\\StoreBL.csproj",
-        "projectName": "StoreBL",
-        "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreBL\\StoreBL.csproj",
+        "projectUniqueName": "C:\\Users\\veron\\Documents\\P0\\BL\\BL.csproj",
+        "projectName": "BL",
+        "projectPath": "C:\\Users\\veron\\Documents\\P0\\BL\\BL.csproj",
         "packagesPath": "C:\\Users\\veron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\veron\\Documents\\P0\\StoreBL\\obj\\",
+        "outputPath": "C:\\Users\\veron\\Documents\\P0\\BL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\veron\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -207,8 +207,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\veron\\Documents\\P0\\StoreBL\\StoreBL.csproj": {
-                "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreBL\\StoreBL.csproj"
+              "C:\\Users\\veron\\Documents\\P0\\BL\\BL.csproj": {
+                "projectPath": "C:\\Users\\veron\\Documents\\P0\\BL\\BL.csproj"
               },
               "C:\\Users\\veron\\Documents\\P0\\StoreDL\\StoreDL.csproj": {
                 "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreDL\\StoreDL.csproj"

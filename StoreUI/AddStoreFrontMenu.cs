@@ -1,5 +1,5 @@
 using StoreModel;
-using StoreBL;
+using BL;
 
 namespace StoreUI
 {
@@ -9,8 +9,8 @@ namespace StoreUI
         //private static Customer _newCustomer = new Customer();
         //private ICustomerBL _customerBL;
         private static StoreFront _newStoreFront = new StoreFront();
-        private IStoreFrontBL _storeBL;
-        public AddStoreFrontMenu(IStoreFrontBL p_storefront)
+        private IStoreBL _storeBL;
+        public AddStoreFrontMenu(IStoreBL p_storefront)
         {
             _storeBL = p_storefront;
         }
