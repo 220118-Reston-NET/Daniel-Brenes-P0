@@ -19,6 +19,8 @@ namespace StoreUI
                         Console.WriteLine("================");
                         Console.WriteLine(item);
                     }
+                    Console.WriteLine("Please press Enter to continue");
+                    Console.ReadLine();
                    
         }
         public string UserChoice()
