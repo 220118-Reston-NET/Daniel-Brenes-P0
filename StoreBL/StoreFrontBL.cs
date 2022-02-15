@@ -14,5 +14,9 @@ namespace StoreBL
             return p_store;
 
         }
+        public List<StoreFront> GetAllStoreFront()
+        {
+            return _repo.GetAllStoreFront();
+        }
     }
 }

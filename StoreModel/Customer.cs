@@ -3,7 +3,7 @@ namespace StoreModel
 {
 public class Customer
 {
-    public int CustomerID {get; set;}
+    public int CustomerId {get; set;}
     public string Name{ get; set;}
     public string Address {get; set;}
     public string Email {get; set;}
@@ -38,7 +38,7 @@ public class Customer
     }
     public override string ToString()
     {
-            return $"Id: {CustomerID}\nName: {Name}\nAddress: {Address}\nEmail: {Email}\nPhoneNumber: {PhoneNumber}\n";
+            return $"Id: {CustomerId}\nName: {Name}\nAddress: {Address}\nEmail: {Email}\nPhoneNumber: {PhoneNumber}\nWallet: ${Wallet}";
     }
 }
 }

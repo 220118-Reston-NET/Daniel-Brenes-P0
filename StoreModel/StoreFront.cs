@@ -22,11 +22,16 @@ public class StoreFront
         Name = "";
         Address = "";
         TypeOfStore = "";
+        _products = new List<Product>()
+        {
+            new Product()
+        };
 
     }
+
     public override string ToString()
     {
-            return $"Name: {Name}\nAddress: {Address}\nType Of Store: {TypeOfStore}\n";
+            return $"Id: {StoreID}\nName: {Name}\nAddress: {Address}\nType Of Store: {TypeOfStore}\n";
     }
 }
 }

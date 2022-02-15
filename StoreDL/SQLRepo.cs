@@ -76,12 +76,12 @@ namespace StoreDL
                 {
                         listOfCustomer.Add(new Customer(){
                         //Zero-based column index
-                        CustomerID = reader.GetInt32(0), //It will get column PokeId since that is the very first column of our select statement
+                        CustomerId = reader.GetInt32(0), //It will get column PokeId since that is the very first column of our select statement
                         Name = reader.GetString(1), //it will get the pokeName column since it is the second column of our select statement
                         Address = reader.GetString(2),
                         Email = reader.GetString(3),
                         PhoneNumber = reader.GetString(4),
-                        //Wallet = reader.GetDouble(5)
+                        Wallet = (double)reader.GetDecimal(5)
                     });
                 }
             }
@@ -112,12 +112,12 @@ namespace StoreDL
                 {
                         listOfCustomer.Add(new Customer(){
                         //Zero-based column index
-                        CustomerID = reader.GetInt32(0), //It will get column PokeId since that is the very first column of our select statement
+                        CustomerId = reader.GetInt32(0), //It will get column PokeId since that is the very first column of our select statement
                         Name = reader.GetString(1), //it will get the pokeName column since it is the second column of our select statement
                         Address = reader.GetString(2),
                         Email = reader.GetString(3),
                         PhoneNumber = reader.GetString(4),
-                        //Wallet = reader.GetDouble(5)
+                        Wallet = (double)reader.GetDecimal(5)
                     });
                 }
             }
@@ -197,6 +197,71 @@ namespace StoreDL
         }
 
         public List<StoreFront> GetAllStoreFront()
+        {
+            List<StoreFront> listOfStoreFront = new List<StoreFront>();
+
+            string sqlQuery = @"select * from StoreFront";
+
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                //Opens connection to the database
+                con.Open();
+
+                //Create command object that has our sqlQuery and con object
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+
+                //SqlDataReader is a class specialized in reading outputs that came from a sql statement
+                //Usually this outputs are in a form of a table and keep that in mind
+                SqlDataReader reader = command.ExecuteReader();
+
+                //Read() methods checks if you have more rows to go through
+                //If there is another row = true, if not = false
+                while (reader.Read())
+                {
+                        listOfStoreFront.Add(new StoreFront(){
+                        //Zero-based column index
+                        StoreID = reader.GetInt32(0), //It will get column PokeId since that is the very first column of our select statement
+                        Name = reader.GetString(1), //it will get the pokeName column since it is the second column of our select statement
+                        Address = reader.GetString(2),
+                        TypeOfStore = reader.GetString(3),
+                    });
+                }
+            }
+
+            return listOfStoreFront;
+        }
+
+        public List<Product> GetAllProducts()
+        {
+            List<Product> listOfProduct = new List<Product>();
+
+            string sqlQuery = @"select * from Product";
+
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                //Opens connection to the database
+                con.Open();
+
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                        listOfProduct.Add(new Product(){
+                        //Zero-based column index
+                        ProductId = reader.GetInt32(0), //It will get column PokeId since that is the very first column of our select statement
+                        Name = reader.GetString(1), //it will get the pokeName column since it is the second column of our select statement
+                        Price = (double)reader.GetDecimal(2),
+                        Desc = reader.GetString(3),
+                    });
+                }
+            }
+
+            return listOfProduct;
+        }
+
+        public List<Product> GetProductById(int p_id)
         {
             throw new NotImplementedException();
         }

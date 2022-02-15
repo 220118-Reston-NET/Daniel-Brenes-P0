@@ -10,5 +10,7 @@ namespace StoreDL
         Customer AddCustomer(Customer p_customer);
         List<Customer> SearchCustomer(string p_inputString);
         List<Customer> SearchCustomerById(int p_id);
+        List<Product> GetAllProducts();
+        List<Product> GetProductById(int p_id);
     }
 }

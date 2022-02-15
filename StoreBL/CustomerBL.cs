@@ -14,10 +14,6 @@ namespace StoreBL
             return _repo.AddCustomer(c_customer);
 
         }
-        public List<Customer> SearchCustomer(string inputString)
-        {
-            return _repo.SearchCustomer(inputString);
-        }
         public List<Customer> GetAllCustomer()
         {
             return _repo.GetAllCustomer();
@@ -26,10 +22,73 @@ namespace StoreBL
         
         {
             List<Customer> listOfCustomer = _repo.GetAllCustomer();
+            listOfCustomer = listOfCustomer.Where(customer => customer.CustomerId.Equals(p_id))
+                                    .ToList();
+             if (listOfCustomer.Count> 0)
+                return listOfCustomer;
+            else   
+                throw new Exception("No customers found with that ID");                       
+        }
+        public List<Customer> SearchCustomerByName(string inputString)
+        {
+            List<Customer> listOfCustomer = _repo.GetAllCustomer();
+            listOfCustomer = listOfCustomer.Where(customer => customer.Name.Contains(inputString))
+                                    .ToList();
+            if (listOfCustomer.Count > 0) 
+               { 
+               return listOfCustomer;
+               }            
+            else
+                {
+                    throw new Exception("No Customers found with that Name");
+                }
+        }
+
+        public List<Customer> SearchCustomerByAddress(string inputString)
+        {
+            List<Customer> listOfCustomer = _repo.GetAllCustomer();
 
             //return _repo.SearchCustomerById(p_id);
-            return listOfCustomer.Where(customer => customer.CustomerID.Equals(p_id))
+            listOfCustomer = listOfCustomer.Where(customer => customer.Address.Contains(inputString))
                                     .ToList();
+            if (listOfCustomer.Count > 0) 
+               { 
+               return listOfCustomer;
+               }            
+            else
+                {
+                    throw new Exception("No Customers found with that Address");
+                }                 
+        }
+
+        public List<Customer> SearchCustomerByEmail(string inputString)
+        {
+            List<Customer> listOfCustomer = _repo.GetAllCustomer();
+            listOfCustomer = listOfCustomer.Where(customer => customer.Email.Contains(inputString))
+                                    .ToList();
+            if (listOfCustomer.Count > 0) 
+               { 
+               return listOfCustomer;
+               }            
+            else
+                {
+                    throw new Exception("No Customers found with that Email");
+                }
+        }
+
+        public List<Customer> SearchCustomerByPhoneNumber(string inputString)
+        {
+            List<Customer> listOfCustomer = _repo.GetAllCustomer();
+            listOfCustomer = listOfCustomer.Where(customer => customer.PhoneNumber.Contains(inputString))
+                                    .ToList();
+            if (listOfCustomer.Count > 0) 
+               { 
+               return listOfCustomer;
+               }            
+            else
+                {
+                    throw new Exception("No Customers found with that Phone Number");
+                }
         }
     }
 }

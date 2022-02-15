@@ -1,19 +1,15 @@
 namespace StoreModel
 {
-
     public class Product
     {
-        public int Id{get; set;}
+        public int ProductId{get; set;}
         public string Name{get; set;}
         public double Price{get; set;}
         public string Desc{get; set;}
-
-        //public int ProductQuantity{get; set;}
-
         public Product()
         {
             Name = "";
-            Price = 0;
+            Price = 0.0;
             Desc = "";
         }
         public override string ToString()

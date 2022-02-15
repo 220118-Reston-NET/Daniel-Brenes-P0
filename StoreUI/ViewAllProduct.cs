@@ -3,19 +3,18 @@ using StoreBL;
 
 namespace StoreUI
 {
-
-    public class ViewCustomer : IMenu
+    public class ViewAllProduct : IMenu
     {
-        private static Customer _newCustomer = new Customer();
-        private ICustomerBL _customerBL;
-        public ViewCustomer(ICustomerBL p_customerBL)
+        private static Product _newProduct = new Product();
+        private IProductBL _productBL;
+        public ViewAllProduct(IProductBL p_productBL)
         {
-            _customerBL = p_customerBL;
+            _productBL = p_productBL;
         }
         public void Display()
         {
-                  List<Customer> listOfCustomer = _customerBL.GetAllCustomer();
-                    foreach (var item in listOfCustomer)
+                  List<Product> listOfProduct = _productBL.GetAllProducts();
+                    foreach (var item in listOfProduct)
                     {
                         Console.WriteLine("================");
                         Console.WriteLine(item);

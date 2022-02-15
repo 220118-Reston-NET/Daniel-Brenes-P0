@@ -38,15 +38,15 @@ namespace StoreUI
                     Console.WriteLine("Please enter the type of StoreFront:");
                     Console.WriteLine("Apparel, Grocery, Luxury, Liquor or Other");
                     _newStoreFront.TypeOfStore = Console.ReadLine();
-                    return "AddCustomer";
+                    return "AddStoreFront";
                 case "3": 
                     Console.WriteLine("Please enter the StoreFront Address");
                     _newStoreFront.Address = Console.ReadLine();
-                    return "AddCustomer";
+                    return "AddStoreFront";
                 case "4":
                     Console.WriteLine("Please enter the StoreFront Name");
                     _newStoreFront.Name = Console.ReadLine();
-                    return "AddCustomer";
+                    return "AddStoreFront";
                 default:
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press Enter to continue");

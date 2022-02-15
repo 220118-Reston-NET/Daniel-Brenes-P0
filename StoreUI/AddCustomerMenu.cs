@@ -33,6 +33,7 @@ namespace StoreUI
                     return "MainMenu";
                 case "1":
                     _customerBL.AddCustomer(_newCustomer);
+                    _newCustomer = new Customer();
                     return "MainMenu";
                 case "2":
                     Console.WriteLine("Please enter an Phone Number");

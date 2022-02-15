@@ -27,19 +27,42 @@ namespace StoreUI
         public string UserChoice()
         {
             string userInput = Console.ReadLine();
-
+            List<Customer> listOfCustomer = new List<Customer>();
             switch (userInput)
             {
                 case "0":
                     return "MainMenu";
                 case "1":
                     Console.WriteLine("Please enter the Customer ID");
-                    int userIn = Convert.ToInt32(Console.ReadLine());
                     //_newCustomer.CustomerID = Convert.ToInt32(Console.ReadLine());
                     //_customerBL.SearchCustomerById(userInt);
                     // int userIn = Convert.ToInt32(Console.ReadLine());
                     // Customer myCustomer = _customerBL.SearchCustomerById(userIn);
-                    List<Customer> listOfCustomer = _customerBL.SearchCustomerById(userIn);
+                    // List<Customer> listOfCustomer = _customerBL.SearchCustomerById(userIn);
+                    try
+                    {
+                    int userIn = Convert.ToInt32(Console.ReadLine());
+                    listOfCustomer = _customerBL.SearchCustomerById(userIn);
+                    foreach(var item in listOfCustomer)
+                    {
+                        Console.WriteLine("-------------");
+                        Console.WriteLine(item);
+                    }
+                    return "MainMenu";
+                    }
+                    catch(Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                        Console.WriteLine("Please press Enter to continue");
+                        Console.ReadLine();
+                    return "SearchCustomer";
+                    }
+                case "2":
+                    Console.WriteLine("Please enter an Phone Number");
+                    try
+                    {
+                    string phoneNumber = Console.ReadLine();
+                    listOfCustomer = _customerBL.SearchCustomerByPhoneNumber(phoneNumber);
                     foreach(var item in listOfCustomer)
                     {
                         Console.WriteLine("-------------");
@@ -47,27 +70,81 @@ namespace StoreUI
                     }
                     Console.WriteLine("Please press Enter to continue");
                     Console.ReadLine();
-                    return "MainMenu";
-                case "2":
-                    Console.WriteLine("Please enter an Phone Number");
-                    _newCustomer.PhoneNumber = Console.ReadLine();
                     return "SearchCustomer";
+                    }
+                    catch(Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                        Console.WriteLine("Please press Enter to continue");
+                        Console.ReadLine();
+                    return "SearchCustomer";
+                    }
                 case "3":
                     Console.WriteLine("Please enter an email");
-                    _newCustomer.Email = Console.ReadLine();
+                    try
+                    {
+                    string email = Console.ReadLine();
+                    listOfCustomer = _customerBL.SearchCustomerByEmail(email);
+                    foreach(var item in listOfCustomer)
+                    {
+                        Console.WriteLine("-------------");
+                        Console.WriteLine(item);
+                    }
+                    Console.WriteLine("Please press Enter to continue");
+                    Console.ReadLine();
                     return "SearchCustomer";
+                    }
+                    catch (Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                        Console.WriteLine("Please press Enter to continue");
+                        Console.ReadLine();
+                    return "SearchCustomer";
+                    }
                 case "4": 
                     Console.WriteLine("Please enter an address!");
-                    _newCustomer.Address = Console.ReadLine();
+                    try 
+                    {
+                    string address = Console.ReadLine();
+                    listOfCustomer = _customerBL.SearchCustomerByAddress(address);
+                    foreach(var item in listOfCustomer)
+                    {
+                        Console.WriteLine("-------------");
+                        Console.WriteLine(item);
+                    }
+                    Console.WriteLine("Please press Enter to continue");
+                    Console.ReadLine();
                     return "SearchCustomer";
+                    }
+                    catch (Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                        Console.WriteLine("Please press Enter to continue");
+                        Console.ReadLine();
+                    return "SearchCustomer";
+                    }
                 case "5":
                     Console.WriteLine("Please enter a name!");
-                    _newCustomer.Name = Console.ReadLine();
+                    try
+                    {
+                    string name = Console.ReadLine();
+                    listOfCustomer = _customerBL.SearchCustomerByName(name);
+                    foreach(var item in listOfCustomer)
+                    {
+                        Console.WriteLine("-------------");
+                        Console.WriteLine(item);
+                    }
+                    Console.WriteLine("Please press Enter to continue");
+                    Console.ReadLine();
                     return "SearchCustomer";
-                case "6":
-                    Console.WriteLine("Please enter the starting wallet");
-                    _newCustomer.Wallet = Convert.ToDouble(Console.ReadLine());
+                    }
+                    catch (Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                        Console.WriteLine("Please press Enter to continue");
+                        Console.ReadLine();
                     return "SearchCustomer";
+                    }
                 default:
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press Enter to continue");
