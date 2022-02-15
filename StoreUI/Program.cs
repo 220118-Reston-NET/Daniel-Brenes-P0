@@ -32,7 +32,7 @@ while (repeat)
             menu = new ViewCustomer(new CustomerBL (new SQLRepo(_connectionString)));
             break;
         case "ViewStoreFrontInventory":
-            menu = new ViewStoreFrontInventory(new StoreFrontBL (new SQLRepo(_connectionString)));
+            menu = new ViewStoreFrontInventory(new LineItemBL (new SQLRepo(_connectionString)));
             break;
         case "SearchCustomer":
             menu = new SearchCustomer(new CustomerBL (new SQLRepo(_connectionString)));
