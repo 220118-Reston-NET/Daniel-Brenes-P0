@@ -46,6 +46,9 @@ while (repeat)
         case "AddStoreFront":
             menu = new AddStoreFrontMenu(new StoreFrontBL (new SQLRepo(_connectionString)));
             break;
+        case "PlaceOrder":
+            menu = new PlaceOrder( new CustomerBL( new SQLRepo(_connectionString)));
+            break;
         case "AddCustomer":
             menu = new AddCustomerMenu(new CustomerBL(new SQLRepo(_connectionString)));
             break;

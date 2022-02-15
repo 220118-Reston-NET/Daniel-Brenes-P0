@@ -37,6 +37,8 @@ namespace StoreUI
                     return "ViewCustomer";
                 case "4":
                     return "ViewStoreFront";
+                case "5":
+                    return "PlaceOrder";
                 default:
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press Enter to continue");

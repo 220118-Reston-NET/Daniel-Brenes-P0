@@ -16,6 +16,11 @@ namespace StoreUI
         {
             Console.WriteLine("Enter the Product Id: ");
             int productId = Convert.ToInt32(Console.ReadLine());
+
+            // foreach(var item in _listOfLineItem)
+            // {
+            //     Console.WriteLine(item);
+            // }
             Console.WriteLine("Enter the Quantity to Add");
             int quantity = Convert.ToInt32(Console.ReadLine());
 
@@ -25,6 +30,8 @@ namespace StoreUI
 
             Console.WriteLine("================");
             Console.WriteLine("Replenishing Inventory ");
+            Console.WriteLine(_newLineItem);
+            Console.WriteLine();
         }
         public string UserChoice()
         {

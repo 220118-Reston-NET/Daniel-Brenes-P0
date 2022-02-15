@@ -14,9 +14,17 @@ namespace StoreBL
             return p_store;
 
         }
+        public StoreFront GetStoreFront(int p_id)
+        {
+            return _repo.GetStoreFront(p_id);
+        }
         public List<StoreFront> GetAllStoreFront()
         {
             return _repo.GetAllStoreFront();
+        }
+        public List<Product> GetAllProducts()
+        {
+            return _repo.GetAllProducts();
         }
     }
 }

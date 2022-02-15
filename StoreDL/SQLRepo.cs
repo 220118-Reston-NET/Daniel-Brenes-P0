@@ -195,6 +195,28 @@ namespace StoreDL
         {
             throw new NotImplementedException();
         }
+        public StoreFront GetStoreFront(int p_id)
+        {
+            StoreFront newStoreFront = new StoreFront();
+            string sqlQuery = @"select * from StoreFront
+                                    where storeFrontId = @storeFrontId";
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@storeFrontId" , p_id);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                        
+                        newStoreFront.StoreID = reader.GetInt32(0);
+                        newStoreFront.Address = reader.GetString(1);
+                        newStoreFront.Name = reader.GetString(2);
+                        newStoreFront.TypeOfStore = reader.GetString(3);// + p_quantity;
+                }
+            }
+            return newStoreFront;
+        }
 
         public List<StoreFront> GetAllStoreFront()
         {
@@ -209,6 +231,7 @@ namespace StoreDL
 
                 //Create command object that has our sqlQuery and con object
                 SqlCommand command = new SqlCommand(sqlQuery, con);
+                
 
                 //SqlDataReader is a class specialized in reading outputs that came from a sql statement
                 //Usually this outputs are in a form of a table and keep that in mind
@@ -285,7 +308,9 @@ namespace StoreDL
                         listOfLineItem.Add(new LineItem(){
                         ProductId = reader.GetInt32(0), 
                         ProductName = reader.GetString(1), 
-                        Quantity = reader.GetInt32(2)
+                        Quantity = reader.GetInt32(2),
+                        StoreFrontId = reader.GetInt32(3)
+
                     });
                 }
             }
@@ -293,9 +318,42 @@ namespace StoreDL
         }
         public LineItem ReplenishQuantity(int p_id, int p_quantity)
         {
-            LineItem newLineItem = new LineItem();
+            LineItem lineItem = new LineItem();
 
-            return newLineItem;
+            string sqlQuery = @"select * from LineItem
+                                    where productId = @productId";
+            string sqlQuery2 =  @"UPDATE LineItem set quantity = @newQuantity
+                                    where productId = @productId";
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                //Opens connection to the database
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@productId", p_id);
+                //command.CommandText = "update LineItem set quantity = @newQuantity where productId = @productId";
+    
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                        
+                        lineItem.ProductId = reader.GetInt32(0);
+                        lineItem.ProductName = reader.GetString(1);
+                        lineItem.Quantity = reader.GetInt32(2);// + p_quantity;
+                        lineItem.StoreFrontId = reader.GetInt32(3);
+                }
+            }
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                lineItem.Quantity = (lineItem.Quantity + p_quantity);
+
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery2, con);
+                command.Parameters.AddWithValue("@productId", p_id);
+                command.Parameters.AddWithValue("@newQuantity", lineItem.Quantity);
+                command.ExecuteScalar();
+            }
+
+            return lineItem;
         }
         public LineItem GetLineItem(int p_id)
         {
@@ -317,6 +375,7 @@ namespace StoreDL
                         lineItem.ProductId = reader.GetInt32(0);
                         lineItem.ProductName = reader.GetString(1);
                         lineItem.Quantity = reader.GetInt32(2);
+                        lineItem.StoreFrontId = reader.GetInt32(3);
                     
                 }
             }

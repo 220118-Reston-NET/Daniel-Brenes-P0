@@ -21,7 +21,7 @@ namespace StoreUI
                     }
                     Console.WriteLine("Press 1 To Replenish Inventory");
                     Console.WriteLine("Press 0 To Go Back");
-                    Console.ReadLine();
+                    
                    
         }
         public string UserChoice()
@@ -33,6 +33,8 @@ namespace StoreUI
             {
                 case "0":
                     return "MainMenu";
+                case "1":
+                    return "ReplenishInventory";
                
                 default:
                    Console.WriteLine("Please press Enter to continue");

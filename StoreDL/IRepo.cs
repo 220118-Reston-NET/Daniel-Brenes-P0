@@ -5,6 +5,7 @@ namespace StoreDL
     public interface IRepo
     {
         StoreFront AddStoreFront(StoreFront p_store);
+        StoreFront GetStoreFront(int p_id);
         List<StoreFront> GetAllStoreFront();
         List<Customer> GetAllCustomer();
         Customer AddCustomer(Customer p_customer);

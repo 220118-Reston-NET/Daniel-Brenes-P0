@@ -3,6 +3,10 @@ namespace StoreModel
 
     public class Order
     {
+        public int OrderId{get; set;}
+        public int StoreFrontId{get; set;}
+
+        public double Total {get; set;}
         private string _orderList;
         public string OrderList 
         {
