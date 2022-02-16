@@ -6,11 +6,11 @@ namespace StoreUI
     public class SearchCustomer : IMenu
     {
         private static Customer _newCustomer = new Customer();
-        private IStoreBL _customerBL;
+        private IStoreBL _storeBL;
         private List<Customer> _listOfCustomer;
-        public SearchCustomer(IStoreBL p_customerBL)
+        public SearchCustomer(IStoreBL p_storeBL)
         {
-            _customerBL = p_customerBL;
+            _storeBL = p_storeBL;
         }
         public void Display()
         {
@@ -42,7 +42,7 @@ namespace StoreUI
                     try
                     {
                     int userIn = Convert.ToInt32(Console.ReadLine());
-                    listOfCustomer = _customerBL.SearchCustomerById(userIn);
+                    listOfCustomer = _storeBL.SearchCustomerById(userIn);
                     foreach(var item in listOfCustomer)
                     {
                         Console.WriteLine("-------------");
@@ -64,7 +64,7 @@ namespace StoreUI
                     try
                     {
                     string phoneNumber = Console.ReadLine();
-                    listOfCustomer = _customerBL.SearchCustomerByPhoneNumber(phoneNumber);
+                    listOfCustomer = _storeBL.SearchCustomerByPhoneNumber(phoneNumber);
                     foreach(var item in listOfCustomer)
                     {
                         Console.WriteLine("-------------");
@@ -86,7 +86,7 @@ namespace StoreUI
                     try
                     {
                     string email = Console.ReadLine();
-                    listOfCustomer = _customerBL.SearchCustomerByEmail(email);
+                    listOfCustomer = _storeBL.SearchCustomerByEmail(email);
                     foreach(var item in listOfCustomer)
                     {
                         Console.WriteLine("-------------");
@@ -108,7 +108,7 @@ namespace StoreUI
                     try 
                     {
                     string address = Console.ReadLine();
-                    listOfCustomer = _customerBL.SearchCustomerByAddress(address);
+                    listOfCustomer = _storeBL.SearchCustomerByAddress(address);
                     foreach(var item in listOfCustomer)
                     {
                         Console.WriteLine("-------------");
@@ -130,7 +130,7 @@ namespace StoreUI
                     try
                     {
                     string name = Console.ReadLine();
-                    listOfCustomer = _customerBL.SearchCustomerByName(name);
+                    listOfCustomer = _storeBL.SearchCustomerByName(name);
                     foreach(var item in listOfCustomer)
                     {
                         Console.WriteLine("-------------");

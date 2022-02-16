@@ -1,10 +1,5 @@
 namespace StoreUI
 {
-    /*
-        Interface are one of the best way to implement abstraction
-        Every method is implicitly abstract meaning you don't have to write anything
-        Every method is public
-    */
     public interface IMenu
     {
         /// <summary>

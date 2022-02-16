@@ -26,39 +26,49 @@ while (repeat)
     switch (ans)
     {
         case "OrderByStore":
+            Log.Information("Displaying OrderByStore to user");
             menu = new OrderByStore(new StoreBL ( new SQLRepo(_connectionString)));
             break;
         case "ReplenishInventory":
+            Log.Information("Displaying ReplenishInventory to user");
             menu = new ReplenishInventory(new StoreBL ( new SQLRepo(_connectionString)));
             break;
         case "ViewAllProducts":
+            Log.Information("Displaying ViewAllProducts to user");
             menu = new ViewAllProduct(new StoreBL (new SQLRepo(_connectionString)));
             break;
         case "ViewCustomer":
+            Log.Information("Displaying ViewCustomer to user");
             menu = new ViewCustomer(new StoreBL (new SQLRepo(_connectionString)));
             break;
         case "ViewStoreFrontInventory":
+            Log.Information("Displaying ViewStoreFrontInventory to user");
             menu = new ViewStoreFrontInventory(new StoreBL (new SQLRepo(_connectionString)));
             break;
         case "SearchCustomer":
+            Log.Information("Displaying SearchCustomer to user");
             menu = new SearchCustomer(new StoreBL (new SQLRepo(_connectionString)));
             break;
         case "ViewStoreFront":
+            Log.Information("Displaying ViewStoreFrontMenu to user");
             menu = new ViewStoreFront(new StoreBL(new SQLRepo(_connectionString)));
             break;
         case "AddStoreFront":
             menu = new AddStoreFrontMenu(new StoreBL (new SQLRepo(_connectionString)));
             break;
         case "PlaceOrder":
+            Log.Information("Displaying PlaceOrder to user");
             menu = new PlaceOrder( new StoreBL( new SQLRepo(_connectionString)));
             break;
         case "AddCustomer":
+            Log.Information("Displaying AddCustomerMenu to user");
             menu = new AddCustomerMenu(new StoreBL(new SQLRepo(_connectionString)));
             break;
         case "MainMenu":
             menu = new MainMenu();
             break;
         case "Exit":
+            Log.Information("Exiting application");
             repeat = false;
             break;
         default:

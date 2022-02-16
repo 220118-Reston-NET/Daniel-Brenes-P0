@@ -5,7 +5,6 @@ namespace StoreUI
 {
     public class AddCustomerMenu : IMenu
     {
-        //static non-access modifier is needed to keep this variable consistent to all objects we create out of our AddPokeMenu
         private static Customer _newCustomer = new Customer();
         private IStoreBL _customerBL;
         public AddCustomerMenu(IStoreBL p_customerBL)
@@ -32,7 +31,19 @@ namespace StoreUI
                 case "0":
                     return "MainMenu";
                 case "1":
+                    try
+                    {
+                    Log.Information("Adding customer \n " + _newCustomer);
                     _customerBL.AddCustomer(_newCustomer);
+                    Log.Information("Successful at adding customer");
+                    }
+                    catch (Exception exc)
+                    {
+                        Log.Warning("Failed to add customer");
+                        Console.WriteLine(exc.Message);
+                        Console.WriteLine("Please press enter to continue");
+                        Console.ReadLine();
+                    }
                     _newCustomer = new Customer();
                     return "MainMenu";
                 case "2":

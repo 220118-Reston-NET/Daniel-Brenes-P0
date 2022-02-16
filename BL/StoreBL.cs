@@ -26,12 +26,10 @@ namespace BL
         {
             return _repo.GetAllOrders();
         }
-
         public List<Customer> GetAllCustomer()
         {
             return _repo.GetAllCustomer();
         }
-
         public List<Product> GetAllProducts()
         {
             List<Product> listOfProduct = _repo.GetAllProducts();
@@ -39,12 +37,10 @@ namespace BL
                         //            .ToList();
                 return listOfProduct;
         }
-
         public List<StoreFront> GetAllStoreFront()
         {
             return _repo.GetAllStoreFront();
         }
-
         public List<LineItem> GetLineItemByStoreId(int p_id)
         {
             List<LineItem> listOfLineItem =  _repo.GetLineItemByStoreId(p_id);
@@ -71,7 +67,6 @@ namespace BL
 
             return lineItem;
         }
-
        public List<Customer> SearchCustomerById(int p_id)
         
         {
@@ -97,12 +92,9 @@ namespace BL
                     throw new Exception("No Customers found with that Name");
                 }
         }
-
         public List<Customer> SearchCustomerByAddress(string inputString)
         {
             List<Customer> listOfCustomer = _repo.GetAllCustomer();
-
-            //return _repo.SearchCustomerById(p_id);
             listOfCustomer = listOfCustomer.Where(customer => customer.Address.Contains(inputString))
                                     .ToList();
             if (listOfCustomer.Count > 0) 
@@ -114,7 +106,6 @@ namespace BL
                     throw new Exception("No Customers found with that Address");
                 }                 
         }
-
         public List<Customer> SearchCustomerByEmail(string inputString)
         {
             List<Customer> listOfCustomer = _repo.GetAllCustomer();
@@ -129,7 +120,6 @@ namespace BL
                     throw new Exception("No Customers found with that Email");
                 }
         }
-
         public List<Customer> SearchCustomerByPhoneNumber(string inputString)
         {
             List<Customer> listOfCustomer = _repo.GetAllCustomer();
@@ -144,7 +134,6 @@ namespace BL
                     throw new Exception("No Customers found with that Phone Number");
                 }
         }
-
         public Order AddOrder(Order p_order)
         {
             return _repo.AddOrder(p_order);

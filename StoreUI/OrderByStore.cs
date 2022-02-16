@@ -5,9 +5,8 @@ namespace StoreUI
 {
     public class OrderByStore : IMenu
     {
-        private Order _newOrder = new Order();
+        private static Order _newOrder =  new Order();
         private IStoreBL _storeBL;
-        private Order _myOrder;
         private static List<LineItem> _shoppingCart = new List<LineItem>();
         public OrderByStore(IStoreBL p_storeBL)
         {
@@ -18,7 +17,9 @@ namespace StoreUI
             Console.WriteLine("Placing Order");
         }
         public string UserChoice()
+        
         {
+             
             bool repeat = true;
                 List<Customer> listOfCustomer = _storeBL.GetAllCustomer();
                 foreach (var item in listOfCustomer)
@@ -84,6 +85,8 @@ namespace StoreUI
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
                     _newOrder = _storeBL.AddOrder(_newOrder);
+                    _newOrder = new Order();
+                    _shoppingCart = new List<LineItem>();
                     return "MainMenu";
                     case "0":
                         return "MainMenu";

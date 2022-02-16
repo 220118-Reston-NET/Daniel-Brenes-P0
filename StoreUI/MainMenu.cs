@@ -1,18 +1,12 @@
 namespace StoreUI
 {
-    /*
-        MainMenu inherits IMenu interface but since it is a class it needs to give actual implementation details to the methods
-        stated inside of the interface
-    */
     public class MainMenu : IMenu
     {
         public void Display()
         {
             Console.WriteLine("Welcome to the Outdoor Shopping Mall");
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("[5] Place Order");
-            
-            //Console.WriteLine("[4] View Products by Store");
+            Console.WriteLine("[5] View/Place Order");
             Console.WriteLine("[4] View StoreFronts/Products and/or Replenish Inventory");
             Console.WriteLine("[3] View Customers");
             Console.WriteLine("[2] Search Customers");
@@ -23,8 +17,6 @@ namespace StoreUI
         public string UserChoice()
         {
             string userInput = Console.ReadLine();
-
-            //Switch cases are just useful if you are doing a bunch of comparison
             switch (userInput)
             {
                 case "0":

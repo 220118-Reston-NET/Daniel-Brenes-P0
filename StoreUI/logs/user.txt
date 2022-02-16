@@ -1,0 +1,52 @@
+2022-02-16 07:20:28.589 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 07:20:35.068 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 07:20:44.057 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 07:21:05.160 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 07:21:12.104 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 07:21:17.649 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 07:21:19.863 -06:00 [INF] Adding customer 
+ Id: 0
+Name: Jacob Jones
+Address: 3433 Timber Ridge Lane Dallas, TX 75463
+Email: jacobjones@yahoo.com
+PhoneNumber: 1233212222
+Wallet: $1234
+2022-02-16 07:21:20.737 -06:00 [INF] Successful at adding customer
+2022-02-16 07:21:24.807 -06:00 [INF] Displaying ViewCustomer to user
+2022-02-16 07:21:55.338 -06:00 [INF] Exiting application
+2022-02-16 07:40:52.427 -06:00 [INF] Displaying ViewCustomer to user
+2022-02-16 07:41:10.029 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:41:12.944 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:41:19.265 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 07:41:54.342 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:41:57.307 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:41:58.813 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 07:43:43.659 -06:00 [INF] Exiting application
+2022-02-16 07:44:14.859 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:44:20.067 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:44:22.497 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 07:44:51.053 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:44:52.116 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 07:46:39.934 -06:00 [INF] Exiting application
+2022-02-16 07:46:46.667 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:46:52.201 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:46:54.313 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 07:47:11.353 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:47:15.272 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:47:16.301 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 07:47:37.919 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:47:39.482 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 07:48:56.911 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 07:49:03.798 -06:00 [INF] Exiting application
+2022-02-16 07:49:27.172 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:49:36.326 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:49:37.793 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 07:49:51.986 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:49:53.479 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 07:52:18.612 -06:00 [INF] Exiting application
+2022-02-16 07:52:28.249 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:52:35.823 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:52:39.253 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 07:53:01.688 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 07:53:02.450 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 07:53:26.152 -06:00 [INF] Exiting application

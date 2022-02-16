@@ -54,9 +54,9 @@ namespace StoreUI
                 return "PlaceOrder";
                 case "4":
                 List<Order> listOfOrders = _storeBL.GetAllOrders();
+                Console.WriteLine("========View All Orders=======");
                 foreach (var item in listOfOrders)
                 {
-                    Console.WriteLine("================");
                     Console.WriteLine(item);
                 }
                 Console.WriteLine("Please press Enter to continue");

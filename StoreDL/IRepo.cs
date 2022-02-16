@@ -4,7 +4,10 @@ namespace StoreDL
 {
     public interface IRepo
     {
-        StoreFront AddStoreFront(StoreFront p_store);
+        // List<Customer> SearchCustomer(string p_inputString);
+        // List<Customer> SearchCustomerById(int p_id);
+        // List<Product> GetProductById(int p_id);
+        // StoreFront AddStoreFront(StoreFront p_store);
         StoreFront GetStoreFront(int p_id);
         Order AddOrder(Order p_order);
         Order PlaceOrder(List<LineItem> p_lineitemlist, double p_total, int p_customerid, int p_storefrontid);
@@ -12,10 +15,7 @@ namespace StoreDL
         List<StoreFront> GetAllStoreFront();
         List<Customer> GetAllCustomer();
         Customer AddCustomer(Customer p_customer);
-        List<Customer> SearchCustomer(string p_inputString);
-        List<Customer> SearchCustomerById(int p_id);
         List<Product> GetAllProducts();
-        List<Product> GetProductById(int p_id);
         List<LineItem> GetLineItemByStoreId(int p_id);
         LineItem GetLineItem(int p_id);
         LineItem ReplenishQuantity(int p_id, int p_quantity);
