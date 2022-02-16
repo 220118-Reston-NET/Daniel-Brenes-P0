@@ -23,7 +23,6 @@ namespace StoreUI
             Console.WriteLine("[0] Go Back");
             // _listOfCustomer = _customerBL.SearchCustomer(string inputString);
         }
-
         public string UserChoice()
         {
             string userInput = Console.ReadLine();

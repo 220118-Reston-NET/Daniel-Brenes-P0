@@ -27,7 +27,7 @@ namespace StoreModel
         }
         public override string ToString()
         {
-            return $"Order Id: {OrderId} \t\t StoreFront Id: {StoreFrontId} \t\tCustomerId: {CustomerId} \t\tTotal: {Total}";
+            return $"Order Id: {OrderId} \t\t StoreFront Id: {StoreFrontId} \t\tCustomerId: {CustomerId} \t\tTotal: ${Total}";
         }
     }
 }

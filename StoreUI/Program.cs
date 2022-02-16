@@ -14,12 +14,17 @@ var configuration = new ConfigurationBuilder()
     .Build();
 
 string _connectionString = configuration.GetConnectionString("Reference2DB");
+Console.WriteLine("\n\n\n\n\n\n");
+Console.WriteLine("\t\t----------------------------------------------------------");
+Console.WriteLine("\t\tProject P0 - An application that resembles a shopping mall");
+Console.WriteLine("\t\t----------------------------------------------------------");
 bool repeat = true;
 IMenu menu = new MainMenu();
 
 while (repeat)
 {
-    Console.Clear();
+    //Console.Clear();
+    Console.WriteLine("\n\n");
     menu.Display();
     string ans = menu.UserChoice();
     

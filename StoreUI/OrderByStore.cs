@@ -53,7 +53,7 @@ namespace StoreUI
                 Console.WriteLine("Enter the Quantity to Add to Cart :");
                 int quantity = Convert.ToInt32(Console.ReadLine());
                 LineItem currentItem = _storeBL.GetLineItem(productId);
-                currentItem.Quantity = quantity;
+                //currentItem.Quantity = quantity;
                 for(int i = 1; i <= quantity; i++)
                 {
                     _shoppingCart.Add(currentItem);

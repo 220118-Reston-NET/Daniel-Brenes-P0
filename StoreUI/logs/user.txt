@@ -54,3 +54,59 @@ Wallet: $1234
 2022-02-16 08:50:16.987 -06:00 [INF] Displaying PlaceOrder to user
 2022-02-16 08:59:36.038 -06:00 [INF] Displaying PlaceOrder to user
 2022-02-16 08:59:38.092 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 09:55:28.930 -06:00 [INF] Exiting application
+2022-02-16 09:56:05.898 -06:00 [INF] Displaying ViewCustomer to user
+2022-02-16 09:56:15.435 -06:00 [INF] Exiting application
+2022-02-16 09:58:29.688 -06:00 [INF] Exiting application
+2022-02-16 09:58:53.677 -06:00 [INF] Exiting application
+2022-02-16 09:59:21.743 -06:00 [INF] Exiting application
+2022-02-16 09:59:46.298 -06:00 [INF] Exiting application
+2022-02-16 10:00:14.638 -06:00 [INF] Exiting application
+2022-02-16 10:24:29.590 -06:00 [INF] Exiting application
+2022-02-16 10:42:16.802 -06:00 [INF] Exiting application
+2022-02-16 10:42:29.402 -06:00 [INF] Exiting application
+2022-02-16 10:42:48.859 -06:00 [INF] Exiting application
+2022-02-16 10:43:04.721 -06:00 [INF] Exiting application
+2022-02-16 10:43:48.393 -06:00 [INF] Exiting application
+2022-02-16 10:44:08.747 -06:00 [INF] Exiting application
+2022-02-16 10:44:53.826 -06:00 [INF] Exiting application
+2022-02-16 11:10:29.245 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 11:10:34.750 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 11:11:50.168 -06:00 [INF] Exiting application
+2022-02-16 11:13:06.794 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 11:13:18.713 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 11:13:59.354 -06:00 [INF] Exiting application
+2022-02-16 11:32:56.930 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 11:33:14.942 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 11:33:18.900 -06:00 [INF] Exiting application
+2022-02-16 12:37:28.572 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 12:37:34.186 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 12:37:41.804 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 12:37:54.690 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 12:38:02.722 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 12:38:06.399 -06:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 12:38:08.566 -06:00 [INF] Adding customer 
+ Id: 0
+Name: Dan B
+Address: 1234 Cherry Crek Dr Dallas, Tx 65445
+Email: abc@yahoo.com
+PhoneNumber: 1234044444
+Wallet: $1000
+2022-02-16 12:38:09.414 -06:00 [INF] Successful at adding customer
+2022-02-16 12:38:13.866 -06:00 [INF] Displaying ViewCustomer to user
+2022-02-16 12:38:26.003 -06:00 [INF] Displaying SearchCustomer to user
+2022-02-16 12:38:44.037 -06:00 [INF] Displaying SearchCustomer to user
+2022-02-16 12:39:04.987 -06:00 [INF] Displaying ViewStoreFrontMenu to user
+2022-02-16 12:39:18.245 -06:00 [INF] Displaying ViewAllProducts to user
+2022-02-16 12:39:34.385 -06:00 [INF] Displaying ViewStoreFrontMenu to user
+2022-02-16 12:39:38.383 -06:00 [INF] Displaying ViewStoreFrontInventory to user
+2022-02-16 12:40:01.864 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 12:40:15.676 -06:00 [INF] Displaying OrderByStore to user
+2022-02-16 12:41:08.442 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 12:41:25.026 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 12:41:33.528 -06:00 [INF] Displaying ViewStoreFrontMenu to user
+2022-02-16 12:41:40.706 -06:00 [INF] Displaying ViewAllProducts to user
+2022-02-16 12:41:47.519 -06:00 [INF] Displaying ViewStoreFrontMenu to user
+2022-02-16 12:41:51.570 -06:00 [INF] Displaying ViewStoreFrontInventory to user
+2022-02-16 12:42:02.612 -06:00 [INF] Displaying ReplenishInventory to user
+2022-02-16 12:42:40.814 -06:00 [INF] Exiting application
