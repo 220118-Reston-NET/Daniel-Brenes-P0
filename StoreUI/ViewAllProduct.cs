@@ -6,14 +6,14 @@ namespace StoreUI
     public class ViewAllProduct : IMenu
     {
         private static Product _newProduct = new Product();
-        private IStoreBL _productBL;
-        public ViewAllProduct(IStoreBL p_productBL)
+        private IStoreBL _storeBL;
+        public ViewAllProduct(IStoreBL p_storeBL)
         {
-            _productBL = p_productBL;
+            _storeBL = p_storeBL;
         }
         public void Display()
         {
-                  List<Product> listOfProduct = _productBL.GetAllProducts();
+                  List<Product> listOfProduct = _storeBL.GetAllProducts();
                     foreach (var item in listOfProduct)
                     {
                         Console.WriteLine("================");

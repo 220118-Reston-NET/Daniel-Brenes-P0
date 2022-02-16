@@ -17,31 +17,29 @@ namespace StoreUI
             Console.WriteLine("Placing Order");
         }
         public string UserChoice()
-        
         {
              
             bool repeat = true;
-                List<Customer> listOfCustomer = _storeBL.GetAllCustomer();
-                foreach (var item in listOfCustomer)
-                {
+            List<Customer> listOfCustomer = _storeBL.GetAllCustomer();
+            foreach (var item in listOfCustomer)
+            {
                 Console.WriteLine("================");
                 Console.WriteLine(item);
-                }
-                Console.WriteLine("================");
-                Console.Write("Enter the Customer Id :");
-                int customerId = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("================");
+            Console.Write("Enter the Customer Id :");
+            int customerId = Convert.ToInt32(Console.ReadLine());
 
-                List<StoreFront> listOfStoreFronts = _storeBL.GetAllStoreFront();
-                foreach (var item in listOfStoreFronts)
-                {
-                    Console.WriteLine("================");
-                    Console.WriteLine(item);
-                }
+            List<StoreFront> listOfStoreFronts = _storeBL.GetAllStoreFront();
+            foreach (var item in listOfStoreFronts)
+            {
                 Console.WriteLine("================");
-                Console.Write("Enter the Store Id :");
-                int storeId = Convert.ToInt32(Console.ReadLine());
-                List<LineItem> listOfLineItem = _storeBL.GetLineItemByStoreId(storeId);
-                
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("================");
+            Console.Write("Enter the Store Id :");
+            int storeId = Convert.ToInt32(Console.ReadLine());
+            List<LineItem> listOfLineItem = _storeBL.GetLineItemByStoreId(storeId); 
             while (repeat)
             {
                 Console.WriteLine("========== LineItems ==========");
@@ -65,6 +63,7 @@ namespace StoreUI
                 {
                     Console.WriteLine(item);
                 }
+                Console.WriteLine();
                 Console.WriteLine("Press 2 to Add more Items");
                 Console.WriteLine("Press 1 to Check Out");
                 Console.WriteLine("Press 0 to Cancel Order");
@@ -96,7 +95,6 @@ namespace StoreUI
                 }
             }
             
-        
         return "MainMenu";
     }
 }

@@ -6,11 +6,11 @@ namespace StoreUI
     public class ReplenishInventory : IMenu
     {
         private static LineItem _newLineItem = new LineItem();
-        private IStoreBL _lineItemBL;
+        private IStoreBL _storeBL;
         private List<LineItem> _listOfLineItem;
-        public ReplenishInventory(IStoreBL p_lineItemBL)
+        public ReplenishInventory(IStoreBL p_storeBL)
         {
-            _lineItemBL = p_lineItemBL;
+            _storeBL = p_storeBL;
         }
         public void Display()
         {
@@ -20,7 +20,7 @@ namespace StoreUI
             Console.WriteLine("Enter the Quantity to Add");
             int quantity = Convert.ToInt32(Console.ReadLine());
 
-            _newLineItem = _lineItemBL.ReplenishQuantity(productId, quantity);
+            _newLineItem = _storeBL.ReplenishQuantity(productId, quantity);
 
             Console.WriteLine("================");
             Console.WriteLine("Replenishing Inventory ");

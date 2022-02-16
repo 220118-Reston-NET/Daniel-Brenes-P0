@@ -34,5 +34,27 @@ public class BLTest
         Assert.Equal(customerId, actualCustomerList[0].CustomerId); 
 
     }
+    [Fact]
+    public void Search_Customer_By_Id()
+    {
+        // int id = 7;
+        // Customer customer = new Customer()
+        // {
+        //     CustomerId = 7
+        // };
+
+        // List<Customer> testList = new List<Customer>();
+
+        // testList.Add(customer);
+
+        // Mock<IRepo> mockRepo = new Mock<IRepo>();
+        // mockRepo.Setup(repo => repo.SearchCustomerById(id)).Returns(testList);
+
+        // IStoreBL _storeBL = new StoreBL(mockRepo.Object);
+        // List<Customer> actualList = _storeBL.SearchCustomerById(id);
+  
+        // Assert.Same(testList, actualList);
+        // Assert.Equal(id, actualList[0].CustomerId); 
+    }
 }
 }

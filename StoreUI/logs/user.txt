@@ -50,3 +50,7 @@ Wallet: $1234
 2022-02-16 07:53:01.688 -06:00 [INF] Displaying PlaceOrder to user
 2022-02-16 07:53:02.450 -06:00 [INF] Displaying OrderByStore to user
 2022-02-16 07:53:26.152 -06:00 [INF] Exiting application
+2022-02-16 08:50:07.655 -06:00 [INF] Displaying ViewCustomer to user
+2022-02-16 08:50:16.987 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 08:59:36.038 -06:00 [INF] Displaying PlaceOrder to user
+2022-02-16 08:59:38.092 -06:00 [INF] Displaying OrderByStore to user

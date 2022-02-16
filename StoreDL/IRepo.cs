@@ -5,7 +5,7 @@ namespace StoreDL
     public interface IRepo
     {
         // List<Customer> SearchCustomer(string p_inputString);
-        // List<Customer> SearchCustomerById(int p_id);
+         List<Customer> SearchCustomerById(int p_id);
         // List<Product> GetProductById(int p_id);
         // StoreFront AddStoreFront(StoreFront p_store);
         StoreFront GetStoreFront(int p_id);

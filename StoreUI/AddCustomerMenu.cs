@@ -6,10 +6,10 @@ namespace StoreUI
     public class AddCustomerMenu : IMenu
     {
         private static Customer _newCustomer = new Customer();
-        private IStoreBL _customerBL;
-        public AddCustomerMenu(IStoreBL p_customerBL)
+        private IStoreBL _storeBL;
+        public AddCustomerMenu(IStoreBL p_storeBL)
         {
-            _customerBL = p_customerBL;
+            _storeBL = p_storeBL;
         }
         public void Display()
         {
@@ -34,7 +34,7 @@ namespace StoreUI
                     try
                     {
                     Log.Information("Adding customer \n " + _newCustomer);
-                    _customerBL.AddCustomer(_newCustomer);
+                    _storeBL.AddCustomer(_newCustomer);
                     Log.Information("Successful at adding customer");
                     }
                     catch (Exception exc)

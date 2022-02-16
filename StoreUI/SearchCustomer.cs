@@ -34,11 +34,6 @@ namespace StoreUI
                     return "MainMenu";
                 case "1":
                     Console.WriteLine("Please enter the Customer ID");
-                    //_newCustomer.CustomerID = Convert.ToInt32(Console.ReadLine());
-                    //_customerBL.SearchCustomerById(userInt);
-                    // int userIn = Convert.ToInt32(Console.ReadLine());
-                    // Customer myCustomer = _customerBL.SearchCustomerById(userIn);
-                    // List<Customer> listOfCustomer = _customerBL.SearchCustomerById(userIn);
                     try
                     {
                     int userIn = Convert.ToInt32(Console.ReadLine());
