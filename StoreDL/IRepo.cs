@@ -6,6 +6,8 @@ namespace StoreDL
     {
         StoreFront AddStoreFront(StoreFront p_store);
         StoreFront GetStoreFront(int p_id);
+        Order PlaceOrder(List<LineItem> p_lineitemlist, double p_total, int p_customerid, int p_storefrontid);
+        List<Order> GetAllOrders();
         List<StoreFront> GetAllStoreFront();
         List<Customer> GetAllCustomer();
         Customer AddCustomer(Customer p_customer);

@@ -45,7 +45,7 @@ public class StoreFront
 
     public override string ToString()
     {
-            return $"Id: {StoreID}\nName: {Name}\nAddress: {Address}\nType Of Store: {TypeOfStore}\n";
+            return $"Store Id: {StoreID}\nName: {Name}\nAddress: {Address}\nType Of Store: {TypeOfStore}\n";
     }
 }
 }

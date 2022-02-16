@@ -50,6 +50,46 @@ namespace StoreDL
 
             return p_customer;
         }
+        public Order PlaceOrder(List<LineItem> p_listoflineitem, double p_total, int p_customerid, int p_storefrontid)
+        {
+            Order newOrder = new Order();
+            string sqlQuery = @"Insert into Orders
+                                    values(@orderId, @total, @storefrontid, @customerid)";
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@orderId" , newOrder.OrderId);
+                command.Parameters.AddWithValue("@total" , p_total);
+                command.Parameters.AddWithValue("@storefrontid" , p_storefrontid);
+                command.Parameters.AddWithValue("@customerid" , p_customerid);
+                command.ExecuteScalar();
+                
+            }
+            return newOrder;
+
+        }
+        public List<Order> GetAllOrders()
+        {
+            List<Order> listOfOrders = new List<Order>();
+            string sqlQuery = @"select * from Orders";
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                        listOfOrders.Add(new Order(){
+                        OrderId = reader.GetInt32(0),
+                        Total = (double)reader.GetDecimal(1),
+                        StoreFrontId = reader.GetInt32(2),
+                        CustomerId = reader.GetInt32(3)
+                        });
+                }
+            }
+            return listOfOrders;
+        }
 
         
         public List<Customer> GetAllCustomer()
@@ -340,6 +380,7 @@ namespace StoreDL
                         lineItem.ProductName = reader.GetString(1);
                         lineItem.Quantity = reader.GetInt32(2);// + p_quantity;
                         lineItem.StoreFrontId = reader.GetInt32(3);
+                        lineItem.Price = (double)reader.GetDecimal(4);
                 }
             }
             using (SqlConnection con = new SqlConnection(_connectionStrings))
@@ -376,6 +417,7 @@ namespace StoreDL
                         lineItem.ProductName = reader.GetString(1);
                         lineItem.Quantity = reader.GetInt32(2);
                         lineItem.StoreFrontId = reader.GetInt32(3);
+                        lineItem.Price = (double)reader.GetDecimal(4);
                     
                 }
             }

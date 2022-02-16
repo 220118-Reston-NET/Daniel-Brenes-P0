@@ -19,10 +19,10 @@ namespace StoreUI
 
             List<LineItem> listOfLineItem = _lineItemBL.GetLineItemByStoreId(id);
             Console.WriteLine("========== LineItems ==========");
-                foreach (var item in listOfLineItem)
-                {
-                    Console.WriteLine(item);
-                }
+            foreach (var item in listOfLineItem)
+            {
+                Console.WriteLine(item);
+            }
             Console.WriteLine("----------------------");
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("[1] Replenish Inventory");

@@ -5,7 +5,7 @@ using BL;
 using StoreDL;
 
 Log.Logger = new LoggerConfiguration()
-    .WriteTo.File("./logs/user.txt") //We configure our logger to save in this file
+    .WriteTo.File("./logs/user.txt")
     .CreateLogger();
 
 var configuration = new ConfigurationBuilder()
@@ -25,6 +25,9 @@ while (repeat)
     
     switch (ans)
     {
+        case "OrderByStore":
+            menu = new OrderByStore(new StoreBL ( new SQLRepo(_connectionString)));
+            break;
         case "ReplenishInventory":
             menu = new ReplenishInventory(new StoreBL ( new SQLRepo(_connectionString)));
             break;

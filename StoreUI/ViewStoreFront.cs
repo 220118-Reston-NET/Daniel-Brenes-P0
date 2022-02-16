@@ -19,7 +19,7 @@ namespace StoreUI
                 {
                         Console.WriteLine("================");
                         Console.WriteLine(item);
-                    }
+                }
                 
                 // Console.WriteLine("Press Enter to continue");
                 // Console.ReadLine();

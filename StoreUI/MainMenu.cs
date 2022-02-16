@@ -13,7 +13,7 @@ namespace StoreUI
             Console.WriteLine("[5] Place Order");
             
             //Console.WriteLine("[4] View Products by Store");
-            Console.WriteLine("[4] View StoreFronts/Products");
+            Console.WriteLine("[4] View StoreFronts/Products and/or Replenish Inventory");
             Console.WriteLine("[3] View Customers");
             Console.WriteLine("[2] Search Customers");
             Console.WriteLine("[1] Add A Customer to the Mall");

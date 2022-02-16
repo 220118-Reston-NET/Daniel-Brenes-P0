@@ -14,10 +14,17 @@ namespace BL
         {
             return _repo.AddCustomer(p_customer);
         }
-
         public StoreFront AddStoreFront(StoreFront p_store)
         {
             throw new NotImplementedException();
+        }
+        public Order PlaceOrder(List<LineItem> p_listoflineitem, double p_total, int p_customerid, int p_storefrontid)
+        {
+            return _repo.PlaceOrder(p_listoflineitem, p_total, p_customerid, p_storefrontid);
+        }
+        public List<Order> GetAllOrders()
+        {
+            return _repo.GetAllOrders();
         }
 
         public List<Customer> GetAllCustomer()
