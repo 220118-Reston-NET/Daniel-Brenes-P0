@@ -6,6 +6,7 @@ namespace StoreDL
     {
         StoreFront AddStoreFront(StoreFront p_store);
         StoreFront GetStoreFront(int p_id);
+        Order AddOrder(Order p_order);
         Order PlaceOrder(List<LineItem> p_lineitemlist, double p_total, int p_customerid, int p_storefrontid);
         List<Order> GetAllOrders();
         List<StoreFront> GetAllStoreFront();
@@ -16,6 +17,7 @@ namespace StoreDL
         List<Product> GetAllProducts();
         List<Product> GetProductById(int p_id);
         List<LineItem> GetLineItemByStoreId(int p_id);
+        LineItem GetLineItem(int p_id);
         LineItem ReplenishQuantity(int p_id, int p_quantity);
     }
 }

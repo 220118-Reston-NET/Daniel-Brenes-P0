@@ -69,6 +69,24 @@ namespace StoreDL
             return newOrder;
 
         }
+        public Order AddOrder(Order p_order)
+        {
+            Order newOrder = new Order();
+            string sqlQuery = @"Insert into Orders
+                                    values(@orderId, @total, @storefrontid, @customerid)";
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@orderId" , p_order.OrderId);
+                command.Parameters.AddWithValue("@total" , p_order.Total);
+                command.Parameters.AddWithValue("@storefrontid" , p_order.StoreFrontId);
+                command.Parameters.AddWithValue("@customerid" , p_order.CustomerId);
+                command.ExecuteScalar();
+                
+            }
+            return newOrder;
+        }
         public List<Order> GetAllOrders()
         {
             List<Order> listOfOrders = new List<Order>();
@@ -349,7 +367,8 @@ namespace StoreDL
                         ProductId = reader.GetInt32(0), 
                         ProductName = reader.GetString(1), 
                         Quantity = reader.GetInt32(2),
-                        StoreFrontId = reader.GetInt32(3)
+                        StoreFrontId = reader.GetInt32(3),
+                        Price = (double)reader.GetDecimal(4)
 
                     });
                 }
@@ -407,7 +426,7 @@ namespace StoreDL
                 //Opens connection to the database
                 con.Open();
                 SqlCommand command = new SqlCommand(sqlQuery, con);
-                command.Parameters.AddWithValue("@storeFrontId", p_id);
+                command.Parameters.AddWithValue("@productId", p_id);
                 SqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())

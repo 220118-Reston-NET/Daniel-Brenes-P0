@@ -55,6 +55,10 @@ namespace BL
             else   
                 throw new Exception("No Line Items found with that ID"); 
         }
+        public LineItem GetLineItem(int p_id)
+        {
+            return _repo.GetLineItem(p_id);
+        }
 
         public StoreFront GetStoreFront(int p_id)
         {
@@ -139,6 +143,11 @@ namespace BL
                 {
                     throw new Exception("No Customers found with that Phone Number");
                 }
+        }
+
+        public Order AddOrder(Order p_order)
+        {
+            return _repo.AddOrder(p_order);
         }
     }
 }

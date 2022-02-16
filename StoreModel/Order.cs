@@ -8,8 +8,8 @@ namespace StoreModel
         public int StoreFrontId{get; set;}
         public int CustomerId{get; set;}
         public double Total {get; set;}
-        private List<LineItem> _listOfLineItem;
-        private List<LineItem> LineItems
+        public List<LineItem> _listOfLineItem;
+        public List<LineItem> LineItems
         {
         get { return _listOfLineItem; }
         set { }
