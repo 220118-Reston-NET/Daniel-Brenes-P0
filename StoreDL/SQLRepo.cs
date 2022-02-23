@@ -10,6 +10,7 @@ namespace StoreDL
         {
             _connectionStrings = p_connectionStrings;
         }
+        
         public Customer AddCustomer(Customer p_customer)
         {
             string sqlQuery = @"insert into Customer 
