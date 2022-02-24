@@ -1,5 +1,5 @@
 using StoreDL;
-
+using BL;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,8 +9,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IRepo>(repo => new SQLRepo());
-
+builder.Services.AddScoped<IRepo>(repo => new SQLRepo(builder.Configuration.GetConnectionString("Reference2DB")));
+builder.Services.AddScoped<IStoreBL, StoreBL>();
 
 var app = builder.Build();
 
