@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using BL;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,11 +13,23 @@ namespace StoreApi.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
+        private IStoreBL _storeBL;
+        public CustomerController(IStoreBL p_storeBL)
+        {
+            _storeBL = p_storeBL;
+        }
         // GET: api/Customer
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult GetAllCustomer()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                return Ok(_storeBL.GetAllCustomer());
+            }
+            catch (SqlException)
+            {
+                return NotFound();
+            }
         }
 
         // GET: api/Customer/5
