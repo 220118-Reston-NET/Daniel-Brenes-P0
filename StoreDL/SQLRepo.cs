@@ -10,6 +10,26 @@ namespace StoreDL
         {
             _connectionStrings = p_connectionStrings;
         }
+
+        public Customer UpdateCustomer(Customer p_customer)
+        {
+            string sqlQuery = @"UPDATE Customer
+                                SET customerName = @name, customerAddress = @address, customerEmail = @email, customerPhoneNumber = @phoneNumber, = customerWallet = @wallet
+                                where customerId = @id;";
+            using (SqlConnection con = new SqlConnection (_connectionStrings))
+            {
+                con.Open();
+
+                SqlCommand com = new SqlCommand(sqlQuery, con);
+                com.Parameters.AddWithValue("@name", p_customer.Name);
+                com.Parameters.AddWithValue("@address", p_customer.Name);
+                com.Parameters.AddWithValue("@email", p_customer.Name);
+                com.Parameters.AddWithValue("@phoneNumber", p_customer.Name);
+                com.Parameters.AddWithValue("@wallet", p_customer.Name);
+                com.Parameters.AddWithValue("@id", p_customer.CustomerId);
+            }
+            return p_customer;
+        }
         
         public Customer AddCustomer(Customer p_customer)
         {

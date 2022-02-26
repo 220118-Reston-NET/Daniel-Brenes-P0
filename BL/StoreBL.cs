@@ -134,6 +134,10 @@ namespace BL
                     throw new Exception("No Customers found with that Phone Number");
                 }
         }
+        public Customer UpdateCustomer(Customer p_customer)
+        {
+            return _repo.UpdateCustomer(p_customer);
+        }
         public Order AddOrder(Order p_order)
         {
             return _repo.AddOrder(p_order);

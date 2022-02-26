@@ -19,5 +19,6 @@ namespace StoreDL
         List<LineItem> GetLineItemByStoreId(int p_id);
         LineItem GetLineItem(int p_id);
         LineItem ReplenishQuantity(int p_id, int p_quantity);
+        Customer UpdateCustomer(Customer p_customer);
     }
 }

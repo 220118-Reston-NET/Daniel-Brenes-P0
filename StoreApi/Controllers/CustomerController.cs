@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BL;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using StoreModel;
 
 namespace StoreApi.Controllers
 {
@@ -19,7 +20,7 @@ namespace StoreApi.Controllers
             _storeBL = p_storeBL;
         }
         // GET: api/Customer
-        [HttpGet]
+        [HttpGet("Get All")]
         public IActionResult GetAllCustomer()
         {
             try
@@ -33,28 +34,55 @@ namespace StoreApi.Controllers
         }
 
         // GET: api/Customer/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("GetCustomerByName/{customerName}")]
+        public IActionResult GetCustomerByName(string customerName)
         {
-            return "value";
+            try
+            {
+                return Ok(_storeBL.SearchCustomerByName(customerName));
+            }
+            catch (SqlException)
+            {
+                return NotFound();
+            }
         }
 
         // POST: api/Customer
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("Add")]
+        public IActionResult Post([FromBody] Customer p_customer)
         {
+            try
+            {
+                return Created("Successfully added", _storeBL.AddCustomer(p_customer));
+            }
+            catch(System.Exception)
+            {
+                return Conflict();
+            }
+            // return Ok(_storeBL.AddCustomer(p_customer));
         }
 
         // PUT: api/Customer/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("Update/{id}")]
+        public IActionResult Put(int id, [FromBody] Customer p_customer)
         {
+            p_customer.CustomerId = id;
+            try
+            {
+                return Ok(_storeBL.UpdateCustomer(p_customer));
+            }
+            catch (System.Exception ex)
+            {
+                return Conflict(ex.Message);
+            }
+
         }
 
         // DELETE: api/Customer/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+
         }
     }
 }
