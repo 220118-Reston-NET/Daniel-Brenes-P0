@@ -45,8 +45,12 @@ namespace StoreApi.Controllers
         }
 
         // GET: api/Customer/5
-        [HttpGet("GetCustomerByName/{customerName}")]
-        public IActionResult GetCustomerByName(string customerName)
+
+        // public IActionResult GetCustomerByName([FromQuery] string customerName)
+        // [HttpGet("GetCustomerByName/{customerName}")]
+        [HttpGet]
+        public IActionResult GetCustomerByName([FromQuery] string customerName)
+        //public IActionResult GetCustomerByName(string customerName)
         {
             try
             {

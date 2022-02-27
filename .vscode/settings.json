@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/94fdda2a-5130-4d3d-98c8-169bea681145/resourceGroups/Revature/providers/Microsoft.Web/sites/DanielBDemo",
+    "appService.deploySubpath": "StoreApi\\publish"
+}

@@ -1,6 +1,11 @@
 C:\Users\veron\Documents\P0\StoreApi\publish\StoreApi.exe
+C:\Users\veron\Documents\P0\StoreApi\publish\publish\web.config
 C:\Users\veron\Documents\P0\StoreApi\publish\appsettings.Development.json
 C:\Users\veron\Documents\P0\StoreApi\publish\appsettings.json
+C:\Users\veron\Documents\P0\StoreApi\publish\publish\appsettings.Development.json
+C:\Users\veron\Documents\P0\StoreApi\publish\publish\appsettings.json
+C:\Users\veron\Documents\P0\StoreApi\publish\publish\StoreApi.deps.json
+C:\Users\veron\Documents\P0\StoreApi\publish\publish\StoreApi.runtimeconfig.json
 C:\Users\veron\Documents\P0\StoreApi\publish\StoreApi.dll
 C:\Users\veron\Documents\P0\StoreApi\publish\StoreApi.deps.json
 C:\Users\veron\Documents\P0\StoreApi\publish\StoreApi.runtimeconfig.json

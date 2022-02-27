@@ -243,3 +243,8 @@ C:\Users\veron\Documents\P0\StoreApi\obj\Release\net6.0\StoreApi.dll
 C:\Users\veron\Documents\P0\StoreApi\obj\Release\net6.0\ref\StoreApi.dll
 C:\Users\veron\Documents\P0\StoreApi\obj\Release\net6.0\StoreApi.pdb
 C:\Users\veron\Documents\P0\StoreApi\obj\Release\net6.0\StoreApi.genruntimeconfig.cache
+C:\Users\veron\Documents\P0\StoreApi\bin\Release\net6.0\publish\web.config
+C:\Users\veron\Documents\P0\StoreApi\bin\Release\net6.0\publish\appsettings.Development.json
+C:\Users\veron\Documents\P0\StoreApi\bin\Release\net6.0\publish\appsettings.json
+C:\Users\veron\Documents\P0\StoreApi\bin\Release\net6.0\publish\StoreApi.deps.json
+C:\Users\veron\Documents\P0\StoreApi\bin\Release\net6.0\publish\StoreApi.runtimeconfig.json
