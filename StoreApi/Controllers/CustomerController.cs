@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BL;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using StoreModel;
 
 namespace StoreApi.Controllers
@@ -15,9 +16,11 @@ namespace StoreApi.Controllers
     public class CustomerController : ControllerBase
     {
         private IStoreBL _storeBL;
-        public CustomerController(IStoreBL p_storeBL)
+        private IMemoryCache _memoryCache; //Only used for GetAllCustomerAsync, memory cache not necessary for P1
+        public CustomerController(IStoreBL p_storeBL, IMemoryCache p_memoryCache)
         {
             _storeBL = p_storeBL;
+            _memoryCache = p_memoryCache;
         }
         // GET: api/Customer
         [HttpGet("GetAll")]
@@ -25,10 +28,18 @@ namespace StoreApi.Controllers
         {
             try
             {
+            List<Customer> listOfCustomer = new List<Customer>();
+            //TryGetValue(checks if the cahce still exists and if it does "out listOfCustomer" puts that data inside our variable)
+            if (!_memoryCache.TryGetValue("customerList", out listOfCustomer))
+            {
+                listOfCustomer = await _storeBL.GetAllCustomerAsync();
+                _memoryCache.Set("customerList", listOfCustomer, new TimeSpan(0, 0, 30));
+            }
                 return Ok(await _storeBL.GetAllCustomerAsync());
             }
             catch (SqlException)
             {
+                //In this case, if it was unable to connect to the database, it will give a 404 status code
                 return NotFound();
             }
         }
