@@ -20,12 +20,12 @@ namespace StoreApi.Controllers
             _storeBL = p_storeBL;
         }
         // GET: api/Customer
-        [HttpGet("Get All")]
-        public IActionResult GetAllCustomer()
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> GetAllCustomerAsync()
         {
             try
             {
-                return Ok(_storeBL.GetAllCustomer());
+                return Ok(await _storeBL.GetAllCustomerAsync());
             }
             catch (SqlException)
             {

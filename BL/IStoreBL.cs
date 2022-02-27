@@ -11,6 +11,7 @@ namespace BL
         List<Customer> SearchCustomerByEmail(string inputString);
         List<Customer> SearchCustomerByPhoneNumber(string inputString);
         List<Customer> GetAllCustomer();
+        Task <List<Customer>> GetAllCustomerAsync();
         List<Product> GetAllProducts();
         List<LineItem> GetLineItemByStoreId(int p_id);
         LineItem GetLineItem(int p_id);

@@ -142,5 +142,10 @@ namespace BL
         {
             return _repo.AddOrder(p_order);
         }
+
+        public async Task<List<Customer>> GetAllCustomerAsync()
+        {
+            return await _repo.GetAllCustomerAsync();
+        }
     }
 }

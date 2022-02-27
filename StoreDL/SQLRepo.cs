@@ -366,5 +366,33 @@ namespace StoreDL
             }
             return lineItem;
         }
+
+        public async Task<List<Customer>> GetAllCustomerAsync()
+        {
+            List<Customer> listOfCustomer = new List<Customer>();
+
+            string sqlQuery = @"select * from Customer";
+
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                await con.OpenAsync();
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                SqlDataReader reader = await command.ExecuteReaderAsync();
+
+                while (reader.Read())
+                {
+                        listOfCustomer.Add(new Customer(){
+                        CustomerId = reader.GetInt32(0), 
+                        Name = reader.GetString(1), 
+                        Address = reader.GetString(2),
+                        Email = reader.GetString(3),
+                        PhoneNumber = reader.GetString(4),
+                        Wallet = (double)reader.GetDecimal(5)
+                    });
+                }
+            }
+
+            return listOfCustomer;
+        }
     }
 }
