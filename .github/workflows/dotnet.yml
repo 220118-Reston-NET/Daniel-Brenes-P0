@@ -70,7 +70,7 @@ jobs:
       
     # Doing our unit tests and making sure that all of it passes before even deploying this app
     - name: Test
-      run: dotnet test --logger trx --collect:"XPlat Code Coverage" --DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+      run: dotnet test --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
       
     - name: Build and analyze
       env:
