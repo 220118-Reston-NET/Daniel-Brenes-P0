@@ -61,7 +61,7 @@ jobs:
       shell: pwsh #NOTED: changed from powershell
       run: |
         New-Item -Path .\.sonar\scanner -ItemType Directory
-        dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+        dotnet tool install dotnet-sonarscanner --version 5.5.3 --tool-path .\.sonar\scanner
         
     # Restore dependencies in our .NET application
     # Essentially, we will get all the external packages we install (ex: System.Data.SqlClient)
