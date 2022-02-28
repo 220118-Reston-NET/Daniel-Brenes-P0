@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreModel", "StoreModel\StoreModel.csproj", "{AF52A064-DAD4-4C2D-884A-7AB07834C924}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreUI", "StoreUI\StoreUI.csproj", "{7062C1BF-327D-43CA-A20A-FC566639C15F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreApi", "StoreApi\StoreApi.csproj", "{C689067C-AF4C-4575-92D5-C9253A9DFB2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{A2B0EF00-C7DB-4337-B906-702FFAD28782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreDL", "StoreDL\StoreDL.csproj", "{6E2F8E06-BBA2-4048-9A09-09602D7787D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreTest", "StoreTest\StoreTest.csproj", "{129B9FC8-2F01-4118-9FB2-FC77FEF1501F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,5 +38,17 @@ Global
 		{C689067C-AF4C-4575-92D5-C9253A9DFB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C689067C-AF4C-4575-92D5-C9253A9DFB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C689067C-AF4C-4575-92D5-C9253A9DFB2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2B0EF00-C7DB-4337-B906-702FFAD28782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2B0EF00-C7DB-4337-B906-702FFAD28782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2B0EF00-C7DB-4337-B906-702FFAD28782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2B0EF00-C7DB-4337-B906-702FFAD28782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E2F8E06-BBA2-4048-9A09-09602D7787D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E2F8E06-BBA2-4048-9A09-09602D7787D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E2F8E06-BBA2-4048-9A09-09602D7787D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E2F8E06-BBA2-4048-9A09-09602D7787D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{129B9FC8-2F01-4118-9FB2-FC77FEF1501F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{129B9FC8-2F01-4118-9FB2-FC77FEF1501F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{129B9FC8-2F01-4118-9FB2-FC77FEF1501F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{129B9FC8-2F01-4118-9FB2-FC77FEF1501F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

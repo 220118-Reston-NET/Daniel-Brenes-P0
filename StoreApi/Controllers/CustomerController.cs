@@ -29,7 +29,7 @@ namespace StoreApi.Controllers
             try
             {
             List<Customer> listOfCustomer = new List<Customer>();
-            //TryGetValue(checks if the cahce still exists and if it does "out listOfCustomer" puts that data inside our variable)
+            //TryGetValue(checks if the cache still exists and if it does "out listOfCustomer" puts that data inside our variable)
             if (!_memoryCache.TryGetValue("customerList", out listOfCustomer))
             {
                 listOfCustomer = await _storeBL.GetAllCustomerAsync();
@@ -43,14 +43,13 @@ namespace StoreApi.Controllers
                 return NotFound();
             }
         }
-
         // GET: api/Customer/5
 
         // public IActionResult GetCustomerByName([FromQuery] string customerName)
         // [HttpGet("GetCustomerByName/{customerName}")]
         [HttpGet]
+        // public IActionResult GetCustomerByName(string customerName)
         public IActionResult GetCustomerByName([FromQuery] string customerName)
-        //public IActionResult GetCustomerByName(string customerName)
         {
             try
             {
@@ -90,7 +89,6 @@ namespace StoreApi.Controllers
             {
                 return Conflict(ex.Message);
             }
-
         }
 
         // DELETE: api/Customer/5

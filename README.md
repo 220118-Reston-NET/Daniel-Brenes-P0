@@ -1,4 +1,4 @@
-Welcome to the Outdoor Shopping Mall Application! (Project P0)
+Welcome to the Outdoor Shopping Mall Application! (Project P1)
 
 -----------------
 
