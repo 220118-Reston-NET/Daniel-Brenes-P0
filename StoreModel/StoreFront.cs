@@ -21,6 +21,15 @@ public class StoreFront
         get {return _orders;}
         set 
         {
+            if(value.Count > 0)
+            {
+                _orders = value;
+            }
+            else
+            {
+                throw new Exception("Empty order set");
+            }
+
         }
     }
     public StoreFront()

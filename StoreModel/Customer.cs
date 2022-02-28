@@ -15,7 +15,7 @@ public class Customer
         get {return _orders;}
         set 
         {
-            if(value.Count < 0)
+            if(value.Count > 0)
             {  
                 _orders = value;
 
