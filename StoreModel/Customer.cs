@@ -11,23 +11,23 @@ public class Customer
 
     public int Pin { get; set;}
 
-    private List<Order> _orders;
-    public List<Order> Orders
-    {
-        get {return _orders;}
-        set 
-        {
-            if(value.Count > 0)
-            {  
-                _orders = value;
+    // private List<Order> _orders;
+    // public List<Order> Orders
+    // {
+    //     get {return _orders;}
+    //     set 
+    //     {
+    //         if(value.Count > 0)
+    //         {  
+    //             _orders = value;
 
-            }
-            else
-            {
-                throw new Exception ("Order is empty");
-            }
-        }
-    }
+    //         }
+    //         else
+    //         {
+    //             throw new Exception ("Order is empty");
+    //         }
+    //     }
+    // }
     public Customer()
     {
         Name = "";
@@ -35,6 +35,7 @@ public class Customer
         Email = "";
         PhoneNumber = "";
         Wallet = 0.0;
+        Pin = 0000;
 
     }
     public override string ToString()

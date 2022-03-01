@@ -42,7 +42,7 @@ namespace StoreApi.Controllers
             catch (System.Exception)
             {
                 
-                return BadRequest(new {results = "user name is exsist"});
+                return BadRequest(new {results = "Customer not added"});
             }
         }
 

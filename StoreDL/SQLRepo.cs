@@ -49,7 +49,7 @@ namespace StoreDL
                 command.Parameters.AddWithValue("@customerEmail", p_customer.Email);
                 command.Parameters.AddWithValue("@customerPhoneNumber", p_customer.PhoneNumber);
                 command.Parameters.AddWithValue("@customerWallet", p_customer.Wallet);
-                command.ExecuteNonQuery();
+                command.ExecuteScalar();
             }
             using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
@@ -58,7 +58,7 @@ namespace StoreDL
                 SqlCommand command = new SqlCommand(sqlQuery2, con);
                 command.Parameters.AddWithValue("@customerId", p_customer.CustomerId);
                 command.Parameters.AddWithValue("@customerPin", p_customer.Pin);
-                command.ExecuteNonQuery();
+                command.ExecuteScalar();
             }
 
             return p_customer;

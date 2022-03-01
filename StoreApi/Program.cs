@@ -6,7 +6,7 @@ using BL;
 var builder = WebApplication.CreateBuilder(args);
 
 Log.Logger = new LoggerConfiguration()
-            .WriteTo.File("./logs/server.txt")
+            .WriteTo.File("./logs/webserver.txt")
             .CreateLogger();
 
 // Add services to the container.

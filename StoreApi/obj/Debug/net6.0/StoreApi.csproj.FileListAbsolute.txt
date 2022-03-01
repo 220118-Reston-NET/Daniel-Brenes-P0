@@ -253,3 +253,5 @@ C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\publish\appsetting
 C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\publish\appsettings.json
 C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\publish\StoreApi.deps.json
 C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\publish\StoreApi.runtimeconfig.json
+C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\Serilog.dll
+C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\Serilog.Sinks.File.dll
