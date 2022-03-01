@@ -10,11 +10,10 @@ namespace StoreDL
         {
             _connectionStrings = p_connectionStrings;
         }
-
         public Customer UpdateCustomer(Customer p_customer)
         {
             string sqlQuery = @"UPDATE Customer
-                                SET customerName = @name, customerAddress = @address, customerEmail = @email, customerPhoneNumber = @phoneNumber, = customerWallet = @wallet
+                                SET customerName = @name, customerAddress = @address, customerEmail = @email, customerPhoneNumber = @phoneNumber, customerWallet = @wallet
                                 where customerId = @id;";
             using (SqlConnection con = new SqlConnection (_connectionStrings))
             {
@@ -22,10 +21,10 @@ namespace StoreDL
 
                 SqlCommand com = new SqlCommand(sqlQuery, con);
                 com.Parameters.AddWithValue("@name", p_customer.Name);
-                com.Parameters.AddWithValue("@address", p_customer.Name);
-                com.Parameters.AddWithValue("@email", p_customer.Name);
-                com.Parameters.AddWithValue("@phoneNumber", p_customer.Name);
-                com.Parameters.AddWithValue("@wallet", p_customer.Name);
+                com.Parameters.AddWithValue("@address", p_customer.Address);
+                com.Parameters.AddWithValue("@email", p_customer.Email);
+                com.Parameters.AddWithValue("@phoneNumber", p_customer.PhoneNumber);
+                com.Parameters.AddWithValue("@wallet", p_customer.Wallet);
                 com.Parameters.AddWithValue("@id", p_customer.CustomerId);
             }
             return p_customer;
@@ -37,6 +36,8 @@ namespace StoreDL
                             values(@customerName,  @customerAddress, @customerEmail,@customerPhoneNumber, @customerWallet)";
             string sqlQuery2 =  @"insert into CustomerPin 
                                     values(@customerId,  @customerPin)";
+            string sqlQuery3 = @"select * from Customer
+                                    where customerName = @customerName";
 
             using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
@@ -55,11 +56,25 @@ namespace StoreDL
             {
                 con.Open();
 
+                SqlCommand command = new SqlCommand(sqlQuery3, con);
+                // command.Parameters.AddWithValue("@customerID", p_customer.CustomerID);
+                command.Parameters.AddWithValue("@customerName", p_customer.Name);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                        p_customer.CustomerId = reader.GetInt32(0);
+                }
+            }
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+
                 SqlCommand command = new SqlCommand(sqlQuery2, con);
                 command.Parameters.AddWithValue("@customerId", p_customer.CustomerId);
                 command.Parameters.AddWithValue("@customerPin", p_customer.Pin);
                 command.ExecuteScalar();
             }
+            
 
             return p_customer;
         }
@@ -67,12 +82,13 @@ namespace StoreDL
         {
             Order newOrder = new Order();
             string sqlQuery = @"Insert into Orders
-                                    values(@orderId, @total, @storefrontid, @customerid)";
+                                    values(@total, @storefrontid, @customerid)";
+                                    //values(@orderId, @total, @storefrontid, @customerid)";
             using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
                 con.Open();
                 SqlCommand command = new SqlCommand(sqlQuery, con);
-                command.Parameters.AddWithValue("@orderId" , newOrder.OrderId);
+                // command.Parameters.AddWithValue("@orderId" , newOrder.OrderId);
                 command.Parameters.AddWithValue("@total" , p_total);
                 command.Parameters.AddWithValue("@storefrontid" , p_storefrontid);
                 command.Parameters.AddWithValue("@customerid" , p_customerid);
@@ -80,7 +96,7 @@ namespace StoreDL
                 
             }
             return newOrder;
-        }
+        }   
         public Order AddOrder(Order p_order)
         {
             Order newOrder = new Order();
@@ -204,6 +220,7 @@ namespace StoreDL
             }
                 Console.WriteLine("Please press Enter to continue");
                     Console.ReadLine();
+
             return listOfCustomer;
         }
 

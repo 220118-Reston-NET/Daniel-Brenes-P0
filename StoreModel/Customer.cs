@@ -9,7 +9,7 @@ public class Customer
     public string PhoneNumber{get; set;}
     public double Wallet{ get; set;}
 
-    public int Pin { get; set;}
+    public string Pin { get; set;}
 
     // private List<Order> _orders;
     // public List<Order> Orders
@@ -35,7 +35,7 @@ public class Customer
         Email = "";
         PhoneNumber = "";
         Wallet = 0.0;
-        Pin = 0000;
+        Pin = "";
 
     }
     public override string ToString()

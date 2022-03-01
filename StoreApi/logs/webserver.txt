@@ -1,0 +1,20 @@
+2022-03-01 11:20:25.203 -06:00 [INF] Register success
+2022-03-01 11:28:20.945 -06:00 [INF] Register successfulId: 0
+Name: Bob Barker
+Address: 1 Price Lane Hollywood, CA 90202
+Email: priceisright@yahoo.com
+PhoneNumber: 8002221516
+Wallet: $10000
+2022-03-01 11:28:21.917 -06:00 [INF] Register unsuccessful:Id: 0
+Name: Bob Barker
+Address: 1 Price Lane Hollywood, CA 90202
+Email: priceisright@yahoo.com
+PhoneNumber: 8002221516
+Wallet: $10000
+2022-03-01 11:28:21.917 -06:00 [INF] With Pin:9999
+2022-03-01 11:40:35.374 -06:00 [INF] Register successfulId: 0
+Name: Test Test
+Address: 123 Test Dr Dallas, Tx 72030
+Email: test@ymail.com
+PhoneNumber: 9795998052
+Wallet: $10

@@ -17,31 +17,32 @@ namespace StoreApi.Controllers
         private readonly IStoreBL _storeBL;
         // private readonly ICustomerBL _customerBL;
 
-        public AuthenticationController(IStoreBL p_storeBL ) //, ICustomerBL p_customerBL)
+        public AuthenticationController(IStoreBL p_storeBL) //, ICustomerBL p_customerBL)
         {
             _storeBL = p_storeBL;
             // _customerBL = p_customerBL;
         }
 
-        [HttpPost("Register")]
+        [HttpPost("Register Customers")]
         public IActionResult Register([FromBody] Customer p_customer)
         {
             try
             {
-                _storeBL.AddCustomer(new Customer(){
-                    Name = p_customer.Name,
-                    Address = p_customer.Address,
-                    Email = p_customer.Email,
-                    PhoneNumber = p_customer.PhoneNumber,
-                    Wallet = p_customer.Wallet,
-                    Pin = p_customer.Pin
-                });
-                Log.Information("Register success");
-                return Created("Register successful", p_customer);
+                // _storeBL.AddCustomer(new Customer(){
+                //     Name = p_customer.Name,
+                //     Address = p_customer.Address,
+                //     Email = p_customer.Email,
+                //     PhoneNumber = p_customer.PhoneNumber,
+                //     Wallet = p_customer.Wallet,
+                //     Pin = p_customer.Pin
+                // });
+                Log.Information("Register successful" + p_customer);
+                return Created("Register successful", _storeBL.AddCustomer(p_customer));
             }
             catch (System.Exception)
             {
-                
+                Log.Information("Register unsuccessful:" + p_customer);
+                Log.Information("With Pin:" + p_customer.Pin);
                 return BadRequest(new {results = "Customer not added"});
             }
         }

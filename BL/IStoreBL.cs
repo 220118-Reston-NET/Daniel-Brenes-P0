@@ -16,7 +16,7 @@ namespace BL
         List<LineItem> GetLineItemByStoreId(int p_id);
         LineItem GetLineItem(int p_id);
         LineItem ReplenishQuantity(int p_id, int p_quantity);
-        StoreFront AddStoreFront(StoreFront p_store);
+        // StoreFront AddStoreFront(StoreFront p_store);
         StoreFront GetStoreFront(int p_id);
         List<StoreFront> GetAllStoreFront();
         Order PlaceOrder(List<LineItem> p_listOfOrder, double p_total, int p_customerId, int p_storefrontid);

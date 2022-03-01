@@ -3,7 +3,7 @@ namespace StoreModel
 
     public class Order
     {
-        public static int _orderId = 1000;
+        // public static int _orderId = 1000;
         public int OrderId{get; set;}
         public int StoreFrontId{get; set;}
         public int CustomerId{get; set;}
@@ -16,7 +16,7 @@ namespace StoreModel
         }
         public Order()
         {
-            OrderId = ++_orderId;
+            // OrderId = ++_orderId;
             StoreFrontId = 0;
             CustomerId = 0;
             Total = 0.0;
