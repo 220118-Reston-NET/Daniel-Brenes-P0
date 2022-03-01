@@ -19,7 +19,7 @@ public class StoreFrontTest
             StoreID = storeId,
             Name = storeName
         };
-        
+
         List<StoreFront> expectedStoreFronts = new List<StoreFront>();
         expectedStoreFronts.Add(storeFront);
 
@@ -33,6 +33,21 @@ public class StoreFrontTest
         Assert.Same(expectedStoreFronts, actualStores); 
         Assert.Equal(storeName, actualStores[0].Name); 
         Assert.Equal(storeId, actualStores[0].StoreID); 
+    }
+
+    [Fact]
+    public void StoreFrontShouldSetValidData()
+    {
+        //Arrange
+        StoreFront store = new StoreFront();
+        string validStore = "Target";
+
+        //Act
+        store.Name = validStore;
+        
+        //Assert
+        Assert.NotNull(store.Name);//checks that the property is not null meaning we did set data in this property
+        Assert.Equal(validStore, store.Name);//checks if the property does indeed hold the same value as what we set it as    
     }
 }
 }

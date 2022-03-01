@@ -34,5 +34,19 @@ public class ProductTest
         Assert.Equal(productName, actualProducts[0].Name); 
         Assert.Equal(productId, actualProducts[0].ProductId); 
     }
+    [Fact]
+        public void ProductShouldSetValidData()
+        {
+            //Arrange
+            Product prod = new Product();
+            string validProd = "Jersey";
+
+            //Act
+            prod.Name = validProd;
+        
+            //Assert
+            Assert.NotNull(prod.Name);//checks that the property is not null meaning we did set data in this property
+            Assert.Equal(validProd, prod.Name);//checks if the property does indeed hold the same value as what we set it as
+        }
 }
 }

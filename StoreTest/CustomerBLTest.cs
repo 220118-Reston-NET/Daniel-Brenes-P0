@@ -33,6 +33,21 @@ public class CustomerBLTest
         Assert.Equal(customerName, actualCustomerList[0].Name); 
         Assert.Equal(customerId, actualCustomerList[0].CustomerId); 
     }
+
+    [Fact]
+    public void CustomerShouldSetValidData()
+    {
+        //Arrange
+        Customer customer = new Customer();
+        string validCustomer = "New Customer";
+
+        //Act
+        customer.Name = validCustomer;
+        
+        //Assert
+        Assert.NotNull(customer.Name);//checks that the property is not null meaning we did set data in this property
+        Assert.Equal(validCustomer, customer.Name);//checks if the property does indeed hold the same value as what we set it as    
+    }
     // [Fact]
     // public void Search_Customer_By_Name()
     // {
