@@ -22,6 +22,7 @@ namespace BL
         Order PlaceOrder(List<LineItem> p_listOfOrder, double p_total, int p_customerId, int p_storefrontid);
         Order AddOrder(Order p_order);
         List<Order> GetAllOrders();
+        List<Order> GetOrderByCustomerId(int p_id);
         Customer UpdateCustomer(Customer p_customer);
     }
 }

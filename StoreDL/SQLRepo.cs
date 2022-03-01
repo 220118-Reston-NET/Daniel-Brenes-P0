@@ -138,27 +138,31 @@ namespace StoreDL
         public List<Customer> SearchCustomer(string inputString)
         { 
             List<Customer> listOfCustomer = new List<Customer>();
+            Customer myCustomer = new Customer();
 
-            string sqlQuery = @"select * from Customer";
+            string sqlQuery = @"select * from Customer
+                                    where customerName = @customerName";
 
             using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
                 con.Open();
                 SqlCommand command = new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@customerName", inputString);
                 SqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
-                        listOfCustomer.Add(new Customer(){
-                        CustomerId = reader.GetInt32(0),
-                        Name = reader.GetString(1), 
+                    listOfCustomer.Add(new Customer(){
+                        Name = reader.GetString(1),
                         Address = reader.GetString(2),
                         Email = reader.GetString(3),
                         PhoneNumber = reader.GetString(4),
-                        Wallet = (double)reader.GetDecimal(5)
+                        Wallet = reader.GetDouble(5)
                     });
                 }
             }
+                Console.WriteLine("Please press Enter to continue");
+                    Console.ReadLine();
             return listOfCustomer;
         }
         public List<Customer> SearchCustomerById(int p_id)
@@ -393,6 +397,30 @@ namespace StoreDL
             }
 
             return listOfCustomer;
+        }
+
+        public List<Order> GetOrderByCustomerId(int p_id)
+        {
+            List<Order> listOfOrders = new List<Order>();
+            string sqlQuery = @"select * from Orders
+                                    where customerId = @customerId";
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@customerId", p_id);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                        listOfOrders.Add(new Order(){
+                        OrderId = reader.GetInt32(0),
+                        Total = (double)reader.GetDecimal(1),
+                        StoreFrontId = reader.GetInt32(2),
+                        CustomerId = reader.GetInt32(3)
+                        });
+                }
+            }
+            return listOfOrders;
         }
     }
 }

@@ -248,3 +248,8 @@ C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\appsettings.Develo
 C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\appsettings.json
 C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\StoreApi.deps.json
 C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\StoreApi.runtimeconfig.json
+C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\publish\web.config
+C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\publish\appsettings.Development.json
+C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\publish\appsettings.json
+C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\publish\StoreApi.deps.json
+C:\Users\veron\Documents\P0\StoreApi\bin\Debug\net6.0\publish\publish\StoreApi.runtimeconfig.json

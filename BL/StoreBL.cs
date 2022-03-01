@@ -24,6 +24,8 @@ namespace BL
         }
         public List<Order> GetAllOrders()
         {
+            List<Order> myOrders = _repo.GetAllOrders();
+            
             return _repo.GetAllOrders();
         }
         public List<Customer> GetAllCustomer()
@@ -73,7 +75,7 @@ namespace BL
             List<Customer> listOfCustomer = _repo.GetAllCustomer();
             listOfCustomer = listOfCustomer.Where(customer => customer.CustomerId.Equals(p_id))
                                     .ToList();
-             if (listOfCustomer.Count> 0)
+             if (listOfCustomer.Count > 0)
                 return listOfCustomer;
             else   
                 throw new Exception("No customers found with that ID");                       
@@ -146,6 +148,11 @@ namespace BL
         public async Task<List<Customer>> GetAllCustomerAsync()
         {
             return await _repo.GetAllCustomerAsync();
+        }
+
+        public List<Order> GetOrderByCustomerId(int p_id)
+        {
+            return _repo.GetOrderByCustomerId(p_id);
         }
     }
 }
