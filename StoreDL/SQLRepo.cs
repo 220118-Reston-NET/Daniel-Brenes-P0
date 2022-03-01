@@ -52,7 +52,7 @@ namespace StoreDL
 
             return p_customer;
         }
-        public Order PlaceOrder(List<LineItem> p_listoflineitem, double p_total, int p_customerid, int p_storefrontid)
+        public Order PlaceOrder(List<LineItem> p_lineitemlist, double p_total, int p_customerid, int p_storefrontid)
         {
             Order newOrder = new Order();
             string sqlQuery = @"Insert into Orders

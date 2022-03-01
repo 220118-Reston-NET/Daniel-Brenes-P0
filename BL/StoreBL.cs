@@ -18,9 +18,9 @@ namespace BL
         {
             throw new NotImplementedException();
         }
-        public Order PlaceOrder(List<LineItem> p_listoflineitem, double p_total, int p_customerid, int p_storefrontid)
+        public Order PlaceOrder(List<LineItem> p_listOfOrder, double p_total, int p_customerId, int p_storefrontid)
         {
-            return _repo.PlaceOrder(p_listoflineitem, p_total, p_customerid, p_storefrontid);
+            return _repo.PlaceOrder(p_listOfOrder, p_total, p_customerId, p_storefrontid);
         }
         public List<Order> GetAllOrders()
         {
