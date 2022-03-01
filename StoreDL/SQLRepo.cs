@@ -34,15 +34,11 @@ namespace StoreDL
         {
             string sqlQuery = @"insert into Customer 
                             values(@customerName,  @customerAddress, @customerEmail,@customerPhoneNumber, @customerWallet, @customerPin)";
-            // string sqlQuery2 =  @"insert into CustomerPin 
-            //                         values(@customerId,  @customerPin)";
-            // string sqlQuery3 = @"select * from Customer
-            //                         where customerName = @customerName";
+
 
             using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
                 con.Open();
-
                 SqlCommand command = new SqlCommand(sqlQuery, con);
                 // command.Parameters.AddWithValue("@customerID", p_customer.CustomerID);
                 command.Parameters.AddWithValue("@customerName", p_customer.Name);
