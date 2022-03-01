@@ -33,11 +33,11 @@ namespace StoreDL
         public Customer AddCustomer(Customer p_customer)
         {
             string sqlQuery = @"insert into Customer 
-                            values(@customerName,  @customerAddress, @customerEmail,@customerPhoneNumber, @customerWallet)";
-            string sqlQuery2 =  @"insert into CustomerPin 
-                                    values(@customerId,  @customerPin)";
-            string sqlQuery3 = @"select * from Customer
-                                    where customerName = @customerName";
+                            values(@customerName,  @customerAddress, @customerEmail,@customerPhoneNumber, @customerWallet, @customerPin)";
+            // string sqlQuery2 =  @"insert into CustomerPin 
+            //                         values(@customerId,  @customerPin)";
+            // string sqlQuery3 = @"select * from Customer
+            //                         where customerName = @customerName";
 
             using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
@@ -50,30 +50,31 @@ namespace StoreDL
                 command.Parameters.AddWithValue("@customerEmail", p_customer.Email);
                 command.Parameters.AddWithValue("@customerPhoneNumber", p_customer.PhoneNumber);
                 command.Parameters.AddWithValue("@customerWallet", p_customer.Wallet);
-                command.ExecuteScalar();
-            }
-            using (SqlConnection con = new SqlConnection(_connectionStrings))
-            {
-                con.Open();
-
-                SqlCommand command = new SqlCommand(sqlQuery3, con);
-                // command.Parameters.AddWithValue("@customerID", p_customer.CustomerID);
-                command.Parameters.AddWithValue("@customerName", p_customer.Name);
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                        p_customer.CustomerId = reader.GetInt32(0);
-                }
-            }
-            using (SqlConnection con = new SqlConnection(_connectionStrings))
-            {
-                con.Open();
-
-                SqlCommand command = new SqlCommand(sqlQuery2, con);
-                command.Parameters.AddWithValue("@customerId", p_customer.CustomerId);
                 command.Parameters.AddWithValue("@customerPin", p_customer.Pin);
                 command.ExecuteScalar();
             }
+            // using (SqlConnection con = new SqlConnection(_connectionStrings))
+            // {
+            //     con.Open();
+
+            //     SqlCommand command = new SqlCommand(sqlQuery3, con);
+            //     // command.Parameters.AddWithValue("@customerID", p_customer.CustomerID);
+            //     command.Parameters.AddWithValue("@customerName", p_customer.Name);
+            //     SqlDataReader reader = command.ExecuteReader();
+            //     while (reader.Read())
+            //     {
+            //             p_customer.CustomerId = reader.GetInt32(0);
+            //     }
+            // }
+            // using (SqlConnection con = new SqlConnection(_connectionStrings))
+            // {
+            //     con.Open();
+
+            //     SqlCommand command = new SqlCommand(sqlQuery2, con);
+            //     command.Parameters.AddWithValue("@customerId", p_customer.CustomerId);
+            //     command.Parameters.AddWithValue("@customerPin", p_customer.Pin);
+            //     command.ExecuteScalar();
+            // }
             
 
             return p_customer;

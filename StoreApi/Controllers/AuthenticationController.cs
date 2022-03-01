@@ -23,7 +23,7 @@ namespace StoreApi.Controllers
             // _customerBL = p_customerBL;
         }
 
-        [HttpPost("Register Customers")]
+        [HttpPost("Register Customer")]
         public IActionResult Register([FromBody] Customer p_customer)
         {
             try
@@ -41,8 +41,7 @@ namespace StoreApi.Controllers
             }
             catch (System.Exception)
             {
-                Log.Information("Register unsuccessful:" + p_customer);
-                Log.Information("With Pin:" + p_customer.Pin);
+                Log.Information("Register unsuccessful");
                 return BadRequest(new {results = "Customer not added"});
             }
         }

@@ -23,7 +23,7 @@ namespace StoreApi.Controllers
             _memoryCache = p_memoryCache;
         }
         // GET: api/Customer
-        [HttpGet("GetAll")]
+        [HttpGet("GetAllCustomers")]
         public async Task<IActionResult> GetAllCustomerAsync()
         {
             try
@@ -47,13 +47,26 @@ namespace StoreApi.Controllers
 
         // public IActionResult GetCustomerByName([FromQuery] string customerName)
         // [HttpGet("GetCustomerByName/{customerName}")]
-        [HttpGet]
+        [HttpGet("SearchCustomerByName")]
         // public IActionResult GetCustomerByName(string customerName)
         public IActionResult GetCustomerByName([FromQuery] string customerName)
         {
             try
             {
                 return Ok(_storeBL.SearchCustomerByName(customerName));
+            }
+            catch (SqlException)
+            {
+                return NotFound();
+            }
+        }
+        [HttpGet("SearchCustomerByEmail")]
+        // public IActionResult GetCustomerByName(string customerName)
+        public IActionResult GetCustomerByEmail([FromQuery] string customerEmail)
+        {
+            try
+            {
+                return Ok(_storeBL.SearchCustomerByEmail(customerEmail));
             }
             catch (SqlException)
             {
@@ -90,12 +103,10 @@ namespace StoreApi.Controllers
                 return Conflict(ex.Message);
             }
         }
-
         // DELETE: api/Customer/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-
-        }
+        // [HttpDelete("{id}")]
+        // public void Delete(int id)
+        // {
+        // }
     }
 }

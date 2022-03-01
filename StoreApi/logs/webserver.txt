@@ -18,3 +18,16 @@ Address: 123 Test Dr Dallas, Tx 72030
 Email: test@ymail.com
 PhoneNumber: 9795998052
 Wallet: $10
+2022-03-01 12:21:20.971 -06:00 [INF] Register successfulId: 0
+Name: Revature Training
+Address: 1010 Corporate Way Reston, VA 87300
+Email: revature@revature.net
+PhoneNumber: 3334548989
+Wallet: $9999
+2022-03-01 12:21:22.048 -06:00 [INF] Register unsuccessful
+2022-03-01 12:24:10.458 -06:00 [INF] Register successfulId: 0
+Name: Revature Training
+Address: 1010 Corporate Way Reston, VA 87300
+Email: revature@revature.net
+PhoneNumber: 3334548989
+Wallet: $9999
