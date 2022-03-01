@@ -4,6 +4,7 @@ namespace BL
 {
     public interface IStoreBL
     {
+        Boolean VerifyCustomer(string p_id, string p_pin);
         Customer AddCustomer(Customer p_customer);
         List<Customer> SearchCustomerById(int p_id);
         List<Customer> SearchCustomerByName(string inputString);
@@ -13,7 +14,8 @@ namespace BL
         List<Customer> GetAllCustomer();
         Task <List<Customer>> GetAllCustomerAsync();
         List<Product> GetAllProducts();
-        List<LineItem> GetLineItemByStoreId(int p_id);
+        // List<LineItem> GetLineItemByStoreId(int p_id);
+        List<LineItem> GetLineItemByOrderId(int p_id);
         LineItem GetLineItem(int p_id);
         LineItem ReplenishQuantity(int p_id, int p_quantity);
         // StoreFront AddStoreFront(StoreFront p_store);

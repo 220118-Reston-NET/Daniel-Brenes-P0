@@ -94,7 +94,6 @@ namespace StoreDL
                 command.Parameters.AddWithValue("@storefrontid" , p_storefrontid);
                 command.Parameters.AddWithValue("@customerid" , p_customerid);
                 command.ExecuteScalar();
-                
             }
             return newOrder;
         }   
@@ -189,8 +188,8 @@ namespace StoreDL
                     });
                 }
             }
-                Console.WriteLine("Please press Enter to continue");
-                    Console.ReadLine();
+                // Console.WriteLine("Please press Enter to continue");
+                //     Console.ReadLine();
             return listOfCustomer;
         }
         public List<Customer> SearchCustomerById(int p_id)
@@ -219,12 +218,8 @@ namespace StoreDL
                     });
                 }
             }
-                Console.WriteLine("Please press Enter to continue");
-                    Console.ReadLine();
-
             return listOfCustomer;
         }
-
         public StoreFront AddStoreFront(StoreFront p_store)
         {
             throw new NotImplementedException();
@@ -302,43 +297,43 @@ namespace StoreDL
                     });
                 }
             }
-
             return listOfProduct;
         }
 
         public List<Product> GetProductById(int p_id)
         {
-            throw new NotImplementedException();
+            List<Product> listOfProducts = new List<Product>();
+
+            return listOfProducts;
         }
 
-        public List<LineItem> GetLineItemByStoreId(int p_id)
-        {
-            List<LineItem> listOfLineItem = new List<LineItem>();
+        // public List<LineItem> GetLineItemByStoreId(int p_id)
+        // {
+        //     List<LineItem> listOfLineItem = new List<LineItem>();
 
-            string sqlQuery = @"select * from LineItem
-                                    where storeFrontId = @storeFrontId";
+        //     string sqlQuery = @"select * from LineItem
+        //                             where storeFrontId = @storeFrontId";
 
-            using (SqlConnection con = new SqlConnection(_connectionStrings))
-            {
-                con.Open();
-                SqlCommand command = new SqlCommand(sqlQuery, con);
-                command.Parameters.AddWithValue("@storeFrontId", p_id);
-                SqlDataReader reader = command.ExecuteReader();
+        //     using (SqlConnection con = new SqlConnection(_connectionStrings))
+        //     {
+        //         con.Open();
+        //         SqlCommand command = new SqlCommand(sqlQuery, con);
+        //         command.Parameters.AddWithValue("@storeFrontId", p_id);
+        //         SqlDataReader reader = command.ExecuteReader();
 
-                while (reader.Read())
-                {
-                        listOfLineItem.Add(new LineItem(){
-                        ProductId = reader.GetInt32(0), 
-                        ProductName = reader.GetString(1), 
-                        Quantity = reader.GetInt32(2),
-                        StoreFrontId = reader.GetInt32(3),
-                        Price = (double)reader.GetDecimal(4)
-
-                    });
-                }
-            }
-            return listOfLineItem;
-        }
+        //         while (reader.Read())
+        //         {
+        //                 listOfLineItem.Add(new LineItem(){
+        //                 ProductId = reader.GetInt32(0), 
+        //                 ProductName = reader.GetString(1), 
+        //                 Quantity = reader.GetInt32(2),
+        //                 // StoreFrontId = reader.GetInt32(3),
+        //                 subTotal = (double)reader.GetDecimal(4)
+        //             });
+        //         }
+        //     }
+        //     return listOfLineItem;
+        // }
         public LineItem ReplenishQuantity(int p_id, int p_quantity)
         {
             LineItem lineItem = new LineItem();
@@ -359,8 +354,8 @@ namespace StoreDL
                         lineItem.ProductId = reader.GetInt32(0);
                         lineItem.ProductName = reader.GetString(1);
                         lineItem.Quantity = reader.GetInt32(2);
-                        lineItem.StoreFrontId = reader.GetInt32(3);
-                        lineItem.Price = (double)reader.GetDecimal(4);
+                        // lineItem.StoreFrontId = reader.GetInt32(3);
+                        lineItem.subTotal = (double)reader.GetDecimal(4);
                 }
             }
             using (SqlConnection con = new SqlConnection(_connectionStrings))
@@ -393,8 +388,8 @@ namespace StoreDL
                         lineItem.ProductId = reader.GetInt32(0);
                         lineItem.ProductName = reader.GetString(1);
                         lineItem.Quantity = reader.GetInt32(2);
-                        lineItem.StoreFrontId = reader.GetInt32(3);
-                        lineItem.Price = (double)reader.GetDecimal(4);
+                        // lineItem.StoreFrontId = reader.GetInt32(3);
+                        lineItem.subTotal = (double)reader.GetDecimal(4);
                 }
             }
             return lineItem;
@@ -424,7 +419,6 @@ namespace StoreDL
                     });
                 }
             }
-
             return listOfCustomer;
         }
 
@@ -433,6 +427,9 @@ namespace StoreDL
             List<Order> listOfOrders = new List<Order>();
             string sqlQuery = @"select * from Orders
                                     where customerId = @customerId";
+            // string sqlQuery2 = @"select * from LineItem
+            //                         where customerId = @customerId";
+                                    
             using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
                 con.Open();
@@ -445,11 +442,89 @@ namespace StoreDL
                         OrderId = reader.GetInt32(0),
                         Total = (double)reader.GetDecimal(1),
                         StoreFrontId = reader.GetInt32(2),
-                        CustomerId = reader.GetInt32(3)
+                        CustomerId = reader.GetInt32(3),
+                        LineItems = GetLineItemByOrderId(reader.GetInt32(0))
                         });
                 }
             }
+            // using (SqlConnection con = new SqlConnection(_connectionStrings))
+            // {
+            //     con.Open();
+            //     SqlCommand command = new SqlCommand(sqlQuery, con);
+            //     command.Parameters.AddWithValue("@customerId", p_id);
+            //     SqlDataReader reader = command.ExecuteReader();
+            //     while (reader.Read())
+            //     {
+            //             listOfOrders.Add(new Order(){
+            //             OrderId = reader.GetInt32(0),
+            //             Total = (double)reader.GetDecimal(1),
+            //             StoreFrontId = reader.GetInt32(2),
+            //             CustomerId = reader.GetInt32(3)
+            //             });
+            //     }
+            // }
             return listOfOrders;
+        }
+
+        public bool VerifyCustomer(string p_id, string p_pin)
+        {
+            Customer myCustomer = new Customer();
+            bool returnVal = false;
+
+            string sqlQuery = @"select * from Customer
+                                    where customerId = @customerId";
+
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@customerId", p_id);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (p_pin.Equals(reader.GetString(6)))
+                    {
+                        returnVal = true;
+                    }
+                }
+            }
+
+            return returnVal;
+        }
+
+        public List<LineItem> GetLineItemByOrderId(int p_orderId)
+        {
+            
+            List<LineItem> listOfLineItem = new List<LineItem>();
+            
+            string sqlQuery = @"select l.orderId , l.productId, l.productName , l.quantity , l.subTotal from Orders o 
+                            inner join LineItem l on l.orderId = o.orderId 
+                            where o.orderId = @orderId";
+            
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@orderId", p_orderId);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    listOfLineItem.Add(new LineItem(){
+                        //Reader column is NOT based on table structure but based on what your select query statement is displaying
+                        OrderId = reader.GetInt32(0),
+                        ProductId = reader.GetInt32(1),
+                        ProductName = reader.GetString(2),
+                        Quantity = reader.GetInt32(3),
+                        subTotal = (double)reader.GetDecimal(4)
+                    });
+                }
+            }
+            return listOfLineItem;
+            
         }
     }
 }

@@ -31,3 +31,34 @@ Address: 1010 Corporate Way Reston, VA 87300
 Email: revature@revature.net
 PhoneNumber: 3334548989
 Wallet: $9999
+2022-03-01 12:53:06.142 -06:00 [INF] Register successfulId: 0
+Name: Test Test
+Address: 123 Testing Dr New York, NY 11302
+Email: test@revature.net
+PhoneNumber: 1110002222
+Wallet: $1
+2022-03-01 12:58:52.801 -06:00 [INF] Log in success
+2022-03-01 12:58:53.269 -06:00 [INF] Log in success
+2022-03-01 13:00:16.959 -06:00 [INF] Log in success
+2022-03-01 13:05:45.552 -06:00 [INF] Log in success
+2022-03-01 13:11:08.103 -06:00 [INF] Manager Login Success1 0909
+2022-03-01 13:11:35.915 -06:00 [INF] Customer Login Success16 9876
+2022-03-01 13:36:28.814 -06:00 [INF] Get All CustomersSystem.Collections.Generic.List`1[StoreModel.Customer]
+2022-03-01 13:46:21.078 -06:00 [INF] Displaying Customer Orders System.Collections.Generic.List`1[StoreModel.Order]
+2022-03-01 14:14:24.791 -06:00 [INF] Displaying Customer Orders System.Collections.Generic.List`1[StoreModel.Order]
+2022-03-01 15:40:14.078 -06:00 [INF] Displaying Customer Orders System.Collections.Generic.List`1[StoreModel.Order]
+2022-03-01 15:56:40.326 -06:00 [INF] Displaying Customer Orders System.Collections.Generic.List`1[StoreModel.Order]
+2022-03-01 16:02:54.445 -06:00 [INF] Displaying Customer Orders 1
+2022-03-01 16:03:02.580 -06:00 [INF] Displaying Customer Orders 3
+2022-03-01 16:03:09.344 -06:00 [INF] Displaying Customer Orders 5
+2022-03-01 16:10:33.099 -06:00 [INF] Displaying Customer Orders 1
+2022-03-01 16:10:34.716 -06:00 [INF] Displaying failed 1
+2022-03-01 16:10:38.597 -06:00 [INF] Displaying Customer Orders 3
+2022-03-01 16:10:43.553 -06:00 [INF] Displaying Customer Orders 5
+2022-03-01 16:10:43.696 -06:00 [INF] Displaying failed 5
+2022-03-01 16:12:30.812 -06:00 [INF] Displaying Customer Orders 1
+2022-03-01 16:17:28.417 -06:00 [INF] Displaying Customer Orders 1
+2022-03-01 16:17:46.100 -06:00 [INF] Displaying Customer Orders 3
+2022-03-01 16:17:50.011 -06:00 [INF] Displaying Customer Orders 4
+2022-03-01 16:18:19.692 -06:00 [INF] Displaying Customer Orders 6
+2022-03-01 16:27:39.876 -06:00 [INF] Displaying Customer Orders 5

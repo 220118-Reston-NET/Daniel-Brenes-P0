@@ -35,6 +35,7 @@ namespace StoreApi.Controllers
                 listOfCustomer = await _storeBL.GetAllCustomerAsync();
                 _memoryCache.Set("customerList", listOfCustomer, new TimeSpan(0, 0, 30));
             }
+                Log.Information("Get All Customers" + listOfCustomer);
                 return Ok(await _storeBL.GetAllCustomerAsync());
             }
             catch (SqlException)
@@ -73,9 +74,25 @@ namespace StoreApi.Controllers
                 return NotFound();
             }
         }
+        [HttpGet("DisplayCustomerOrders")]
+        public IActionResult GetCustomerOrderById([FromQueryAttribute] int customerId)
+        {
+            try
+            {
+            List<Order> listOfOrder = new List<Order>();
+            // listOfOrder =  _storeBL.GetOrderByCustomerId(customerId);
+            Log.Information("Displaying Customer Orders " + customerId);
+                return Ok(_storeBL.GetOrderByCustomerId(customerId));
+            }
+            catch (SqlException)
+            {
+                 Log.Information("Displaying failed " + customerId);
+                return NotFound();
+            }
+        }
 
         // POST: api/Customer
-        [HttpPost("Add")]
+        [HttpPost("AddACustomer")]
         public IActionResult Post([FromBody] Customer p_customer)
         {
             try

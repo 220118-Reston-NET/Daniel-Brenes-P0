@@ -23,51 +23,66 @@ namespace StoreApi.Controllers
             // _customerBL = p_customerBL;
         }
 
-        [HttpPost("Register Customer")]
-        public IActionResult Register([FromBody] Customer p_customer)
-        {
-            try
-            {
-                // _storeBL.AddCustomer(new Customer(){
-                //     Name = p_customer.Name,
-                //     Address = p_customer.Address,
-                //     Email = p_customer.Email,
-                //     PhoneNumber = p_customer.PhoneNumber,
-                //     Wallet = p_customer.Wallet,
-                //     Pin = p_customer.Pin
-                // });
-                Log.Information("Register successful" + p_customer);
-                return Created("Register successful", _storeBL.AddCustomer(p_customer));
-            }
-            catch (System.Exception)
-            {
-                Log.Information("Register unsuccessful");
-                return BadRequest(new {results = "Customer not added"});
-            }
-        }
-
-        // [HttpPost("Login")]
-        // public IActionResult Login([FromBody] LoginForm p_loginForm)
+        // [HttpPost("RegisterCustomer")]
+        // public IActionResult Register([FromBody] Customer p_customer)
         // {
         //     try
         //     {
-        //       if(_userBL.Login(new User()
-        //       {
-        //           UserName = p_loginForm.UserName,
-        //           Password = p_loginForm.Password
-        //       }))
-        //       {
-        //             Log.Information("log in success");
-        //             return Ok("Login Successful");            
-        //       }
-        //       return BadRequest("Login failed"); 
+        //         // _storeBL.AddCustomer(new Customer(){
+        //         //     Name = p_customer.Name,
+        //         //     Address = p_customer.Address,
+        //         //     Email = p_customer.Email,
+        //         //     PhoneNumber = p_customer.PhoneNumber,
+        //         //     Wallet = p_customer.Wallet,
+        //         //     Pin = p_customer.Pin
+        //         // });
+        //         Log.Information("Register successful" + p_customer);
+        //         return Created("Register successful", _storeBL.AddCustomer(p_customer));
         //     }
-        //     catch (System.Exception e)
+        //     catch (System.Exception)
         //     {
-              
-        //         return StatusCode(500, e);
+        //         Log.Information("Register unsuccessful");
+        //         return BadRequest(new {results = "Customer not added"});
         //     }
         // }
 
+        [HttpPost("Login")]
+        public IActionResult Login([FromQueryAttribute] string customerId, [FromQueryAttribute] string customerPin)
+        {
+            if (customerId == "1")
+            {
+            try
+            {
+                if(_storeBL.VerifyCustomer(customerId, customerPin))
+              {
+                    Log.Information("Manager Login Success" + customerId);
+                    return Ok("Manager Login Successful");            
+              }
+              Log.Information("Manager Login unsuccessful");
+              return BadRequest("Login failed"); 
+            }
+            catch (System.Exception e)
+            {
+                return StatusCode(500, e);
+            }
+            }
+            else
+            {
+            try
+            {
+              if(_storeBL.VerifyCustomer(customerId, customerPin))
+              {
+                    Log.Information("Customer Login Success" + customerId);
+                    return Ok("Customer Login Successful");            
+              }
+              Log.Information("Customer Login unsuccessful");
+              return BadRequest("Customer Login failed"); 
+            }
+            catch (System.Exception e)
+            {
+                return StatusCode(500, e);
+            }
+            }
+        }
     }
 }

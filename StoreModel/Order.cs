@@ -12,7 +12,7 @@ namespace StoreModel
         public List<LineItem> LineItems
         {
         get { return _listOfLineItem; }
-        set { }
+        set { _listOfLineItem = value;}
         }
         public Order()
         {

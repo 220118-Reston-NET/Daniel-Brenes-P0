@@ -43,16 +43,16 @@ namespace BL
         {
             return _repo.GetAllStoreFront();
         }
-        public List<LineItem> GetLineItemByStoreId(int p_id)
-        {
-            List<LineItem> listOfLineItem =  _repo.GetLineItemByStoreId(p_id);
-            //listOfLineItem = listOfLineItem.Where(lineitem => lineitem.ProductId.Equals(p_id))
-            //                        .ToList();
-             if (listOfLineItem.Count> 0)
-                return listOfLineItem;
-            else   
-                throw new Exception("No Line Items found with that ID"); 
-        }
+        // public List<LineItem> GetLineItemByStoreId(int p_id)
+        // {
+        //     List<LineItem> listOfLineItem =  _repo.GetLineItemByStoreId(p_id);
+        //     //listOfLineItem = listOfLineItem.Where(lineitem => lineitem.ProductId.Equals(p_id))
+        //     //                        .ToList();
+        //      if (listOfLineItem.Count> 0)
+        //         return listOfLineItem;
+        //     else   
+        //         throw new Exception("No Line Items found with that ID"); 
+        // }
         public LineItem GetLineItem(int p_id)
         {
             return _repo.GetLineItem(p_id);
@@ -153,6 +153,16 @@ namespace BL
         public List<Order> GetOrderByCustomerId(int p_id)
         {
             return _repo.GetOrderByCustomerId(p_id);
+        }
+
+        public bool VerifyCustomer(string p_id, string p_pin)
+        {
+            return _repo.VerifyCustomer(p_id, p_pin);
+        }
+
+        public List<LineItem> GetLineItemByOrderId(int p_id)
+        {
+            return _repo.GetLineItemByOrderId(p_id);
         }
     }
 }
