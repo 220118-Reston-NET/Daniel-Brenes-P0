@@ -1,6 +1,13 @@
+global using Serilog;
 using StoreDL;
 using BL;
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+Log.Logger = new LoggerConfiguration()
+            .WriteTo.File("./logs/server.txt")
+            .CreateLogger();
 
 // Add services to the container.
 builder.Services.AddMemoryCache();

@@ -9,6 +9,8 @@ public class Customer
     public string PhoneNumber{get; set;}
     public double Wallet{ get; set;}
 
+    public int Pin { get; set;}
+
     private List<Order> _orders;
     public List<Order> Orders
     {

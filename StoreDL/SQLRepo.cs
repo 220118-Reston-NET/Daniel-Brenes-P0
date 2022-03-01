@@ -35,6 +35,8 @@ namespace StoreDL
         {
             string sqlQuery = @"insert into Customer 
                             values(@customerName,  @customerAddress, @customerEmail,@customerPhoneNumber, @customerWallet)";
+            string sqlQuery2 =  @"insert into CustomerPin 
+                                    values(@customerId,  @customerPin)";
 
             using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
@@ -47,6 +49,15 @@ namespace StoreDL
                 command.Parameters.AddWithValue("@customerEmail", p_customer.Email);
                 command.Parameters.AddWithValue("@customerPhoneNumber", p_customer.PhoneNumber);
                 command.Parameters.AddWithValue("@customerWallet", p_customer.Wallet);
+                command.ExecuteNonQuery();
+            }
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+
+                SqlCommand command = new SqlCommand(sqlQuery2, con);
+                command.Parameters.AddWithValue("@customerId", p_customer.CustomerId);
+                command.Parameters.AddWithValue("@customerPin", p_customer.Pin);
                 command.ExecuteNonQuery();
             }
 
