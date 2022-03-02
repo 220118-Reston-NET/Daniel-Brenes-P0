@@ -37,7 +37,7 @@ public class StoreFront
             }
             else
             {
-                throw new Exception("No orders at  this location");
+                throw new Exception("No orders at this location");
             }
         }
     }
@@ -46,14 +46,14 @@ public class StoreFront
         Name = "";
         Address = "";
         TypeOfStore = "";
-        _storeInventory = new List<Inventory>()
-        {
-            new Inventory()
-        };
-        _orders = new List<Order>()
-        {
-            new Order()
-        };
+        // _storeInventory = new List<Inventory>()
+        // {
+        //     new Inventory()
+        // };
+        // _orders = new List<Order>()
+        // {
+        //     new Order()
+        // };
         // _lineitem = new List<LineItem>()
         // {
         //     new LineItem()

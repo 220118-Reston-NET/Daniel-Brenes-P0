@@ -63,11 +63,11 @@ namespace BL
         //     return _repo.GetStoreFront(p_id);
         // }
 
-        public LineItem ReplenishQuantity(int p_id, int p_quantity)
+        public Inventory ReplenishQuantity(int p_storeId, int p_id, int p_quantity)
         {
-            LineItem lineItem = _repo.ReplenishQuantity(p_id, p_quantity);
+            Inventory updateItem = _repo.ReplenishQuantity(p_storeId, p_id, p_quantity);
 
-            return lineItem;
+            return updateItem;
         }
        public List<Customer> SearchCustomerById(int p_id)
         
@@ -154,8 +154,7 @@ namespace BL
         {
             return _repo.GetOrderByCustomerId(p_id);
         }
-
-        public bool VerifyCustomer(string p_id, string p_pin)
+        public bool VerifyCustomer(int p_id, string p_pin)
         {
             return _repo.VerifyCustomer(p_id, p_pin);
         }
@@ -173,6 +172,11 @@ namespace BL
         public List<Order> GetOrderHistoryByStoreId(int p_id)
         {
             return _repo.GetOrderHistoryByStoreId(p_id);
+        }
+
+        public bool VerifyManager(int p_id, string p_pin)
+        {
+            return _repo.VerifyManager(p_id, p_pin);
         }
     }
 }

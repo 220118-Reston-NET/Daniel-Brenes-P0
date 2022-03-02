@@ -107,19 +107,20 @@ namespace StoreApi.Controllers
         }
 
         // PUT: api/Customer/5
-        [HttpPut("Update/{id}")]
-        public IActionResult Put(int id, [FromBody] Customer p_customer)
-        {
-            p_customer.CustomerId = id;
-            try
-            {
-                return Ok(_storeBL.UpdateCustomer(p_customer));
-            }
-            catch (System.Exception ex)
-            {
-                return Conflict(ex.Message);
-            }
-        }
+        // [HttpPut("Update/{id}")]
+        // public IActionResult Put(int id, [FromBody] Customer p_customer)
+        // {
+        //     p_customer.CustomerId = id;
+        //     try
+        //     {
+        //         return Ok(_storeBL.UpdateCustomer(p_customer));
+        //     }
+        //     catch (System.Exception ex)
+        //     {
+        //         return Conflict(ex.Message);
+        //     }
+        // }
+
         // DELETE: api/Customer/5
         // [HttpDelete("{id}")]
         // public void Delete(int id)

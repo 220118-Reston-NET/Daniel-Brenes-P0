@@ -216,10 +216,10 @@ namespace StoreDL
             }
             return listOfCustomer;
         }
-        public StoreFront AddStoreFront(StoreFront p_store)
-        {
-            throw new NotImplementedException();
-        }
+        // public StoreFront AddStoreFront(StoreFront p_store)
+        // {
+        //     throw new NotImplementedException();
+        // }
         public List<StoreFront> GetAllStoreFront()
         {
             List<StoreFront> listOfStoreFront = new List<StoreFront>();
@@ -240,7 +240,8 @@ namespace StoreDL
                         Name = reader.GetString(1), 
                         Address = reader.GetString(2),
                         TypeOfStore = reader.GetString(3),
-                        StoreInventory = GetInventoryByStoreFront(reader.GetInt32(0))
+                        StoreInventory = GetInventoryByStoreFront(reader.GetInt32(0)),
+                        Orders = GetOrderHistoryByStoreId(reader.GetInt32(0))
                     });
                 }
             }
@@ -308,41 +309,47 @@ namespace StoreDL
         //     }
         //     return listOfLineItem;
         // }
-        public LineItem ReplenishQuantity(int p_id, int p_quantity)
+        public Inventory ReplenishQuantity(int p_quantity, int p_storeFrontId, int p_productId)
         {
-            LineItem lineItem = new LineItem();
+            Inventory updateItem = new Inventory();
 
-            string sqlQuery = @"select * from LineItem
-                                    where productId = @productId";
-            string sqlQuery2 =  @"UPDATE LineItem set quantity = @newQuantity
-                                    where productId = @productId";
+            string sqlQuery =  @"update Inventory
+                                        set totalQty = @newQuantity
+                                            where productId = @productId and storeFrontId = @storeFrontId";
             using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
                 con.Open();
                 SqlCommand command = new SqlCommand(sqlQuery, con);
-                command.Parameters.AddWithValue("@productId", p_id);
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                        
-                        lineItem.ProductId = reader.GetInt32(0);
-                        lineItem.ProductName = reader.GetString(1);
-                        lineItem.Quantity = reader.GetInt32(2);
-                        // lineItem.StoreFrontId = reader.GetInt32(3);
-                        lineItem.subTotal = (double)reader.GetDecimal(4);
-                }
-            }
-            using (SqlConnection con = new SqlConnection(_connectionStrings))
-            {
-                lineItem.Quantity = (lineItem.Quantity + p_quantity);
-                con.Open();
-                SqlCommand command = new SqlCommand(sqlQuery2, con);
-                command.Parameters.AddWithValue("@productId", p_id);
-                command.Parameters.AddWithValue("@newQuantity", lineItem.Quantity);
-                command.ExecuteScalar();
-            }
+                command.Parameters.AddWithValue("@newQuantity", p_quantity);
+                command.Parameters.AddWithValue("@storeFrontId", p_storeFrontId);
+                command.Parameters.AddWithValue("@productId", p_productId);
+                command.ExecuteNonQuery();
+                updateItem.Quantity = p_quantity;
+                updateItem.StoreFrontId = p_storeFrontId;
+                updateItem.ProductId = p_productId;
 
-            return lineItem;
+                // SqlDataReader reader = command.ExecuteNonQuery();
+                // while (reader.Read())
+                // {
+                        
+                //         updateItem.ProductId = reader.GetInt32(0);
+                //         // updateItem.ProductName = reader.GetString(1);
+                //         updateItem.Quantity = reader.GetInt32(2);
+                //         // lineItem.StoreFrontId = reader.GetInt32(3);
+                //         // updateItem.subTotal = (double)reader.GetDecimal(4);
+                // }
+            }
+            // using (SqlConnection con = new SqlConnection(_connectionStrings))
+            // {
+            //     lineItem.Quantity = (lineItem.Quantity + p_quantity);
+            //     con.Open();
+            //     SqlCommand command = new SqlCommand(sqlQuery2, con);
+            //     command.Parameters.AddWithValue("@productId", p_id);
+            //     command.Parameters.AddWithValue("@newQuantity", lineItem.Quantity);
+            //     command.ExecuteScalar();
+            // }
+
+            return updateItem;
         }
         public LineItem GetLineItem(int p_id)
         {
@@ -417,6 +424,7 @@ namespace StoreDL
                         Total = (double)reader.GetDecimal(1),
                         StoreFrontId = reader.GetInt32(2),
                         CustomerId = reader.GetInt32(3),
+                        dateCreated = reader.GetDateTime(4),
                         LineItems = GetLineItemByOrderId(reader.GetInt32(0))
                         });
                 }
@@ -440,7 +448,7 @@ namespace StoreDL
             return listOfOrders;
         }
 
-        public bool VerifyCustomer(string p_id, string p_pin)
+        public bool VerifyCustomer(int p_id, string p_pin)
         {
             Customer myCustomer = new Customer();
             bool returnVal = false;
@@ -463,7 +471,31 @@ namespace StoreDL
                     }
                 }
             }
+            return returnVal;
+        }
+        public bool VerifyManager(int p_id, string p_pin)
+        {
+            Manager currentManager = new Manager();
+            bool returnVal = false;
 
+            string sqlQuery = @"select * from StoreManager
+                                    where storeManagerId = @p_Id";
+
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@p_id", p_id);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (p_pin.Equals(reader.GetString(1)))
+                    {
+                        returnVal = true;
+                    }
+                }
+            }
             return returnVal;
         }
 
@@ -530,8 +562,8 @@ namespace StoreDL
         {
             StoreFront currentStore = new StoreFront();
             List<Order> listOfOrders = new List<Order>();
-            string sqlQuery = @"select * from StoreFront
-                                    where storeFrontId = @storeFrontId";
+            string sqlQuery = @"select * from Orders
+                                    where storeFrontId = @p_storeId";
 
             using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
@@ -551,7 +583,6 @@ namespace StoreDL
                         });
                 }
             }
-
             return listOfOrders;
         }
         // public StoreFront GetStoreFront(int p_id)

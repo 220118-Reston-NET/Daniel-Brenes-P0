@@ -9,7 +9,6 @@ namespace StoreModel
 
         public Inventory()
        {
-            
             ProductName = "";
             Quantity = 0;
             ProductId = 0;

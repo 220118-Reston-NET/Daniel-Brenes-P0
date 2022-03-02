@@ -75,3 +75,24 @@ Wallet: $1
 2022-03-01 20:55:38.019 -06:00 [INF] Displaying Customer Orders : 4
 2022-03-01 20:55:56.289 -06:00 [INF] Displaying Customer Orders : 7
 2022-03-01 21:13:44.516 -06:00 [INF] Viewing All Inventory
+2022-03-01 23:54:36.673 -06:00 [INF] Customer Login Success16
+2022-03-01 23:54:49.015 -06:00 [INF] Customer Login unsuccessful
+2022-03-01 23:55:02.735 -06:00 [INF] Viewing All Inventory
+2022-03-01 23:56:49.146 -06:00 [INF] Viewing Order History FAILED
+2022-03-01 23:57:21.819 -06:00 [INF] Viewing Order History FAILED
+2022-03-01 23:57:25.104 -06:00 [INF] Viewing Order History FAILED
+2022-03-01 23:57:28.505 -06:00 [INF] Viewing Order History FAILED
+2022-03-01 23:57:45.774 -06:00 [INF] Displaying Customer Orders : 7
+2022-03-01 23:58:10.810 -06:00 [INF] Displaying Customer Orders : 5
+2022-03-02 00:05:11.434 -06:00 [INF] Viewing All Inventory
+2022-03-02 00:13:08.472 -06:00 [INF] Viewing All StoreFront Inventory
+2022-03-02 00:30:30.245 -06:00 [INF] Viewing All Inventory FAILED
+2022-03-02 00:41:47.745 -06:00 [INF] Viewing All StoreFront Inventory
+2022-03-02 01:48:48.151 -06:00 [INF] Manager Login unsuccessful
+2022-03-02 01:57:08.069 -06:00 [INF] Manager Login Success 9999
+2022-03-02 02:10:34.572 -06:00 [INF] Manager Login Success 9999
+2022-03-02 02:14:24.095 -06:00 [INF] Manager Login Success 9999
+2022-03-02 02:26:36.934 -06:00 [INF] Manager Login Success 9999
+2022-03-02 02:26:59.187 -06:00 [INF] Viewing All StoreFront Inventory & Order History
+2022-03-02 02:32:48.525 -06:00 [INF] Manager Login Success 9999
+2022-03-02 02:33:10.817 -06:00 [INF] Viewing All StoreFront Inventory & Order History

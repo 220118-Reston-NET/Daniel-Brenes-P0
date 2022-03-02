@@ -4,7 +4,8 @@ namespace BL
 {
     public interface IStoreBL
     {
-        Boolean VerifyCustomer(string p_id, string p_pin);
+        Boolean VerifyCustomer(int p_id, string p_pin);
+        Boolean VerifyManager(int p_id, string p_pin);
         Customer AddCustomer(Customer p_customer);
         List<Customer> SearchCustomerById(int p_id);
         List<Customer> SearchCustomerByName(string inputString);
@@ -18,7 +19,7 @@ namespace BL
         // List<LineItem> GetLineItemByStoreId(int p_id);
         List<LineItem> GetLineItemByOrderId(int p_id);
         LineItem GetLineItem(int p_id);
-        LineItem ReplenishQuantity(int p_id, int p_quantity);
+        Inventory ReplenishQuantity(int p_quantity, int p_storeId, int p_id);
         // StoreFront AddStoreFront(StoreFront p_store);
         // StoreFront GetStoreFront(int p_id);
         List<StoreFront> GetAllStoreFront();

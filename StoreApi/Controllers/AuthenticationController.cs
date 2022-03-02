@@ -47,15 +47,15 @@ namespace StoreApi.Controllers
         // }
 
         [HttpPost("Login")]
-        public IActionResult Login([FromQueryAttribute] string customerId, [FromQueryAttribute] string customerPin)
+        public IActionResult Login([FromQueryAttribute] int userId, [FromQueryAttribute] string userPin)
         {
-            if (customerId == "1")
+            if (userId >= 5000)
             {
             try
             {
-                if(_storeBL.VerifyCustomer(customerId, customerPin))
+                if(_storeBL.VerifyManager(userId, userPin))
               {
-                    Log.Information("Manager Login Success" + customerId);
+                    Log.Information("Manager Login Success" + userId);
                     return Ok("Manager Login Successful");            
               }
               Log.Information("Manager Login unsuccessful");
@@ -70,9 +70,9 @@ namespace StoreApi.Controllers
             {
             try
             {
-              if(_storeBL.VerifyCustomer(customerId, customerPin))
+              if(_storeBL.VerifyCustomer(userId, userPin))
               {
-                    Log.Information("Customer Login Success" + customerId);
+                    Log.Information("Customer Login Success" + userId);
                     return Ok("Customer Login Successful");            
               }
               Log.Information("Customer Login unsuccessful");

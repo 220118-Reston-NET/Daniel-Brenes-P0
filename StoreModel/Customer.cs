@@ -10,24 +10,6 @@ public class Customer
     public double Wallet{ get; set;}
 
     public string Pin { get; set;}
-
-    // private List<Order> _orders;
-    // public List<Order> Orders
-    // {
-    //     get {return _orders;}
-    //     set 
-    //     {
-    //         if(value.Count > 0)
-    //         {  
-    //             _orders = value;
-
-    //         }
-    //         else
-    //         {
-    //             throw new Exception ("Order is empty");
-    //         }
-    //     }
-    // }
     public Customer()
     {
         Name = "";

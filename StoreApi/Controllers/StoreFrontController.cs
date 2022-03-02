@@ -21,37 +21,38 @@ namespace StoreApi.Controllers
             _storeBL = p_storeBL;
         }
         // GET: api/StoreFront
-        [HttpGet("ViewStoreFrontInventory")]
+        [HttpGet("ViewStoreFrontInventory&OrderHistory")]
         public IActionResult GetAllStoreFrontInventory()
         {
             try
             {
             List<StoreFront> listOfStoreFront = _storeBL.GetAllStoreFront();
-            Log.Information("Viewing All Inventory");
+            Log.Information("Viewing All StoreFront Inventory & Order History");
                 return Ok(_storeBL.GetAllStoreFront());
             }
             catch (SqlException)
             {
-                Log.Information("Viewing All Inventory FAILED");
+                Log.Information("Viewing All Inventory & Order History FAILED");
                 return NotFound();
             }
         }
-        [HttpGet("ViewStoreFrontOrderHistory")]
-        public IActionResult GetOrderHistoryByStoreFront([FromQueryAttribute] int storeFrontId)
-        {
-            try
-            {
-            // StoreFront currentStore = _storeBL.GetStoreFront(storeFrontId);
-            List<Order> listOfOrders = _storeBL.GetOrderHistoryByStoreId(storeFrontId);
-            Log.Information("Viewing Order History for StoreFront: "); //+ currentStore);
-                return Ok(_storeBL.GetOrderHistoryByStoreId(storeFrontId));
-            }
-            catch (SqlException)
-            {
-                Log.Information("Viewing Order History FAILED");
-                return NotFound();
-            }
-        }
+        // [HttpGet("ViewStoreFrontOrderHistory")]
+        // public IActionResult GetOrderHistoryByStoreFront([FromQueryAttribute] int storeFrontId)
+        // {
+        //     try
+        //     {
+        //     // StoreFront currentStore = _storeBL.GetStoreFront(storeFrontId);
+        //     List<Order> listOfOrders = _storeBL.GetOrderHistoryByStoreId(storeFrontId);
+        //     Log.Information("Viewing Order History for StoreFront: "); //+ currentStore);
+        //         return Ok(_storeBL.GetOrderHistoryByStoreId(storeFrontId));
+        //     }
+        //     catch (SqlException)
+        //     {
+        //         Log.Information("Viewing Order History FAILED");
+        //         return NotFound();
+        //     }
+        // }
+
         // GET: api/Customer/5
         // [HttpGet("DisplayStoreFrontOrders")]
         // public IActionResult GetCustomerOrderById([FromQueryAttribute] int customerId)
@@ -69,19 +70,36 @@ namespace StoreApi.Controllers
         //         return NotFound();
         //     }
         // }
-        // PUT: api/Customer/5
-        // [HttpPut("Update/{id}")]
-        // public IActionResult Put(int id, [FromBody] Customer p_customer)
-        // {
-        //     p_customer.CustomerId = id;
-        //     try
-        //     {
-        //         return Ok(_storeBL.UpdateCustomer(p_customer));
-        //     }
-        //     catch (System.Exception ex)
-        //     {
-        //         return Conflict(ex.Message);
-        //     }
-        // }
+
+        // PUT: api/StoreFront
+        [HttpPut("ReplenishInventory")]
+        public IActionResult ReplenishInventory([FromQueryAttribute] int userId, [FromQueryAttribute] string userPin, [FromQueryAttribute] int newQuantity, [FromQueryAttribute] int storeFrontId, [FromQueryAttribute] int productId)
+        // public IActionResult ReplenishInventory([FromQueryAttribute] int userId, [FromQueryAttribute] string userPin, [FromBody] Inventory i_inv)
+        {
+            Inventory newInventory = new Inventory();
+            if (userId >= 5000)
+            {
+            try
+            {
+                if(_storeBL.VerifyManager(userId, userPin))
+                {
+                    Log.Information("Manager Login Success " + userId);
+                    newInventory = _storeBL.ReplenishQuantity(newQuantity, storeFrontId, productId);
+                    return Ok(_storeBL.ReplenishQuantity(newQuantity, storeFrontId, productId));        
+                }
+              Log.Information("Manager Login unsuccessful");
+              return Ok(newInventory); 
+            }
+            catch (System.Exception e)
+            {
+                return StatusCode(500, e);
+            }
+            }
+            else
+            {
+            Log.Information("Manager Login unsuccessful, not a manager");
+                return BadRequest("Not a manager!");
+            }
+        }
     }
 }
