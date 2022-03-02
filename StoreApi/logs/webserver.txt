@@ -66,3 +66,7 @@ Wallet: $1
 2022-03-01 16:31:48.801 -06:00 [INF] Displaying Customer Orders 3
 2022-03-01 16:31:53.037 -06:00 [INF] Displaying Customer Orders 5
 2022-03-01 16:59:16.378 -06:00 [INF] View All StoreFrontsSystem.Collections.Generic.List`1[StoreModel.StoreFront]
+2022-03-01 18:37:09.873 -06:00 [INF] Viewing All StoreFronts
+2022-03-01 18:41:25.217 -06:00 [INF] Viewing All Inventory
+2022-03-01 19:10:50.034 -06:00 [INF] Viewing All Inventory
+2022-03-01 19:30:36.098 -06:00 [INF] Viewing All Inventory

@@ -7,48 +7,56 @@ public class StoreFront
     public string Name{ get; set;}
     public string Address {get; set;}
     public string TypeOfStore{get; set;}
-    private List<LineItem> _lineitem;
-    private List<LineItem> LineItems
+    private List<Inventory> _storeInventory;
+    public List<Inventory> StoreInventory
     {
-        get { return _lineitem; }
-        set { }
-    }
-    private List<Product> _products;
-    private List<Product> Products{get; set;}
-    private List<Order> _orders;
-    public List<Order> Orders
-    {
-        get {return _orders;}
+        get { return _storeInventory; }
         set 
         {
             if(value.Count > 0)
             {
-                _orders = value;
+                _storeInventory = value;
             }
             else
             {
-                throw new Exception("Empty order set");
+                throw new Exception("No Inventory at this location");
             }
+    }
+    // private List<Product> _products;
+    // private List<Product> Products{get; set;}
+    // private List<Order> _orders;
+    // public List<Order> Orders
+    // {
+    //     get {return _orders;}
+    //     set 
+    //     {
+    //         if(value.Count > 0)
+    //         {
+    //             _orders = value;
+    //         }
+    //         else
+    //         {
+    //             throw new Exception("Empty order set");
+    //         }
 
-        }
     }
     public StoreFront()
     {
         Name = "";
         Address = "";
         TypeOfStore = "";
-        _products = new List<Product>()
+        _storeInventory = new List<Inventory>()
         {
-            new Product()
+            new Inventory()
         };
-        _orders = new List<Order>()
-        {
-            new Order()
-        };
-        _lineitem = new List<LineItem>()
-        {
-            new LineItem()
-        };
+        // _orders = new List<Order>()
+        // {
+        //     new Order()
+        // };
+        // _lineitem = new List<LineItem>()
+        // {
+        //     new LineItem()
+        // };
 
     }
 

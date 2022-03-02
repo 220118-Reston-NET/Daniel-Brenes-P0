@@ -164,5 +164,10 @@ namespace BL
         {
             return _repo.GetLineItemByOrderId(p_id);
         }
+
+        public List<Inventory> GetInventoryByStoreFront(int p_id)
+        {
+            return _repo.GetInventoryByStoreFront(p_id);
+        }
     }
 }

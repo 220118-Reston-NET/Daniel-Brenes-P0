@@ -15,6 +15,7 @@ namespace StoreDL
         List<Order> GetAllOrders();
         List<LineItem> GetLineItemByOrderId(int p_orderId);
         List<StoreFront> GetAllStoreFront();
+        List<Inventory> GetInventoryByStoreFront(int p_id);
         List<Customer> GetAllCustomer();
         Task <List<Customer>> GetAllCustomerAsync();
         Customer AddCustomer(Customer p_customer);

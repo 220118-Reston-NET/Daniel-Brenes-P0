@@ -263,6 +263,7 @@ namespace StoreDL
                         Name = reader.GetString(1), 
                         Address = reader.GetString(2),
                         TypeOfStore = reader.GetString(3),
+                        StoreInventory = GetInventoryByStoreFront(reader.GetInt32(0))
                     });
                 }
             }
@@ -521,6 +522,31 @@ namespace StoreDL
             }
             return listOfLineItem;
             
+        }
+
+        public List<Inventory> GetInventoryByStoreFront(int p_id)
+        {
+            List<Inventory> listOfInventory = new List<Inventory>();
+            string sqlQuery = @"select i.storeFrontId, i.productId, p.productName, i.totalQty from Inventory i
+		                            inner join Product p on i.productId = p.productId
+                                    where storeFrontId = @p_id";                
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@p_id", p_id);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                        listOfInventory.Add(new Inventory(){
+                        StoreFrontId = reader.GetInt32(0),
+                        ProductId = reader.GetInt32(1),
+                        ProductName = reader.GetString(2),
+                        Quantity = reader.GetInt32(3)
+                        });
+                }
+            }
+            return listOfInventory;
         }
     }
 }

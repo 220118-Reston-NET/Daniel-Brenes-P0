@@ -20,18 +20,19 @@ namespace StoreApi.Controllers
         {
             _storeBL = p_storeBL;
         }
-        // GET: api/Customer
-        [HttpGet("ViewAllStoreFronts")]
-        public IActionResult GetAllStoreFronts()
+        // GET: api/StoreFront
+        [HttpGet("ViewStoreFrontInventory")]
+        public IActionResult GetAllStoreFrontInventory()
         {
             try
             {
             List<StoreFront> listOfStoreFront = _storeBL.GetAllStoreFront();
-                Log.Information("View All StoreFronts" + listOfStoreFront);
-                return Ok( _storeBL.GetAllStoreFront());
+            Log.Information("Viewing All Inventory");
+                return Ok(_storeBL.GetAllStoreFront());
             }
             catch (SqlException)
             {
+                Log.Information("Viewing All Inventory FAILED");
                 return NotFound();
             }
         }
@@ -48,23 +49,23 @@ namespace StoreApi.Controllers
             }
             catch (SqlException)
             {
-                 Log.Information("Displaying failed " + customerId);
+                 Log.Information("Displaying FAILED " + customerId);
                 return NotFound();
             }
         }
         // PUT: api/Customer/5
-        [HttpPut("Update/{id}")]
-        public IActionResult Put(int id, [FromBody] Customer p_customer)
-        {
-            p_customer.CustomerId = id;
-            try
-            {
-                return Ok(_storeBL.UpdateCustomer(p_customer));
-            }
-            catch (System.Exception ex)
-            {
-                return Conflict(ex.Message);
-            }
-        }
+        // [HttpPut("Update/{id}")]
+        // public IActionResult Put(int id, [FromBody] Customer p_customer)
+        // {
+        //     p_customer.CustomerId = id;
+        //     try
+        //     {
+        //         return Ok(_storeBL.UpdateCustomer(p_customer));
+        //     }
+        //     catch (System.Exception ex)
+        //     {
+        //         return Conflict(ex.Message);
+        //     }
+        // }
     }
 }
