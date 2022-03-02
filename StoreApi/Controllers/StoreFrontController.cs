@@ -36,23 +36,6 @@ namespace StoreApi.Controllers
                 return NotFound();
             }
         }
-        // [HttpGet("ViewStoreFrontOrderHistory")]
-        // public IActionResult GetOrderHistoryByStoreFront([FromQueryAttribute] int storeFrontId)
-        // {
-        //     try
-        //     {
-        //     // StoreFront currentStore = _storeBL.GetStoreFront(storeFrontId);
-        //     List<Order> listOfOrders = _storeBL.GetOrderHistoryByStoreId(storeFrontId);
-        //     Log.Information("Viewing Order History for StoreFront: "); //+ currentStore);
-        //         return Ok(_storeBL.GetOrderHistoryByStoreId(storeFrontId));
-        //     }
-        //     catch (SqlException)
-        //     {
-        //         Log.Information("Viewing Order History FAILED");
-        //         return NotFound();
-        //     }
-        // }
-
         // GET: api/Customer/5
         // [HttpGet("DisplayStoreFrontOrders")]
         // public IActionResult GetCustomerOrderById([FromQueryAttribute] int customerId)

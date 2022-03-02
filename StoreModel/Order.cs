@@ -1,15 +1,13 @@
 namespace StoreModel
 {
-
     public class Order
     {
-        // public static int _orderId = 1000;
         public int OrderId{get; set;}
         public int StoreFrontId{get; set;}
         public int CustomerId{get; set;}
         public double Total {get; set;}
         public DateTime dateCreated {get; set;}
-        public List<LineItem> _listOfLineItem;
+        private List<LineItem> _listOfLineItem;
         public List<LineItem> LineItems
         {
         get { return _listOfLineItem; }
@@ -17,10 +15,10 @@ namespace StoreModel
         }
         public Order()
         {
-            // OrderId = ++_orderId;
             StoreFrontId = 0;
             CustomerId = 0;
             Total = 0.0;
+            dateCreated = DateTime.UtcNow;
             _listOfLineItem = new List<LineItem>()
             {
                 new LineItem()

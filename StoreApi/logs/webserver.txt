@@ -96,3 +96,9 @@ Wallet: $1
 2022-03-02 02:26:59.187 -06:00 [INF] Viewing All StoreFront Inventory & Order History
 2022-03-02 02:32:48.525 -06:00 [INF] Manager Login Success 9999
 2022-03-02 02:33:10.817 -06:00 [INF] Viewing All StoreFront Inventory & Order History
+2022-03-02 03:16:27.028 -06:00 [INF] Successfully placed an order.
+2022-03-02 03:16:27.956 -06:00 [WRN] Could not place order.
+2022-03-02 03:20:19.370 -06:00 [WRN] Could not place order.
+2022-03-02 03:23:09.669 -06:00 [INF] Successfully placed an order.
+2022-03-02 03:41:19.735 -06:00 [INF] Successfully placed an order.
+2022-03-02 04:25:20.437 -06:00 [INF] Successfully placed an order.

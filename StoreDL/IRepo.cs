@@ -11,8 +11,8 @@ namespace StoreDL
         // List<Product> GetProductById(int p_id);
         // StoreFront AddStoreFront(StoreFront p_store);
         // StoreFront GetStoreFront(int p_id);
-        Order AddOrder(Order p_order);
-        Order PlaceOrder(List<LineItem> p_lineitemlist, double p_total, int p_customerid, int p_storefrontid);
+        Order PlaceOrder(Order p_order);
+        // Order PlaceOrder(List<LineItem> p_lineitemlist, double p_total, int p_customerid, int p_storefrontid);
         List<Order> GetAllOrders();
         List<Order> GetOrderHistoryByStore(int p_id);
         List<LineItem> GetLineItemByOrderId(int p_orderId);

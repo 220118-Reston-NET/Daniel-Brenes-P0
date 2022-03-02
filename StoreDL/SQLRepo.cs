@@ -75,29 +75,68 @@ namespace StoreDL
 
             return p_customer;
         }
-        public Order PlaceOrder(List<LineItem> p_lineitemlist, double p_total, int p_customerid, int p_storefrontid)
+        // public Order PlaceOrder(List<LineItem> p_lineitemlist, double p_total, int p_customerid, int p_storefrontid)
+        // {
+        //     Order newOrder = new Order();
+        //     string sqlQuery = @"Insert into Orders
+        //                             values(@total, @storefrontid, @customerid)";
+        //                             //values(@orderId, @total, @storefrontid, @customerid)";
+        //     using (SqlConnection con = new SqlConnection(_connectionStrings))
+        //     {
+        //         con.Open();
+        //         SqlCommand command = new SqlCommand(sqlQuery, con);
+        //         // command.Parameters.AddWithValue("@orderId" , newOrder.OrderId);
+        //         command.Parameters.AddWithValue("@total" , p_total);
+        //         command.Parameters.AddWithValue("@storefrontid" , p_storefrontid);
+        //         command.Parameters.AddWithValue("@customerid" , p_customerid);
+        //         command.ExecuteScalar();
+        //     }
+        //     return newOrder;
+        // }   
+        public Order PlaceOrder(Order p_order)
         {
-            Order newOrder = new Order();
-            string sqlQuery = @"Insert into Orders
-                                    values(@total, @storefrontid, @customerid)";
-                                    //values(@orderId, @total, @storefrontid, @customerid)";
+            string firstQuery = @"update Inventory
+                                        set totalQty = @newQuantity
+                                            where productId = @productId and storeFrontId = @storeFrontId";
+            List<Inventory> storeInventory = GetInventoryByStoreFront(p_order.StoreFrontId);
+            Order badOrder = new Order();
+            try
+            {
+            for(int i =0; i < storeInventory.Count; i++)
+            {
+                if (storeInventory[i].Quantity < p_order.LineItems[i].Quantity)
+                {
+                        throw new Exception("Not enough products");
+                }
+                else
+                    storeInventory[i].Quantity -= p_order.LineItems[i].Quantity;
+            
+            
+
+            // string firstQuery = @"update Inventory
+            //                             set totalQty = @newQuantity
+            //                                 where productId = @productId and storeFrontId = @storeFrontId";
+            // foreach (var item in p_order.LineItems)
+            // {
             using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
                 con.Open();
-                SqlCommand command = new SqlCommand(sqlQuery, con);
-                // command.Parameters.AddWithValue("@orderId" , newOrder.OrderId);
-                command.Parameters.AddWithValue("@total" , p_total);
-                command.Parameters.AddWithValue("@storefrontid" , p_storefrontid);
-                command.Parameters.AddWithValue("@customerid" , p_customerid);
+                SqlCommand command = new SqlCommand(firstQuery, con);
+                command.Parameters.AddWithValue("@newQuantity" , storeInventory[i].Quantity);
+                command.Parameters.AddWithValue("@productId" , storeInventory[i].ProductId);
+                command.Parameters.AddWithValue("@storeFrontId" , storeInventory[i].StoreFrontId);
                 command.ExecuteScalar();
             }
-            return newOrder;
-        }   
-        public Order AddOrder(Order p_order)
-        {
-            Order newOrder = new Order();
+            }
+            }
+            catch(System.Exception ex)
+            {
+                return badOrder;
+            }
+
+            // Order newOrder = new Order();
             string sqlQuery = @"Insert into Orders
-                                    values(@orderId, @total, @storefrontid, @customerid)";
+                                    values(@orderId, @total, @storefrontid, @customerid, @dateTime)";
             using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
                 con.Open();
@@ -106,9 +145,26 @@ namespace StoreDL
                 command.Parameters.AddWithValue("@total" , p_order.Total);
                 command.Parameters.AddWithValue("@storefrontid" , p_order.StoreFrontId);
                 command.Parameters.AddWithValue("@customerid" , p_order.CustomerId);
+                command.Parameters.AddWithValue("@dateTime", p_order.dateCreated);
                 command.ExecuteScalar();
             }
-            return newOrder;
+            string sqlQuery2 = @"Insert into LineItem
+                                    values(@quantity, @orderId, @productId, @subTotal, @productName)";
+            foreach (var item in p_order.LineItems)
+            {
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery2, con);
+                command.Parameters.AddWithValue("@quantity" , item.Quantity);
+                command.Parameters.AddWithValue("@orderId" , item.OrderId);
+                command.Parameters.AddWithValue("@productId" , item.ProductId);
+                command.Parameters.AddWithValue("@subTotal" , item.subTotal);
+                command.Parameters.AddWithValue("@productName", item.ProductName);
+                command.ExecuteScalar();
+            }
+            }
+            return p_order;
         }
         public List<Order> GetAllOrders()
         {

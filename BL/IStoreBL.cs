@@ -23,8 +23,8 @@ namespace BL
         // StoreFront AddStoreFront(StoreFront p_store);
         // StoreFront GetStoreFront(int p_id);
         List<StoreFront> GetAllStoreFront();
-        Order PlaceOrder(List<LineItem> p_listOfOrder, double p_total, int p_customerId, int p_storefrontid);
-        Order AddOrder(Order p_order);
+        // Order PlaceOrder(List<LineItem> p_listOfOrder, double p_total, int p_customerId, int p_storefrontid);
+        Order PlaceOrder(Order p_order);
         List<Order> GetAllOrders();
         List<Order> GetOrderByCustomerId(int p_id);
         List<Order> GetOrderHistoryByStoreId(int p_id);

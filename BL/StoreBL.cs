@@ -18,10 +18,10 @@ namespace BL
         // {
         //     throw new NotImplementedException();
         // }
-        public Order PlaceOrder(List<LineItem> p_listOfOrder, double p_total, int p_customerId, int p_storefrontid)
-        {
-            return _repo.PlaceOrder(p_listOfOrder, p_total, p_customerId, p_storefrontid);
-        }
+        // public Order PlaceOrder(List<LineItem> p_listOfOrder, double p_total, int p_customerId, int p_storefrontid)
+        // {
+        //     return _repo.PlaceOrder(p_listOfOrder, p_total, p_customerId, p_storefrontid);
+        // }
         public List<Order> GetAllOrders()
         {
             List<Order> myOrders = _repo.GetAllOrders();
@@ -140,9 +140,9 @@ namespace BL
         {
             return _repo.UpdateCustomer(p_customer);
         }
-        public Order AddOrder(Order p_order)
+        public Order PlaceOrder(Order p_order)
         {
-            return _repo.AddOrder(p_order);
+            return _repo.PlaceOrder(p_order);
         }
 
         public async Task<List<Customer>> GetAllCustomerAsync()

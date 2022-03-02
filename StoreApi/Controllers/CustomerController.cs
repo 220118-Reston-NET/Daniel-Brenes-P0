@@ -106,6 +106,25 @@ namespace StoreApi.Controllers
             // return Ok(_storeBL.AddCustomer(p_customer));
         }
 
+        // GET: api/Customer
+        [HttpPost("PlaceOrder")]
+        // public IActionResult PlaceOrder([FromQueryAttribute] int userId, [FromQueryAttribute] int storeFrontId , [FromQueryAttribute] int storeFrontId, [FromQueryAttribute] int storeFrontId)
+        public IActionResult PlaceOrder([FromBody] Order p_order)
+        {
+            Order currentOrder = new Order();
+            try
+            {
+                currentOrder = _storeBL.PlaceOrder(p_order);
+                Log.Information("Successfully placed an order.");
+                return Created("Order added successfully", currentOrder);
+            }
+            catch (System.Exception ex)
+            {
+                Log.Warning("Could not place order.");
+                return Conflict(ex.Message);
+            }
+        }
+
         // PUT: api/Customer/5
         // [HttpPut("Update/{id}")]
         // public IActionResult Put(int id, [FromBody] Customer p_customer)
