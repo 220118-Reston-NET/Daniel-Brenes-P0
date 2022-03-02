@@ -72,8 +72,8 @@ namespace StoreApi.Controllers
         // }
 
         // PUT: api/StoreFront
-        [HttpPut("ReplenishInventory")]
-        public IActionResult ReplenishInventory([FromQueryAttribute] int userId, [FromQueryAttribute] string userPin, [FromQueryAttribute] int newQuantity, [FromQueryAttribute] int storeFrontId, [FromQueryAttribute] int productId)
+        [HttpPut("UpdateInventory")]
+        public IActionResult UpdateInventory([FromQueryAttribute] int userId, [FromQueryAttribute] string userPin, [FromQueryAttribute] int newQuantity, [FromQueryAttribute] int storeFrontId, [FromQueryAttribute] int productId)
         // public IActionResult ReplenishInventory([FromQueryAttribute] int userId, [FromQueryAttribute] string userPin, [FromBody] Inventory i_inv)
         {
             Inventory newInventory = new Inventory();
