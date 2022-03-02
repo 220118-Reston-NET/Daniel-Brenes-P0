@@ -68,5 +68,6 @@ public class OrderTest
         Assert.IsType<int>(order.OrderId);//checks that the property is not null meaning we did set data in this property
         Assert.Equal(validOrder, order.OrderId);//checks if the property does indeed hold the same value as what we set it as    
     }
+
 }
 }

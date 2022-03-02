@@ -6,12 +6,10 @@ namespace StoreModel
         public int ProductId {get; set;}
         public string ProductName{get; set;}
         public int Quantity{get; set;}
-        // public int StoreFrontId {get; set;}
         public double subTotal {get; set;}
 
         public LineItem()
        {
-            
             ProductName = "";
             Quantity = 0;
             ProductId = 0;

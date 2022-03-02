@@ -14,9 +14,6 @@ namespace StoreModel
             ProductId = 0;
             StoreFrontId = 0;
        }
-        // public override string ToString()
-        // {
-        //     return $"Id: {ProductId} \t\tName: {ProductName} \t\tQuantity: {Quantity} \t\t SubTotal: {subTotal}";
-        // }
+
     }
 }

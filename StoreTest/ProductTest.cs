@@ -35,6 +35,29 @@ public class ProductTest
         Assert.Equal(productId, actualProducts[0].ProductId); 
     }
     [Fact]
+    public void ProductCorrectTypes()
+    {
+       Product prod = new Product();
+        prod.ProductId = 5;
+
+        List<Product> expectedProducts= new List<Product>();
+        expectedProducts.Add(prod);
+
+        Mock<IRepo> mockRepo = new Mock<IRepo>();
+        mockRepo.Setup(repo => repo.GetAllProducts()).Returns(expectedProducts);
+
+        IStoreBL orderBL = new StoreBL(mockRepo.Object);
+
+        List<Product> actualProducts = orderBL.GetAllProducts();
+
+        Assert.Same(expectedProducts, actualProducts); 
+        Assert.IsType<int>(actualProducts[0].ProductId);
+        Assert.IsType<double>(actualProducts[0].Price);
+        Assert.IsType<string>(actualProducts[0].Name);
+        Assert.IsType<string>(actualProducts[0].Desc);
+    }
+    
+    [Fact]
         public void ProductShouldSetValidData()
         {
             //Arrange

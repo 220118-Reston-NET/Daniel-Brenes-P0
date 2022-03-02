@@ -1,4 +1,3 @@
-//Updating this file to push to git
 namespace StoreModel
 {
 public class StoreFront
@@ -23,8 +22,6 @@ public class StoreFront
             }
         }
     }
-    // private List<Product> _products;
-    // private List<Product> Products{get; set;}
     private List<Order> _orders;
     public List<Order> Orders
     {
@@ -54,13 +51,7 @@ public class StoreFront
         // {
         //     new Order()
         // };
-        // _lineitem = new List<LineItem>()
-        // {
-        //     new LineItem()
-        // };
-
     }
-
     public override string ToString()
     {
             return $"Store Id: {StoreID}\nName: {Name}\nAddress: {Address}\nType Of Store: {TypeOfStore}\n";

@@ -600,7 +600,6 @@ namespace StoreDL
         }
         public List<Order> GetOrderHistoryByStore(int p_storeId)
         {
-            //StoreFront currentStore = new StoreFront();
             List<Order> listOfOrders = new List<Order>();
             string sqlQuery = @"select * from Orders
                                     where storeFrontId = @p_storeId
