@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\veron\\Documents\\P0\\Storetest\\StoreTest.csproj": {}
+    "C:\\Users\\veron\\Documents\\P0\\StoreTest\\StoreTest.csproj": {}
   },
   "projects": {
     "C:\\Users\\veron\\Documents\\P0\\BL\\BL.csproj": {
@@ -183,14 +183,14 @@
         }
       }
     },
-    "C:\\Users\\veron\\Documents\\P0\\Storetest\\StoreTest.csproj": {
+    "C:\\Users\\veron\\Documents\\P0\\StoreTest\\StoreTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\veron\\Documents\\P0\\Storetest\\StoreTest.csproj",
+        "projectUniqueName": "C:\\Users\\veron\\Documents\\P0\\StoreTest\\StoreTest.csproj",
         "projectName": "StoreTest",
-        "projectPath": "C:\\Users\\veron\\Documents\\P0\\Storetest\\StoreTest.csproj",
+        "projectPath": "C:\\Users\\veron\\Documents\\P0\\StoreTest\\StoreTest.csproj",
         "packagesPath": "C:\\Users\\veron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\veron\\Documents\\P0\\Storetest\\obj\\",
+        "outputPath": "C:\\Users\\veron\\Documents\\P0\\StoreTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\veron\\AppData\\Roaming\\NuGet\\NuGet.Config",

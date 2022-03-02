@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3IvLXsG2GodsxVDSgrGpiGszpGPEqDScExLuUB3Jah6L/qIoKQ1IRc0eCFAANQuV6rj8DxmbUx3P7E5YzF34cw==",
+  "dgSpecHash": "4mr8ufHCznHuBbwfgr0U5zOiIixxUhpqacwwFI5FSA2HhbekCbJys0hkqYcgYB+VZKON/sN4UV3m0v6maozCPQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\veron\\Documents\\P0\\Storetest\\StoreTest.csproj",
+  "projectFilePath": "C:\\Users\\veron\\Documents\\P0\\StoreTest\\StoreTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\veron\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\veron\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
