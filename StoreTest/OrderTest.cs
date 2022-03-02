@@ -55,7 +55,7 @@ public class OrderTest
     }
 
     [Fact]
-    public void OrderShouldSetValidData()
+    public void OrderShouldSetValidOrderId()
     {
         //Arrange
         Order order = new Order();
@@ -67,6 +67,20 @@ public class OrderTest
         //Assert
         Assert.IsType<int>(order.OrderId);//checks that the property is not null meaning we did set data in this property
         Assert.Equal(validOrder, order.OrderId);//checks if the property does indeed hold the same value as what we set it as    
+    }
+    [Fact]
+    public void OrderShouldSetValidData()
+    {
+        //Arrange
+        Order order = new Order();
+        int storeFrontId = 7;
+
+        //Act
+        order.StoreFrontId = storeFrontId;
+        
+        //Assert
+        Assert.IsType<int>(order.StoreFrontId);//checks that the property is not null meaning we did set data in this property
+        Assert.Equal(storeFrontId, order.StoreFrontId);//checks if the property does indeed hold the same value as what we set it as    
     }
 
 }
