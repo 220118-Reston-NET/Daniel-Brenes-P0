@@ -58,10 +58,10 @@ namespace BL
             return _repo.GetLineItem(p_id);
         }
 
-        public StoreFront GetStoreFront(int p_id)
-        {
-            return _repo.GetStoreFront(p_id);
-        }
+        // public StoreFront GetStoreFront(int p_id)
+        // {
+        //     return _repo.GetStoreFront(p_id);
+        // }
 
         public LineItem ReplenishQuantity(int p_id, int p_quantity)
         {
@@ -168,6 +168,11 @@ namespace BL
         public List<Inventory> GetInventoryByStoreFront(int p_id)
         {
             return _repo.GetInventoryByStoreFront(p_id);
+        }
+
+        public List<Order> GetOrderHistoryByStoreId(int p_id)
+        {
+            return _repo.GetOrderHistoryByStoreId(p_id);
         }
     }
 }

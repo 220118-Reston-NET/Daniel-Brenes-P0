@@ -220,29 +220,6 @@ namespace StoreDL
         {
             throw new NotImplementedException();
         }
-        public StoreFront GetStoreFront(int p_id)
-        {
-            StoreFront newStoreFront = new StoreFront();
-            string sqlQuery = @"select * from StoreFront
-                                    where storeFrontId = @storeFrontId";
-            using (SqlConnection con = new SqlConnection(_connectionStrings))
-            {
-                con.Open();
-                SqlCommand command = new SqlCommand(sqlQuery, con);
-                command.Parameters.AddWithValue("@storeFrontId" , p_id);
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                        
-                        newStoreFront.StoreID = reader.GetInt32(0);
-                        newStoreFront.Address = reader.GetString(1);
-                        newStoreFront.Name = reader.GetString(2);
-                        newStoreFront.TypeOfStore = reader.GetString(3);// + p_quantity;
-                }
-            }
-            return newStoreFront;
-        }
-
         public List<StoreFront> GetAllStoreFront()
         {
             List<StoreFront> listOfStoreFront = new List<StoreFront>();
@@ -547,6 +524,91 @@ namespace StoreDL
                 }
             }
             return listOfInventory;
+        }
+
+        public List<Order> GetOrderHistoryByStoreId(int p_storeId)
+        {
+            StoreFront currentStore = new StoreFront();
+            List<Order> listOfOrders = new List<Order>();
+            string sqlQuery = @"select * from StoreFront
+                                    where storeFrontId = @storeFrontId";
+
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@p_storeId", p_storeId);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                        listOfOrders.Add(new Order(){
+                        OrderId = reader.GetInt32(0),
+                        Total = (double)reader.GetDecimal(1),
+                        StoreFrontId = reader.GetInt32(2),
+                        CustomerId = reader.GetInt32(3),
+                        dateCreated = reader.GetDateTime(4),
+                        LineItems = GetLineItemByOrderId(reader.GetInt32(0))
+                        });
+                }
+            }
+
+            return listOfOrders;
+        }
+        // public StoreFront GetStoreFront(int p_id)
+        // {
+        //     StoreFront newStoreFront = new StoreFront();
+        //     List<Order> myOrder = new List<Order>();
+        //     string sqlQuery = @"select s.storeFrontId, s.storeFrontName, s.storeFrontAddress, s.storeFrontType, o.orderId from StoreFront s
+        //                                                 inner join Orders o on o.storeFrontId = s.storeFrontId
+        //                                                     where s.storeFrontId = @p_id";
+        //     using (SqlConnection con = new SqlConnection(_connectionStrings))
+        //     {
+        //         con.Open();
+        //         SqlCommand command = new SqlCommand(sqlQuery, con);
+        //         command.Parameters.AddWithValue("@p_id" , p_id);
+        //         SqlDataReader reader = command.ExecuteReader();
+        //         while (reader.Read())
+        //         {
+        //                 // newStoreFront.StoreID = reader.GetInt32(0);
+        //                 // newStoreFront.Address = reader.GetString(1);
+        //                 // newStoreFront.Name = reader.GetString(2);
+        //                 // newStoreFront.TypeOfStore = reader.GetString(3);
+        //                 myOrder.Add(new Order()
+        //                 {
+        //                     GetOrderHistoryByStore(reader.GetInt32(4))
+        //                 });
+        //         }
+        //     }
+        //     return newStoreFront;
+        // }
+        public List<Order> GetOrderHistoryByStore(int p_storeId)
+        {
+            //StoreFront currentStore = new StoreFront();
+            List<Order> listOfOrders = new List<Order>();
+            string sqlQuery = @"select * from Orders
+                                    where storeFrontId = @p_storeId
+                                    order by DATEPART(Day, dateTimeCreated) ASC, total DESC";
+
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@p_storeId", p_storeId);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                        listOfOrders.Add(new Order(){
+                        OrderId = reader.GetInt32(0),
+                        Total = (double)reader.GetDecimal(1),
+                        StoreFrontId = reader.GetInt32(2),
+                        CustomerId = reader.GetInt32(3),
+                        dateCreated = reader.GetDateTime(4),
+                        LineItems = GetLineItemByOrderId(reader.GetInt32(0))
+                        });
+                }
+            }
+
+            return listOfOrders;
         }
     }
 }

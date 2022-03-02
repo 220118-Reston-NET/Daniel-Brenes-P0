@@ -21,24 +21,25 @@ public class StoreFront
             {
                 throw new Exception("No Inventory at this location");
             }
+        }
     }
     // private List<Product> _products;
     // private List<Product> Products{get; set;}
-    // private List<Order> _orders;
-    // public List<Order> Orders
-    // {
-    //     get {return _orders;}
-    //     set 
-    //     {
-    //         if(value.Count > 0)
-    //         {
-    //             _orders = value;
-    //         }
-    //         else
-    //         {
-    //             throw new Exception("Empty order set");
-    //         }
-
+    private List<Order> _orders;
+    public List<Order> Orders
+    {
+        get {return _orders;}
+        set 
+        {
+            if(value.Count > 0)
+            {
+                _orders = value;
+            }
+            else
+            {
+                throw new Exception("No orders at  this location");
+            }
+        }
     }
     public StoreFront()
     {
@@ -49,10 +50,10 @@ public class StoreFront
         {
             new Inventory()
         };
-        // _orders = new List<Order>()
-        // {
-        //     new Order()
-        // };
+        _orders = new List<Order>()
+        {
+            new Order()
+        };
         // _lineitem = new List<LineItem>()
         // {
         //     new LineItem()

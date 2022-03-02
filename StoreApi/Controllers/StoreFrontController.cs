@@ -36,23 +36,39 @@ namespace StoreApi.Controllers
                 return NotFound();
             }
         }
-        // GET: api/Customer/5
-        [HttpGet("DisplayStoreFrontOrders")]
-        public IActionResult GetCustomerOrderById([FromQueryAttribute] int customerId)
+        [HttpGet("ViewStoreFrontOrderHistory")]
+        public IActionResult GetOrderHistoryByStoreFront([FromQueryAttribute] int storeFrontId)
         {
             try
             {
-            List<Order> listOfOrder = new List<Order>();
-            // listOfOrder =  _storeBL.GetOrderByCustomerId(customerId);
-            Log.Information("Displaying Customer Orders " + customerId);
-                return Ok(_storeBL.GetOrderByCustomerId(customerId));
+            // StoreFront currentStore = _storeBL.GetStoreFront(storeFrontId);
+            List<Order> listOfOrders = _storeBL.GetOrderHistoryByStoreId(storeFrontId);
+            Log.Information("Viewing Order History for StoreFront: "); //+ currentStore);
+                return Ok(_storeBL.GetOrderHistoryByStoreId(storeFrontId));
             }
             catch (SqlException)
             {
-                 Log.Information("Displaying FAILED " + customerId);
+                Log.Information("Viewing Order History FAILED");
                 return NotFound();
             }
         }
+        // GET: api/Customer/5
+        // [HttpGet("DisplayStoreFrontOrders")]
+        // public IActionResult GetCustomerOrderById([FromQueryAttribute] int customerId)
+        // {
+        //     try
+        //     {
+        //     List<Order> listOfOrder = new List<Order>();
+        //     // listOfOrder =  _storeBL.GetOrderByCustomerId(customerId);
+        //     Log.Information("Displaying Customer Orders " + customerId);
+        //         return Ok(_storeBL.GetOrderByCustomerId(customerId));
+        //     }
+        //     catch (SqlException)
+        //     {
+        //          Log.Information("Displaying FAILED " + customerId);
+        //         return NotFound();
+        //     }
+        // }
         // PUT: api/Customer/5
         // [HttpPut("Update/{id}")]
         // public IActionResult Put(int id, [FromBody] Customer p_customer)

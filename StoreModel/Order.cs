@@ -8,6 +8,7 @@ namespace StoreModel
         public int StoreFrontId{get; set;}
         public int CustomerId{get; set;}
         public double Total {get; set;}
+        public DateTime dateCreated {get; set;}
         public List<LineItem> _listOfLineItem;
         public List<LineItem> LineItems
         {

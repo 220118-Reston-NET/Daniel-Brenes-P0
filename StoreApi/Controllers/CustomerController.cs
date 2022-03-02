@@ -80,8 +80,8 @@ namespace StoreApi.Controllers
             try
             {
             List<Order> listOfOrder = new List<Order>();
-            // listOfOrder =  _storeBL.GetOrderByCustomerId(customerId);
-            Log.Information("Displaying Customer Orders " + customerId);
+            listOfOrder =  _storeBL.GetOrderByCustomerId(customerId);
+            Log.Information("Displaying Customer Orders : " + customerId);
                 return Ok(_storeBL.GetOrderByCustomerId(customerId));
             }
             catch (SqlException)

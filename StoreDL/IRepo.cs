@@ -9,10 +9,12 @@ namespace StoreDL
         List<Customer> SearchCustomerById(int p_id);
         // List<Product> GetProductById(int p_id);
         // StoreFront AddStoreFront(StoreFront p_store);
-        StoreFront GetStoreFront(int p_id);
+        // StoreFront GetStoreFront(int p_id);
         Order AddOrder(Order p_order);
         Order PlaceOrder(List<LineItem> p_lineitemlist, double p_total, int p_customerid, int p_storefrontid);
         List<Order> GetAllOrders();
+        List<Order> GetOrderHistoryByStoreId(int p_storeId);
+        List<Order> GetOrderHistoryByStore(int p_id);
         List<LineItem> GetLineItemByOrderId(int p_orderId);
         List<StoreFront> GetAllStoreFront();
         List<Inventory> GetInventoryByStoreFront(int p_id);
