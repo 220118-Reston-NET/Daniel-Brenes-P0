@@ -102,3 +102,6 @@ Wallet: $1
 2022-03-02 03:23:09.669 -06:00 [INF] Successfully placed an order.
 2022-03-02 03:41:19.735 -06:00 [INF] Successfully placed an order.
 2022-03-02 04:25:20.437 -06:00 [INF] Successfully placed an order.
+2022-03-02 08:38:00.869 -06:00 [INF] Get All CustomersSystem.Collections.Generic.List`1[StoreModel.Customer]
+2022-03-02 08:38:46.301 -06:00 [INF] Displaying Customer Orders : 7
+2022-03-02 08:39:24.256 -06:00 [INF] Viewing All StoreFront Inventory & Order History
