@@ -36,28 +36,11 @@ namespace StoreApi.Controllers
                 return NotFound();
             }
         }
-        // GET: api/Customer/5
-        // [HttpGet("DisplayStoreFrontOrders")]
-        // public IActionResult GetCustomerOrderById([FromQueryAttribute] int customerId)
-        // {
-        //     try
-        //     {
-        //     List<Order> listOfOrder = new List<Order>();
-        //     // listOfOrder =  _storeBL.GetOrderByCustomerId(customerId);
-        //     Log.Information("Displaying Customer Orders " + customerId);
-        //         return Ok(_storeBL.GetOrderByCustomerId(customerId));
-        //     }
-        //     catch (SqlException)
-        //     {
-        //          Log.Information("Displaying FAILED " + customerId);
-        //         return NotFound();
-        //     }
-        // }
 
         // PUT: api/StoreFront
         [HttpPut("UpdateInventory")]
         public IActionResult UpdateInventory([FromQueryAttribute] int userId, [FromQueryAttribute] string userPin, [FromQueryAttribute] int newQuantity, [FromQueryAttribute] int storeFrontId, [FromQueryAttribute] int productId)
-        // public IActionResult ReplenishInventory([FromQueryAttribute] int userId, [FromQueryAttribute] string userPin, [FromBody] Inventory i_inv)
+
         {
             Inventory newInventory = new Inventory();
             if (userId >= 5000)

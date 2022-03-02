@@ -7,8 +7,22 @@ public class Customer
     public string Address {get; set;}
     public string Email {get; set;}
     public string PhoneNumber{get; set;}
-    public double Wallet{ get; set;}
-
+    private double _wallet;
+    public double Wallet
+    {
+    get { return _wallet; }
+    set 
+        {
+            if(_wallet >= 0)
+            {
+                _wallet = value;
+            }
+            else
+            {
+                throw new Exception("Wallet cannot be negative");
+            }
+        }
+    }
     public string Pin { get; set;}
     public Customer()
     {

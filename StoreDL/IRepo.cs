@@ -8,6 +8,7 @@ namespace StoreDL
         Boolean VerifyManager(int p_id, string p_pin);
         List<Customer> SearchCustomer(string p_inputString);
         List<Customer> SearchCustomerById(int p_id);
+        List<Customer> SearchCustomerByEmail(string p_email);
         // List<Product> GetProductById(int p_id);
         // StoreFront AddStoreFront(StoreFront p_store);
         // StoreFront GetStoreFront(int p_id);

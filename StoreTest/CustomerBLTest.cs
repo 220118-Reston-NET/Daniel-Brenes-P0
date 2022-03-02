@@ -48,27 +48,5 @@ public class CustomerBLTest
         Assert.NotNull(customer.Name);//checks that the property is not null meaning we did set data in this property
         Assert.Equal(validCustomer, customer.Name);//checks if the property does indeed hold the same value as what we set it as    
     }
-    // [Fact]
-    // public void Search_Customer_By_Name()
-    // {
-    //     string customerName = "Dan B";
-    //     Customer customer = new Customer()
-    //     {
-    //         Name = customerName
-    //     };
-
-    //     List<Customer> testList = new List<Customer>();
-
-    //     testList.Add(customer);
-
-    //     Mock<IRepo> mockRepo = new Mock<IRepo>();
-    //     mockRepo.Setup(repo => repo.SearchCustomer(customerName)).Returns(testList);
-
-    //     IStoreBL _storeBL = new StoreBL(mockRepo.Object);
-    //     List<Customer> actualList = _storeBL.SearchCustomerByName(customerName);
-  
-    //     Assert.Same(testList, actualList);
-    //     Assert.Equal(customerName, actualList[0].Name); 
-    // }
 }
 }

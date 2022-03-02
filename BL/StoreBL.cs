@@ -14,14 +14,6 @@ namespace BL
         {
             return _repo.AddCustomer(p_customer);
         }
-        // public StoreFront AddStoreFront(StoreFront p_store)
-        // {
-        //     throw new NotImplementedException();
-        // }
-        // public Order PlaceOrder(List<LineItem> p_listOfOrder, double p_total, int p_customerId, int p_storefrontid)
-        // {
-        //     return _repo.PlaceOrder(p_listOfOrder, p_total, p_customerId, p_storefrontid);
-        // }
         public List<Order> GetAllOrders()
         {
             List<Order> myOrders = _repo.GetAllOrders();
@@ -43,26 +35,10 @@ namespace BL
         {
             return _repo.GetAllStoreFront();
         }
-        // public List<LineItem> GetLineItemByStoreId(int p_id)
-        // {
-        //     List<LineItem> listOfLineItem =  _repo.GetLineItemByStoreId(p_id);
-        //     //listOfLineItem = listOfLineItem.Where(lineitem => lineitem.ProductId.Equals(p_id))
-        //     //                        .ToList();
-        //      if (listOfLineItem.Count> 0)
-        //         return listOfLineItem;
-        //     else   
-        //         throw new Exception("No Line Items found with that ID"); 
-        // }
         public LineItem GetLineItem(int p_id)
         {
             return _repo.GetLineItem(p_id);
         }
-
-        // public StoreFront GetStoreFront(int p_id)
-        // {
-        //     return _repo.GetStoreFront(p_id);
-        // }
-
         public Inventory ReplenishQuantity(int p_storeId, int p_id, int p_quantity)
         {
             Inventory updateItem = _repo.ReplenishQuantity(p_storeId, p_id, p_quantity);

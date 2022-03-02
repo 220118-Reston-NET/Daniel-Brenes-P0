@@ -50,5 +50,27 @@ public class InventoryTest
         Assert.Equal(productId, inv.ProductId); 
         Assert.Equal(storeFrontId, inv.StoreFrontId); 
     }
+    [Fact]
+    public void InventoryCorrectTypes()
+    {
+        Inventory inv = new Inventory();
+        inv.StoreFrontId = 5;
+
+        List<Inventory> expectedInventory = new List<Inventory>();
+        expectedInventory.Add(inv);
+
+        Mock<IRepo> mockRepo = new Mock<IRepo>();
+        mockRepo.Setup(repo => repo.GetInventoryByStoreFront(inv.StoreFrontId)).Returns(expectedInventory);
+
+        IStoreBL orderBL = new StoreBL(mockRepo.Object);
+
+        List<Inventory> actualInventory = orderBL.GetInventoryByStoreFront(inv.StoreFrontId);
+
+        Assert.Same(expectedInventory, actualInventory); 
+        Assert.IsType<int>(actualInventory[0].ProductId);
+        Assert.IsType<string>(actualInventory[0].ProductName);
+        Assert.IsType<int>(actualInventory[0].Quantity);
+        Assert.IsType<int>(actualInventory[0].StoreFrontId);
+    }
 }
 }
