@@ -105,3 +105,12 @@ Wallet: $1
 2022-03-02 08:38:00.869 -06:00 [INF] Get All CustomersSystem.Collections.Generic.List`1[StoreModel.Customer]
 2022-03-02 08:38:46.301 -06:00 [INF] Displaying Customer Orders : 7
 2022-03-02 08:39:24.256 -06:00 [INF] Viewing All StoreFront Inventory & Order History
+2022-03-02 08:52:21.772 -06:00 [INF] Displaying Customer Orders : 6
+2022-03-02 10:38:06.907 -06:00 [INF] Manager Login Success9999
+2022-03-02 10:41:17.662 -06:00 [INF] Manager Login Success7777
+2022-03-02 10:41:42.316 -06:00 [INF] Viewing All StoreFront Inventory & Order History
+2022-03-02 10:42:24.873 -06:00 [INF] Displaying Customer Orders : 5
+2022-03-02 10:45:12.957 -06:00 [INF] Successfully placed an order.
+2022-03-02 10:46:00.053 -06:00 [INF] Displaying Customer Orders : 8
+2022-03-02 10:46:25.643 -06:00 [INF] Viewing All StoreFront Inventory & Order History
+2022-03-02 10:47:23.051 -06:00 [INF] Manager Login Success 7777
